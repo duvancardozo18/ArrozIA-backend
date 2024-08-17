@@ -1,0 +1,28 @@
+Nombres de variables y funciones:
+Se utilizarán nombres descriptivos y en idioma inglés para variables, funciones y constantes.
+Los nombres de variables y funciones seguirán la convención "camelCase", comenzando con minúscula y utilizando mayúsculas para separar palabras.
+Ejemplo: userAge, calculateTotalCost, getProductDetails
+
+
+Nombres de constantes
+Los nombres de constantes se escribirán en "UPPER_CASE" con palabras separadas por guiones bajos.
+Ejemplo: MAX_ALLOWED_CONNECTIONS, DEFAULT_TIMEOUT_SECONDS
+
+
+Nombres de clases:
+Los nombres de clases seguirán la convención "PascalCase", comenzando con mayúscula y utilizando mayúsculas para separar palabras.
+Se utilizarán nombres descriptivos y en idioma inglés para las clases.
+Ejemplo: UserProfile, OrderProcessingService, DatabaseConnection
+Longitud de los nombres:
+Los nombres de variables, funciones y clases tendrán una longitud máxima de 30 caracteres.
+En caso de que los nombres sean muy largos, se utilizarán las tres primeras letras de cada palabra bajos para construir el nombre.
+
+
+Comentarios:
+Se incluirán comentarios explicativos y de documentación en el código.
+Los comentarios de una línea se realizarán utilizando "//" en JavaScript y Kotlin, y "#" en Python.
+Los comentarios de múltiples líneas se realizarán utilizando "/* */" en JavaScript y Kotlin, y "''' '''" en Python.
+
+Manejo de errores:
+Todos los métodos que interactúan con datos externos deben manejar errores.
+Se utilizarán bloques try-catch para capturar y manejar excepciones de manera apropiada.

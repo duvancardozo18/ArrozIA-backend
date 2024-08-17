@@ -26,3 +26,8 @@ class TokenCreate(BaseModel):
     refresh_token:str
     status:bool
     created_date:datetime.datetime
+
+class UpdateUser(BaseModel):
+    nombre: str
+    apellido: str
+    email: str
