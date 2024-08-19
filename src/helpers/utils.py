@@ -10,34 +10,34 @@ ALGORITHM = "HS256"
 JWT_SECRET_KEY = "narscbjim@$@&^@&%^&RFghgjvbdsha"   # should be kept secret
 JWT_REFRESH_SECRET_KEY = "13ugfdfgh@#$%^@&jkl45678902"
 
-password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+passwordContext = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def get_hashed_password(password: str) -> str:
-    return password_context.hash(password)
+    return passwordContext.hash(password)
 
 
 def verify_password(password: str, hashed_pass: str) -> bool:
-    return password_context.verify(password, hashed_pass)
+    return passwordContext.verify(password, hashed_pass)
 
-def create_access_token(subject: Union[str, Any], expires_delta: int = None) -> str:
-    if expires_delta is not None:
-        expires_delta = datetime.utcnow() + expires_delta
+def create_access_token(subject: Union[str, Any], expiresDelta: int = None) -> str:
+    if expiresDelta is not None:
+        expiresDelta = datetime.utcnow() + expiresDelta
         
     else:
-        expires_delta = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+        expiresDelta = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
          
     
-    to_encode = {"exp": expires_delta, "sub": str(subject)}
-    encoded_jwt = jwt.encode(to_encode, JWT_SECRET_KEY, ALGORITHM)
+    to_encode = {"exp": expiresDelta, "sub": str(subject)}
+    encodedJwt = jwt.encode(to_encode, JWT_SECRET_KEY, ALGORITHM)
      
-    return encoded_jwt
+    return encodedJwt
 
-def create_refresh_token(subject: Union[str, Any], expires_delta: int = None) -> str:
-    if expires_delta is not None:
-        expires_delta = datetime.utcnow() + expires_delta
+def create_refresh_token(subject: Union[str, Any], expiresDelta: int = None) -> str:
+    if expiresDelta is not None:
+        expiresDelta = datetime.utcnow() + expiresDelta
     else:
-        expires_delta = datetime.utcnow() + timedelta(minutes=REFRESH_TOKEN_EXPIRE_MINUTES)
+        expiresDelta = datetime.utcnow() + timedelta(minutes=REFRESH_TOKEN_EXPIRE_MINUTES)
     
-    to_encode = {"exp": expires_delta, "sub": str(subject)}
-    encoded_jwt = jwt.encode(to_encode, JWT_REFRESH_SECRET_KEY, ALGORITHM)
-    return encoded_jwt
+    toEncode = {"exp": expiresDelta, "sub": str(subject)}
+    encodedJwt = jwt.encode(toEncode, JWT_REFRESH_SECRET_KEY, ALGORITHM)
+    return encodedJwt
