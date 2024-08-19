@@ -7,7 +7,7 @@ class CrearUsuario(BaseModel):
     email: str
     password: str
 
-class requestdetails(BaseModel):
+class RequestDetails(BaseModel):
     email:str
     password:str
         
@@ -15,7 +15,7 @@ class TokenSchema(BaseModel):
     access_token: str
     refresh_token: str
 
-class changepassword(BaseModel):
+class ChangePassword(BaseModel):
     email:str
     old_password:str
     new_password:str
@@ -31,3 +31,4 @@ class UpdateUser(BaseModel):
     nombre: str
     apellido: str
     email: str
+    password: str

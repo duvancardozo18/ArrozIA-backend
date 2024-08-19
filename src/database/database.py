@@ -24,3 +24,11 @@ except SQLAlchemyError as e:
 Base = declarative_base()
 
 SessionLocal =  sessionmaker(bind=engine, expire_on_commit=False)
+
+def get_session() ->str:
+    session = SessionLocal()
+    try:
+        yield session
+        
+    finally:
+        session.close()
