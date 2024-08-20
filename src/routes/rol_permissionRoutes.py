@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from src.controller.permissionController import check_permission
-from src.database.database import get_session
+from src.database.database import get_session 
 
 ROL_PERMISSION_ROUTES = APIRouter()
 

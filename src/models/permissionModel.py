@@ -1,9 +1,9 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
-from src.database.database import Base 
+from src.database.database import Base
 
 class Permiso(Base):
     __tablename__ = 'permiso'
-    
+
     id = Column(Integer, primary_key=True)
     nombre = Column(String(50), unique=True, nullable=False)
     descripcion = Column(String(255))

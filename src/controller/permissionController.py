@@ -1,7 +1,7 @@
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 from src.models.rolModel import UsuarioFincaRol, Rol
-from src.models.permissionModel import Permiso, RolPermiso
+from src.models.permissionModel import Permiso, RolPermiso 
 
 def check_permission(user_id: int, permission_name: str, db: Session):
     # Obtener los roles del usuario desde la tabla usuario_finca
