@@ -1,24 +1,15 @@
 from src.database.database import Base, engine
-from fastapi import FastAPI
+from fastapi import FastAPI 
 from src.routes.userRouter import USER_ROUTES
+from src.routes.rol_permissionRoutes import ROL_PERMISSION_ROUTES
 
-Base.metadata.create_all(engine)    
+Base.metadata.create_all(engine)
 
-app=FastAPI()
-
+app = FastAPI()
+ 
 # Incluir las rutas
 app.include_router(USER_ROUTES)
-
-
-
-
-
-
-
-
-
-
-
+app.include_router(ROL_PERMISSION_ROUTES)
 
 
 
