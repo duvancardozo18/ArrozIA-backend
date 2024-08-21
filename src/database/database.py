@@ -2,14 +2,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import SQLAlchemyError
+from typing import Generator
+from sqlalchemy.orm import Session
 
-
-print("-------------------------")
-print("-------------------------")
-print("-------------------------")
-print("-------------------------")
-print("-------------------------")
-DATABASE_URL = "postgresql://postgres:futbolmania16@localhost:5432/ArrozIADB"
+DATABASE_URL = "postgresql://postgres:kevipao15@localhost:5432/ArrozIADBPostgreSQL"
 
 try:
     engine = create_engine(DATABASE_URL)
@@ -19,16 +15,13 @@ try:
 except SQLAlchemyError as e:
     print(f"Error al conectar con la base de datos: {e}")
 
-#engine = create_engine(DATABASE_URL)
-
 Base = declarative_base()
 
-SessionLocal =  sessionmaker(bind=engine, expire_on_commit=False)
+SessionLocal = sessionmaker(bind=engine, expire_on_commit=False)
 
-def get_session() ->str:
+def get_session() -> Generator[Session, None, None]:
     session = SessionLocal()
     try:
         yield session
-        
     finally:
         session.close()
