@@ -1,17 +1,25 @@
 from src.database.database import Base, engine
-from fastapi import FastAPI 
+from fastapi import FastAPI
 from src.routes.userRouter import USER_ROUTES
+from src.routes.permissionRouter import PERMISSION_ROUTES
+from src.routes.passwordResetRouter import PASSWORD_RESET_ROUTES
 from src.routes.rol_permissionRoutes import ROL_PERMISSION_ROUTES
 
-Base.metadata.create_all(engine)
+Base.metadata.create_all(engine)    
 
 app = FastAPI()
- 
-# Incluir las rutas
+
+# Incluir las rutas de usuario
 app.include_router(USER_ROUTES)
+
+# Incluir las rutas de permisos
+app.include_router(PERMISSION_ROUTES)
+
+# Incluir las rutas de restablecimiento de contraseña sin prefijo adicional
+app.include_router(PASSWORD_RESET_ROUTES)
+
+#verificar permisos
 app.include_router(ROL_PERMISSION_ROUTES)
-
-
 
 
 

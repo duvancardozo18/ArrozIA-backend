@@ -32,3 +32,29 @@ class UpdateUser(BaseModel):
     apellido: str
     email: str
     password: str
+
+class CreatePermission(BaseModel):
+    name: str
+    description: str = None
+
+class UpdatePermission(BaseModel):
+    name: str = None
+    description: str = None
+
+
+class PermissionSchema(BaseModel):
+    id: int
+    name: str
+    description: str = None
+
+    class Config:
+        orm_mode = True
+        from_attributes = True
+
+class PasswordResetRequest(BaseModel):
+    email: str
+
+class PasswordResetVerify(BaseModel):
+    email: str
+    token: str
+    new_password: str

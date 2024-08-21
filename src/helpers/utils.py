@@ -41,3 +41,12 @@ def create_refresh_token(subject: Union[str, Any], expiresDelta: int = None) -> 
     toEncode = {"exp": expiresDelta, "sub": str(subject)}
     encodedJwt = jwt.encode(toEncode, JWT_REFRESH_SECRET_KEY, ALGORITHM)
     return encodedJwt
+
+import uuid
+
+def generate_password_reset_token():
+    return str(uuid.uuid4())
+
+def send_password_reset_email(email: str, token: str):
+    # Esto es solo un ejemplo. Deberías integrar un servicio real de envío de correos.
+    print(f"Se ha enviado un correo electrónico a {email} con el token de restablecimiento de contraseña: {token}")
