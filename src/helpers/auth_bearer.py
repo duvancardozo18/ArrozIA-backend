@@ -16,7 +16,7 @@ def decodeJWT(jwtoken: str):
         # Decode and verify the token
         payload = jwt.decode(jwtoken, JWT_SECRET_KEY, ALGORITHM)
         return payload
-    except InvalidTokenError:
+    except InvalidKeyError:
         return None
 
 
