@@ -5,7 +5,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from typing import Generator
 from sqlalchemy.orm import Session
 
-DATABASE_URL = "postgresql://postgres:kevipao15@localhost:5432/ArrozIADBPostgreSQL"
+DATABASE_URL = "postgresql://postgres:futbolmania16@localhost:5432/ArrozIADB"
 
 try:
     engine = create_engine(DATABASE_URL)
