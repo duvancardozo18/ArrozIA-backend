@@ -4,8 +4,12 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import SQLAlchemyError
 from typing import Generator
 from sqlalchemy.orm import Session
+import os
+from dotenv import load_dotenv
 
-DATABASE_URL = "postgresql://postgres:kevipao15@localhost:5432/ArrozIADBPostgreSQL"
+# Cargar variables de entorno desde el archivo .env
+load_dotenv()
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 try:
     engine = create_engine(DATABASE_URL)

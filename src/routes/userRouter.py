@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session 
 import  src.schemas.schemas as schemas
-from src.controller.userController import registerUser, changePassword, deleteUser, getUser, getUsers, login, updateUser
+from src.controller.userController import registerUser, changePassword, deleteUser, getUser, getUsers, login, updateUser, updatePassword
 from src.database.database import get_session
-from src.helpers.auth_bearer import JWTBearer
+#from src.helpers.auth_bearer import JWTBearer
 
 
 USER_ROUTES = APIRouter()
@@ -31,7 +31,6 @@ def getUserId(user_id: int, db: Session = Depends(get_session)):
 
 
 
-
 @USER_ROUTES.put('/users/update/{user_id}')
 def modifyUser(user_id: int, user_update: schemas.UpdateUser, db: Session = Depends(get_session)):
     return updateUser(user_id, user_update, db)
@@ -42,6 +41,10 @@ def removeUser(user_id: int, db: Session = Depends(get_session)):
     return deleteUser(user_id, db)
 
 
-@USER_ROUTES.post('/change-password')
+@USER_ROUTES.post('/change-password/')
 def changeUserPassword(request: schemas.ChangePassword, db: Session = Depends(get_session)):
     return changePassword(request, db)
+
+@USER_ROUTES.put("/update_password/{user_id}")
+def update_password(user_id: int, password_data: schemas.UpdatePassword, db: Session = Depends(get_session)):
+   return updatePassword(user_id, password_data, db)

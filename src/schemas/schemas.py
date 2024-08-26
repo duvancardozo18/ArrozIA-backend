@@ -58,3 +58,7 @@ class PasswordResetVerify(BaseModel):
     email: str
     token: str
     new_password: str
+
+class UpdatePassword(BaseModel):
+    new_password: str
+    confirm_password: str
