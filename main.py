@@ -4,6 +4,7 @@ from src.routes.userRouter import USER_ROUTES
 from src.routes.permissionRouter import PERMISSION_ROUTES
 from src.routes.passwordResetRouter import PASSWORD_RESET_ROUTES
 from src.routes.rol_permissionRoutes import ROL_PERMISSION_ROUTES
+from src.routes.roleRoutes import ROLE_ROUTES
 
 Base.metadata.create_all(engine)    
 
@@ -21,7 +22,7 @@ app.include_router(PASSWORD_RESET_ROUTES)
 #verificar permisos
 app.include_router(ROL_PERMISSION_ROUTES)
 
-
+app.include_router(ROLE_ROUTES)
 
 
 

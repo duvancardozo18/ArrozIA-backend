@@ -58,3 +58,20 @@ class PasswordResetVerify(BaseModel):
     email: str
     token: str
     new_password: str
+
+class RoleBase(BaseModel):
+    nombre: str
+    descripcion: str
+
+class RoleCreate(RoleBase):
+    pass
+
+class RoleUpdate(RoleBase):
+    nombre: str = None
+    descripcion: str = None
+
+class Role(RoleBase):
+    id: int
+
+    class Config:
+        from_attributes = True
