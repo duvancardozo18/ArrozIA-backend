@@ -9,7 +9,13 @@ from dotenv import load_dotenv
 
 # Cargar variables de entorno desde el archivo .env
 load_dotenv()
+
+# Obtener la URL de la base de datos desde las variables de entorno
 DATABASE_URL = os.getenv("DATABASE_URL")
+
+# Verificar si DATABASE_URL se cargó correctamente
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL no está definida en el archivo .env")
 
 try:
     engine = create_engine(DATABASE_URL)

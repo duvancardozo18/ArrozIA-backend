@@ -3,8 +3,11 @@ from sqlalchemy.orm import Session
 from src.schemas.schemas import PasswordResetRequest, PasswordResetVerify
 from src.models.userModel import User
 from src.models.passwordResetModel import PasswordReset
-from src.helpers.utils import generate_password_reset_token, send_password_reset_email, get_hashed_password
+from src.helpers.utils import generate_password_reset_token, get_hashed_password
 from src.database.database import get_session
+
+# Importa el módulo necesario para enviar correos electrónicos
+from src.helpers.email_helper import send_email  # Asegúrate de que esta importación sea correcta
 
 def requestPasswordReset(request: PasswordResetRequest, db: Session = Depends(get_session)):
     user = db.query(User).filter(User.email == request.email).first()
@@ -20,7 +23,11 @@ def requestPasswordReset(request: PasswordResetRequest, db: Session = Depends(ge
     db.commit()
     
     # Enviar un correo electrónico al usuario con el token de restablecimiento
-    send_password_reset_email(user.email, token)
+    send_email(
+        recipient=user.email,
+        token=token,
+        user_name=user.nombre  # Asumiendo que tienes un campo 'nombre' en tu modelo User
+    )
     
     return {"message": "Password reset email sent successfully"}
 
