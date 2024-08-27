@@ -1,24 +1,22 @@
 import jwt
-from jwt.exceptions import InvalidKeyError
+from jwt.exceptions import InvalidKeyTypeError
 from fastapi import FastAPI, Depends, HTTPException,status
 from fastapi import Request, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from src.models.userModel import TokenTable
-    
-ACCESS_TOKEN_EXPIRE_MINUTES = 30  # 30 minutes
-REFRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7 # 7 days
-ALGORITHM = "HS256"
-JWT_SECRET_KEY = "narscbjim@$@&^@&%^&RFghgjvbdsha"   # should be kept secret
-JWT_REFRESH_SECRET_KEY = "13ugfdfgh@#$%^@&jkl45678902"
+from jose import jwt
+from src.helpers.config import JWT_SECRET_KEY, ALGORITHM
 
 def decodeJWT(jwtoken: str):
     try:
-        # Decode and verify the token
-        payload = jwt.decode(jwtoken, JWT_SECRET_KEY, ALGORITHM)
+        payload = jwt.decode(jwtoken, JWT_SECRET_KEY, algorithms=[ALGORITHM])
         return payload
-    except InvalidKeyError:
+    except jwt.ExpiredSignatureError:
         return None
-
+    except jwt.DecodeError:
+        return None
+    except Exception:
+        return None
 
 class JWTBearer(HTTPBearer):
     def __init__(self, auto_error: bool = True):
@@ -37,10 +35,9 @@ class JWTBearer(HTTPBearer):
 
     def verify_jwt(self, jwtoken: str) -> bool:
         isTokenValid: bool = False
-
         try:
             payload = decodeJWT(jwtoken)
-        except:
+        except Exception:
             payload = None
         if payload:
             isTokenValid = True

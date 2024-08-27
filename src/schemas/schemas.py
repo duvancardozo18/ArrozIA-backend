@@ -7,13 +7,16 @@ class CrearUsuario(BaseModel):
     email: str
     password: str
 
-class RequestDetails(BaseModel):
-    email:str
-    password:str
+class LoginRequest(BaseModel):
+    email: str
+    password: str
         
 class TokenSchema(BaseModel):
     access_token: str
     refresh_token: str
+
+    class Config:
+        from_attributes = True
 
 class ChangePassword(BaseModel):
     email:str
@@ -48,7 +51,6 @@ class PermissionSchema(BaseModel):
     description: str = None
 
     class Config:
-        orm_mode = True
         from_attributes = True
 
 class PasswordResetRequest(BaseModel):

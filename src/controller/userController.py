@@ -1,8 +1,9 @@
 from fastapi import HTTPException, Depends, status
 from sqlalchemy.orm import Session
 import src.schemas.schemas as schemas
+from src.schemas.schemas import LoginRequest
 import src.models.userModel as userModel
-from src.helpers.utils import create_access_token, create_refresh_token, verify_password, get_hashed_password
+from src.helpers.utils import create_access_token, create_refresh_token, verify_password, get_hashed_password, get_current_user
 from src.database.database import Base, get_session, engine
 from src.models.userModel import User, TokenTable
 from src.helpers.auth_bearer import JWTBearer
@@ -23,32 +24,38 @@ def registerUser(user: schemas.CrearUsuario, session: Session = Depends(get_sess
 
     return {"message":"user created successfully"}
 
-def login(request: schemas.RequestDetails, db: Session = Depends(get_session)):
+def login(request: schemas.LoginRequest, db: Session = Depends(get_session)):
     user = db.query(User).filter(User.email == request.email).first()
     if user is None:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Incorrect email")
-    hashedPass = user.password
-    if not verify_password(request.password, hashedPass):
+
+    if not verify_password(request.password, user.password):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Incorrect password"
         )
     
-    access=create_access_token(user.id)
-    refresh = create_refresh_token(user.id)
+    access_token = create_access_token(subject=user.id)
+    refresh_token = create_refresh_token(subject=user.id)
 
-    tokenDb = userModel.TokenTable(user_id=user.id,  access_toke=access,  refresh_toke=refresh, status=True)
+    tokenDb = TokenTable(
+        user_id=user.id,
+        access_toke=access_token,
+        refresh_toke=refresh_token,
+        status=True
+    )
     db.add(tokenDb)
     db.commit()
     db.refresh(tokenDb)
+
     return {
-        "access_token": access,
-        "refresh_token": refresh,
+        "access_token": access_token,
+        "refresh_token": refresh_token,
     }
-#def getUsers( dependencies=Depends(JWTBearer()),session: Session = Depends(get_session)):
-def getUsers(session: Session = Depends(get_session)):
-    user = session.query(userModel.User).all()
-    return user
+
+def getUsers(db: Session = Depends(get_session), current_user: User = Depends(get_current_user)):
+    users = db.query(User).all()
+    return users
 
 def getUser(user_id: int, db: Session = Depends(get_session)):
 #def getUser(user_id: int, dependencies=[Depends(JWTBearer())], db: Session = Depends(get_session)):

@@ -4,25 +4,23 @@ import  src.schemas.schemas as schemas
 from src.controller.userController import registerUser, changePassword, deleteUser, getUser, getUsers, login, updateUser
 from src.database.database import get_session
 from src.helpers.auth_bearer import JWTBearer
-
+from src.helpers.utils import verify_permission, get_current_user
+from src.models.userModel import User 
 
 USER_ROUTES = APIRouter()
-
 
 @USER_ROUTES.post("/register")
 def register(user: schemas.CrearUsuario, session: Session = Depends(get_session)):
     return registerUser(user, session)
 
-@USER_ROUTES.post('/login' ,response_model=schemas.TokenSchema)
-def loginRoute(request: schemas.RequestDetails, db: Session = Depends(get_session)):
+@USER_ROUTES.post('/login', response_model=schemas.TokenSchema)
+def loginRoute(request: schemas.LoginRequest, db: Session = Depends(get_session)):
     return login(request, db)
 
-
-
-@USER_ROUTES.get('/users/getusers',)
-#def listUsers(dependencies=Depends(JWTBearer()), session: Session = Depends(get_session)):
-def listUsers( session: Session = Depends(get_session)):
-    return getUsers(session)
+@USER_ROUTES.get("/users", dependencies=[Depends(verify_permission("view_secure_data"))])
+async def get_users(db: Session = Depends(get_session), current_user: User = Depends(get_current_user)):
+    users = db.query(User).all()
+    return users
 
 @USER_ROUTES.get('/users/{user_id}', )
 #def getUserId(user_id: int, dependencies=[Depends(JWTBearer())], db: Session = Depends(get_session)):
