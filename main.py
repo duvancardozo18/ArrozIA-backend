@@ -5,6 +5,8 @@ from src.routes.permissionRouter import PERMISSION_ROUTES
 from src.routes.passwordResetRouter import PASSWORD_RESET_ROUTES
 from src.routes.rol_permissionRoutes import ROL_PERMISSION_ROUTES
 from src.routes.roleRoutes import ROLE_ROUTES
+from fastapi.middleware.cors import CORSMiddleware
+
 
 Base.metadata.create_all(engine)    
 
@@ -25,7 +27,14 @@ app.include_router(ROL_PERMISSION_ROUTES)
 app.include_router(ROLE_ROUTES)
 
 
-
+# Configuración del middleware de CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Permite solicitudes solo desde el frontend en localhost:3000
+    allow_credentials=True,
+    allow_methods=["*"],  # Permite todos los métodos HTTP (GET, POST, etc.)
+    allow_headers=["*"],  # Permite todos los encabezados
+)
 
 
 
