@@ -25,11 +25,9 @@ from src.helpers.config import (
 passwordContext = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def get_hashed_password(password: str) -> str:
-    """Genera un hash para la contraseña proporcionada."""
     return passwordContext.hash(password)
 
 def verify_password(password: str, hashed_pass: str) -> bool:
-    """Verifica si la contraseña coincide con el hash."""
     return passwordContext.verify(password, hashed_pass)
 
 
@@ -52,8 +50,8 @@ def create_access_token(subject: Union[str, Any], expiresDelta: int = None) -> s
     encodedJwt = jwt.encode(to_encode, JWT_SECRET_KEY, algorithm=ALGORITHM)
     return encodedJwt
 
+
 def create_refresh_token(subject: Union[str, Any], expiresDelta: int = None) -> str:
-    """Crea un token de actualización JWT."""
     if expiresDelta:
         expire = datetime.utcnow() + expiresDelta
     else:
@@ -88,7 +86,7 @@ def get_current_user(token: str = Depends(JWTBearer()), db: Session = Depends(ge
 
 #Permisos
 def verify_permission(permission_name: str):
-    """Verifica si el usuario actual tiene el permiso necesario."""
+    #Verifica si el usuario actual tiene el permiso necesario.
     def verify(user: User = Depends(get_current_user), db: Session = Depends(get_session)):
         # Obtener todos los roles del usuario
         user_roles = db.query(UsuarioFincaRol).filter(UsuarioFincaRol.usuario_id == user.id).all()

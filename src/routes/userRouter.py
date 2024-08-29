@@ -28,8 +28,6 @@ def getUserId(user_id: int, db: Session = Depends(get_session)):
     return getUser(user_id, db)
 
 
-
-
 @USER_ROUTES.put('/users/update/{user_id}')
 def modifyUser(user_id: int, user_update: schemas.UpdateUser, db: Session = Depends(get_session)):
     return updateUser(user_id, user_update, db)
