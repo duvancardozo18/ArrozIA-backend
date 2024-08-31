@@ -1,12 +1,16 @@
-from fastapi import HTTPException, Depends, status
+from fastapi import Depends, HTTPException, status
 from sqlalchemy.orm import Session
-import src.schemas.schemas as schemas
-from src.schemas.schemas import LoginRequest
+
 import src.models.userModel as userModel
-from src.helpers.utils import create_access_token, create_refresh_token, verify_password, get_hashed_password, get_current_user
-from src.database.database import Base, get_session, engine
-from src.models.userModel import User, TokenTable
+import src.schemas.schemas as schemas
+from src.database.database import Base, engine, get_session
 from src.helpers.auth_bearer import JWTBearer
+from src.helpers.utils import (create_access_token, create_refresh_token,
+                               get_current_user, get_hashed_password,
+                               verify_password)
+from src.models.userModel import TokenTable, User
+from src.schemas.schemas import LoginRequest
+
 
 def registerUser(user: schemas.CrearUsuario, session: Session = Depends(get_session)):
     existingUser = session.query(userModel.User).filter_by(email=user.email).first()
