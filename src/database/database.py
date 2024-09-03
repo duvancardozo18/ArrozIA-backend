@@ -29,6 +29,14 @@ Base = declarative_base()
 
 SessionLocal = sessionmaker(bind=engine, expire_on_commit=False)
 
+def get_db() -> Generator[Session, None, None]:
+    session = SessionLocal()
+    try:
+        yield session
+    finally:
+        session.close()
+
+
 def get_session() -> Generator[Session, None, None]:
     session = SessionLocal()
     try:
