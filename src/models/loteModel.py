@@ -18,6 +18,7 @@ class Lote(Base):
     # Relaciones
     finca = relationship("Finca", back_populates="lotes")   
     unidad_area = relationship("UnidadArea", back_populates="lotes")
+    crops = relationship("Crop", back_populates="lotes") 
 
 
 class UnidadArea(Base):

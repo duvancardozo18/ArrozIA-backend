@@ -1,5 +1,7 @@
 from sqlalchemy import Column, Integer, String, Text
-from src.database.database import Base 
+from sqlalchemy.orm import relationship
+from src.database.database import Base
+
 class VariedadArroz(Base):
     __tablename__ = 'variedad_arroz'
 
@@ -15,4 +17,5 @@ class VariedadArroz(Base):
     oferta_ambiental = Column(Text)
     recomendaciones_generales = Column(Text)
 
-    
+    # Relación inversa
+    crops = relationship("Crop", order_by="Crop.id", back_populates="variety")
