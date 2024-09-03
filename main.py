@@ -10,7 +10,8 @@ from src.routes.rol_permissionRoutes import ROL_PERMISSION_ROUTES
 from src.routes.roleRoutes import ROLE_ROUTES
 from src.routes.unidadesAreasRoutes import UNIDAD_AREA_ROUTE
 from src.routes.userRouter import USER_ROUTES
-from src.routes.varietyArrozRoutes import VARIETY_ARROZ_ROUTES  # Importa el router correcto para variedades de arroz
+from src.routes.varietyArrozRoutes import VARIETY_ARROZ_ROUTES
+from src.routes.cropRoutes import CROP_ROUTES
 
 # Crear las tablas en la base de datos
 Base.metadata.create_all(engine)
@@ -44,6 +45,9 @@ app.include_router(UNIDAD_AREA_ROUTE)
 
 # Incluir las rutas para variedades de arroz
 app.include_router(VARIETY_ARROZ_ROUTES, prefix="/varieties", tags=["Varieties of Rice"])
+
+# Incluir las rutas para cultivo
+app.include_router(CROP_ROUTES)
 
 # Configuración del middleware de CORS
 app.add_middleware(
