@@ -10,7 +10,7 @@ from src.routes.rol_permissionRoutes import ROL_PERMISSION_ROUTES
 from src.routes.roleRoutes import ROLE_ROUTES
 from src.routes.unidadesAreasRoutes import UNIDAD_AREA_ROUTE
 from src.routes.userRouter import USER_ROUTES
-from src.routes.cultivoRoutes import CULTIVO_ROUTES
+from src.routes.cropRoutes import CROP_ROUTES
 
 Base.metadata.create_all(engine)    
 
@@ -36,7 +36,7 @@ app.include_router(LOTE_ROUTES)
 
 app.include_router(UNIDAD_AREA_ROUTE)
 
-app.include_router(CULTIVO_ROUTES)
+app.include_router(CROP_ROUTES)
 
 # Configuración del middleware de CORS
 app.add_middleware(
