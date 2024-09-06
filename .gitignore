@@ -2,3 +2,9 @@
 __pycache__
 venv
 .env
+test
+pytest.ini
+.pytest_cache
+test_Permisson
+test_Variety_Arroz
+test_Verify_Token

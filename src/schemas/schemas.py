@@ -1,5 +1,6 @@
 from pydantic import BaseModel 
 import datetime
+from typing import Optional
 
 class CrearUsuario(BaseModel):
     nombre: str
@@ -31,10 +32,10 @@ class TokenCreate(BaseModel):
     created_date:datetime.datetime
 
 class UpdateUser(BaseModel):
-    nombre: str
-    apellido: str
-    email: str
-    password: str
+    nombre: Optional[str] = None
+    apellido: Optional[str] = None
+    email: Optional[str] = None
+    password: Optional[str] = None
 
 class CreatePermission(BaseModel):
     name: str
