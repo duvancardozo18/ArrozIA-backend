@@ -1,6 +1,9 @@
-from sqlalchemy import Column, Integer, String, DateTime, Boolean
-from src.database.database import Base 
-import datetime 
+import datetime
+
+from sqlalchemy import Boolean, Column, DateTime, Integer, String
+
+from src.database.database import Base
+
 
 class User(Base):
     __tablename__ = 'usuario'
@@ -9,6 +12,7 @@ class User(Base):
     apellido = Column(String(50), nullable=False)
     email = Column(String(50), unique=True, nullable=False)
     password = Column(String(100),nullable=False)
+    primer_login = Column(Boolean, default=True)
 
 class TokenTable(Base):
     __tablename__ = "token"

@@ -1,11 +1,14 @@
 from fastapi import APIRouter, Depends
-from sqlalchemy.orm import Session 
-import  src.schemas.schemas as schemas
-from src.controller.userController import registerUser, changePassword, deleteUser, getUser, getUsers, login, updateUser
+from sqlalchemy.orm import Session
+
+import src.schemas.schemas as schemas
+from src.controller.userController import (changePassword, deleteUser, getUser,
+                                           getUsers, login, registerUser,
+                                           updateUser)
 from src.database.database import get_session
 from src.helpers.auth_bearer import JWTBearer
-from src.helpers.utils import verify_permission, get_current_user
-from src.models.userModel import User 
+from src.helpers.utils import get_current_user, verify_permission
+from src.models.userModel import User
 
 USER_ROUTES = APIRouter()
 
