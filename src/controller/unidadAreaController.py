@@ -2,7 +2,7 @@ from fastapi import Depends
 from sqlalchemy.orm import Session
 
 from src.database.database import get_session
-from src.models.loteModel import UnidadArea
+from src.models.landModel import UnidadArea
 
 
 def getUnidadArea(session: Session = Depends(get_session)):
