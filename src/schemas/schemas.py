@@ -78,3 +78,7 @@ class Role(RoleBase):
 
     class Config:
         from_attributes = True
+        
+
+class PasswordUpdate(BaseModel):
+    new_password: str
