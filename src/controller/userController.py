@@ -1,4 +1,5 @@
 from fastapi import Depends, HTTPException, status
+from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 
 import src.models.userModel as userModel
@@ -38,10 +39,20 @@ def login(request: schemas.LoginRequest, db: Session = Depends(get_session)):
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Incorrect password"
         )
-    
+    if user.primer_login:
+        # Responder con un mensaje de que se necesita cambiar la contraseña
+        return JSONResponse(
+            status_code=403,
+            content={
+                "message": "You need to change your password",
+                "change_password_required": True,
+                "access_token" : create_access_token(subject=user.id),
+                "refresh_token" : create_refresh_token(subject=user.id)
+            }
+        )
     access_token = create_access_token(subject=user.id)
     refresh_token = create_refresh_token(subject=user.id)
-
+    
     tokenDb = TokenTable(
         user_id=user.id,
         access_toke=access_token,
@@ -122,6 +133,7 @@ def changePassword(request: schemas.ChangePassword, db: Session = Depends(get_se
     
     encryptedPassword = get_hashed_password(request.new_password)
     user.password = encryptedPassword
+    user.primer_login = False
     db.commit()
     
     return {"message": "Password changed successfully"}
