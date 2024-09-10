@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 from src.database.database import Base
 
 
-class Lote(Base):
+class Land(Base):
     __tablename__ = 'lote'
     
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -16,7 +16,7 @@ class Lote(Base):
     longitud = Column(DECIMAL(10, 5), nullable=True)
     
     # Relaciones
-    finca = relationship("Finca", back_populates="lotes")   
+    finca = relationship("Farm", back_populates="lotes")   
     unidad_area = relationship("UnidadArea", back_populates="lotes")
     crops = relationship("Crop", back_populates="lotes") 
 
@@ -28,4 +28,4 @@ class UnidadArea(Base):
     unidad = Column(String(50), nullable=False)
 
     # Relación inversa
-    lotes = relationship("Lote", order_by=Lote.id, back_populates="unidad_area")
+    lotes = relationship("Land", order_by=Land.id, back_populates="unidad_area")

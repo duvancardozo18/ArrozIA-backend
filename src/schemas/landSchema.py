@@ -4,7 +4,7 @@ from typing import Optional
 from pydantic import BaseModel, condecimal
 
 
-class LoteSchema(BaseModel):
+class LandSchema(BaseModel):
     nombre: str
     finca_id: int
     area: float
