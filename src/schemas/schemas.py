@@ -41,7 +41,7 @@ class UpdateUser(BaseModel):
     apellido: Optional[str] = None
     email: Optional[str] = None
     password: Optional[str] = None
-
+ 
 class CreatePermission(BaseModel):
     name: str
     description: str = None

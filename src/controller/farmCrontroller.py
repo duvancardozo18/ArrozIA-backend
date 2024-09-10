@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 from src.database.database import get_session
 from src.models.farmModel import Farm
-from src.schemas.farmSchema import FarmSchema
+from src.schemas.farmSchema import FarmSchema, UpdateFarmSchema
 
 
 def createFarm(farm:  FarmSchema, session: Session = Depends(get_session) ):
@@ -29,7 +29,7 @@ def getFarmById(farm_id: int, session: Session = Depends(get_session)):
         )
     return farm
 
-def updateFarm(farm_id: int, farm_data: FarmSchema, session: Session = Depends(get_session)):
+def updateFarm(farm_id: int, farm_data: UpdateFarmSchema, session: Session = Depends(get_session)):
     farm = session.query(Farm).filter(Farm.id == farm_id).first()
     if not farm:
         raise HTTPException(

@@ -18,7 +18,7 @@ Base.metadata.create_all(engine)
 
 # Inicializar la aplicación FastAPI
 app = FastAPI()
-
+ 
 # Incluir las rutas de usuario
 app.include_router(USER_ROUTES)
 
