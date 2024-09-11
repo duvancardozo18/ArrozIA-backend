@@ -6,6 +6,12 @@ from src.database.database import get_session
 from src.models.rolModel import UsuarioFincaRol, Rol
 from src.models.permissionModel import Permission, RolPermiso 
 
+def get_all_permissions(db: Session):
+    permissions = db.query(Permission).all()
+    permissions_list = [{"id": permission.id, "nombre": permission.nombre, "descripcion": permission.descripcion} for permission in permissions]
+    return {"permissions": permissions_list}
+
+
 def createPermission(permission: schemas.CreatePermission, session: Session = Depends(get_session)):
     newPermission = permissionModel.Permission(nombre=permission.name, descripcion=permission.description)
     session.add(newPermission)
