@@ -65,6 +65,15 @@ def deletePermission(permission_id: int, session: Session = Depends(get_session)
     session.commit()
     return {"message": "Permission deleted successfully"}
 
+
+def getPermission(permission_id: int, session: Session = Depends(get_session)):
+    permission = session.query(permissionModel.Permission).filter(permissionModel.Permission.id == permission_id).first()
+    if permission is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Permission not found")
+    
+    return permission  # FastAPI se encargará de la serialización
+
+
 def check_permission(user_id: int, permission_name: str, db: Session):
     user_roles = db.query(UserFarmRole).filter(UserFarmRole.usuario_id == user_id).all()
     if not user_roles:
