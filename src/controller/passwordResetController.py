@@ -22,7 +22,7 @@ def requestPasswordReset(request: PasswordResetRequest, db: Session = Depends(ge
     db.commit()
     
     # Enviar un correo electrónico al usuario con el token de restablecimiento
-    reset_link = f"http://localhost:8000/Reset_Password/{token}"  # Aquí puedes redirigir al frontend si tienes uno
+    reset_link = f"http://localhost:5173/Reset_Password/{token}"  # Aquí puedes redirigir al frontend si tienes uno
     send_email(
         recipient=user.email,
         token=token,
@@ -78,23 +78,7 @@ def showResetPasswordPage(token: str):
     if not token_data:
         # Si el token es inválido o ha expirado, redirigir al login
         return RedirectResponse(url="/login")
+    # Si el token es válido, redirigir al frontend donde está implementado ResetPasswordForm
+    reset_link = f"http://localhost:5173/Reset_Password/{token}"
+    return RedirectResponse(url=reset_link)
 
-    # Si el token es válido, mostrar el formulario de restablecimiento de contraseña
-    html_content = f"""
-    <html>
-        <head>
-            <title>Restablecer Contraseña</title>
-        </head>
-        <body>
-            <h2>Restablecer Contraseña</h2>
-            <form action="/password-reset/update" method="post">
-                <input type="hidden" name="token" value="{token}">
-                <label for="new_password">Nueva Contraseña:</label>
-                <input type="password" id="new_password" name="new_password"><br><br>
-                <input type="submit" value="Restablecer Contraseña">
-            </form>
-        </body>
-    </html>
-    """
-    
-    return HTMLResponse(content=html_content)
