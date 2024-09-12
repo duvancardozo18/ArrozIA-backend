@@ -16,8 +16,7 @@ def get_all_user_farms(db: Session):
 
 # Función para obtener un registro específico por user_id y finca_id
 def get_user_farm(user_id: int, finca_id: int, db: Session):
-    return db.query(UserFarmRole).filter(UserFarmRole.user_id == user_id, UserFarmRole.finca_id == finca_id).first()
-
+    return db.query(UserFarmRole).filter(UserFarmRole.usuario_id == user_id, UserFarmRole.finca_id == finca_id).first()
 # Función para actualizar un registro UserFarmRole
 def update_user_farm(usuario_id: int, finca_id: int, rol_id: int, db: Session):
     try:
