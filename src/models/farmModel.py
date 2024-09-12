@@ -2,10 +2,10 @@ from sqlalchemy import DECIMAL, Column, Float, Integer, String
 from sqlalchemy.orm import relationship
 
 from src.database.database import Base
-from src.models.loteModel import Lote
+from src.models.landModel import Land
 
 
-class Finca(Base):
+class Farm(Base):
     __tablename__ = 'finca'
     
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -15,4 +15,4 @@ class Finca(Base):
     latitud = Column(DECIMAL(10, 5), nullable=True)
     longitud = Column(DECIMAL(10, 5), nullable=True)
     
-    lotes = relationship(Lote, back_populates="finca")
+    lotes = relationship(Land, back_populates="finca")

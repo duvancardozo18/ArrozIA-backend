@@ -3,8 +3,15 @@ from sqlalchemy.orm import Session
 import src.schemas.schemas as schemas
 import src.models.permissionModel as permissionModel
 from src.database.database import get_session
-from src.models.rolModel import UsuarioFincaRol, Rol
+from src.models.userFarmRoleModel import UserFarmRole
+from src.models.rolModel import Rol
 from src.models.permissionModel import Permission, RolPermiso 
+
+def get_all_permissions(db: Session):
+    permissions = db.query(Permission).all()
+    permissions_list = [{"id": permission.id, "nombre": permission.nombre, "descripcion": permission.descripcion} for permission in permissions]
+    return {"permissions": permissions_list}
+
 
 def createPermission(permission: schemas.CreatePermission, session: Session = Depends(get_session)):
     newPermission = permissionModel.Permission(nombre=permission.name, descripcion=permission.description)
@@ -59,7 +66,7 @@ def deletePermission(permission_id: int, session: Session = Depends(get_session)
     return {"message": "Permission deleted successfully"}
 
 def check_permission(user_id: int, permission_name: str, db: Session):
-    user_roles = db.query(UsuarioFincaRol).filter(UsuarioFincaRol.usuario_id == user_id).all()
+    user_roles = db.query(UserFarmRole).filter(UserFarmRole.usuario_id == user_id).all()
     if not user_roles:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,

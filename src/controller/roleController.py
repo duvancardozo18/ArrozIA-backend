@@ -1,14 +1,25 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException, status
 from src.models.rolModel import Rol
+from src.models.permissionModel import RolPermiso  # Importar el modelo para la tabla de relación rol-permiso
 from src.schemas.schemas import RoleCreate, RoleUpdate, Role
 
-# Crear un nuevo rol
+# Crear un nuevo rol y asociar permisos
 def create_role(role: RoleCreate, db: Session):
+    # Crear el nuevo rol
     new_role = Rol(nombre=role.nombre, descripcion=role.descripcion)
     db.add(new_role)
     db.commit()
-    return {"message": "Role created successfully"}
+    db.refresh(new_role)  # Refrescar la sesión para obtener el ID del nuevo rol
+
+    # Asociar permisos al rol en la tabla de relación rol-permiso
+    if role.permisos:  # Verificar si se proporcionaron permisos
+        for permiso_id in role.permisos:
+            role_permission = RolPermiso(rol_id=new_role.id, permiso_id=permiso_id)
+            db.add(role_permission)
+        db.commit()  # Hacer commit para guardar la relación
+
+    return {"message": "Role created successfully", "role_id": new_role.id}  # Devolver también el ID del nuevo rol
 
 # Obtener todos los roles
 def get_roles(db: Session):

@@ -1,9 +1,11 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Date, Float
+from sqlalchemy import Column, Date, Float, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
+
 from src.database.database import Base
-from src.models.varietyArrozModel import VariedadArroz  
-from src.models.loteModel import Lote
+from src.models.landModel import Land
+from src.models.varietyArrozModel import VariedadArroz
 from src.models.weightUnitModel import WeightUnit
+
 
 class Crop(Base):
     __tablename__ = 'cultivo'
@@ -21,5 +23,5 @@ class Crop(Base):
 
     # Relaciones
     variety = relationship("VariedadArroz", back_populates="crops")
-    lotes = relationship("Lote", back_populates="crops")
+    lotes = relationship("Land", back_populates="crops")
     weightUnit = relationship("WeightUnit", back_populates="crops")
