@@ -5,6 +5,7 @@ from pydantic import BaseModel
 
 
 class FarmSchema(BaseModel):
+    id: int
     nombre: str
     ubicacion: str
     area_total: float
