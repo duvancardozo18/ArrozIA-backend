@@ -13,11 +13,13 @@ from src.routes.roleRoutes import ROLE_ROUTES
 from src.routes.unidadesAreasRoutes import UNIDAD_AREA_ROUTE
 from src.routes.userRouter import USER_ROUTES
 from src.routes.varietyArrozRoutes import VARIETY_ARROZ_ROUTES
+from src.routes.farmLotRoutes import FARM_LOT_ROUTES 
 from dotenv import load_dotenv
 import os
 
 # Cargar variables de entorno desde el archivo .env
 load_dotenv()
+
 
 # Crear las tablas en la base de datos
 Base.metadata.create_all(engine)
@@ -57,6 +59,10 @@ app.include_router(VARIETY_ARROZ_ROUTES, prefix="/varieties", tags=["Varieties o
 
 # Incluir las rutas para cultivo
 app.include_router(CROP_ROUTES)
+
+
+# Incluir las rutas para lotes de la finca
+app.include_router(FARM_LOT_ROUTES)  # Añadir esta línea
 
 # Incluir las rutas para USUARIO FINCA ROLE
 app.include_router(USER_FARM_ROL_ROUTES)
