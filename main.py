@@ -13,13 +13,14 @@ from src.routes.roleRoutes import ROLE_ROUTES
 from src.routes.unidadesAreasRoutes import UNIDAD_AREA_ROUTE
 from src.routes.userRouter import USER_ROUTES
 from src.routes.varietyArrozRoutes import VARIETY_ARROZ_ROUTES
+from src.routes.farmLotRoutes import FARM_LOT_ROUTES 
 
 # Crear las tablas en la base de datos
 Base.metadata.create_all(engine)
 
 # Inicializar la aplicación FastAPI
 app = FastAPI()
- 
+
 # Incluir las rutas de usuario
 app.include_router(USER_ROUTES)
 
@@ -53,12 +54,14 @@ app.include_router(VARIETY_ARROZ_ROUTES, prefix="/varieties", tags=["Varieties o
 # Incluir las rutas para cultivo
 app.include_router(CROP_ROUTES)
 
+# Incluir las rutas para lotes de la finca
+app.include_router(FARM_LOT_ROUTES)  # Añadir esta línea
+
 # Configuración del middleware de CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Permite solicitudes solo desde el frontend en localhost:3000
+    allow_origins=["http://localhost:5173"],  # Permite solicitudes solo desde el frontend en localhost:5173
     allow_credentials=True,
     allow_methods=["*"],  # Permite todos los métodos HTTP (GET, POST, etc.)
     allow_headers=["*"],  # Permite todos los encabezados
 )
-
