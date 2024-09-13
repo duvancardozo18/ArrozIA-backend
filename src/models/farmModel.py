@@ -16,3 +16,4 @@ class Farm(Base):
     longitud = Column(DECIMAL(10, 5), nullable=True)
     
     lotes = relationship(Land, back_populates="finca")
+    #usuario_fincas = relationship("UsuarioFinca", back_populates="finca")

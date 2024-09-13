@@ -1,6 +1,7 @@
 import datetime
 
 from sqlalchemy import Boolean, Column, DateTime, Integer, String
+from sqlalchemy.orm import relationship
 
 from src.database.database import Base
 
@@ -13,6 +14,8 @@ class User(Base):
     email = Column(String(50), unique=True, nullable=False)
     password = Column(String(100),nullable=False)
     primer_login = Column(Boolean, default=True)
+
+    #usuario_fincas = relationship("UsuarioFinca", back_populates="usuario")
 
 class TokenTable(Base):
     __tablename__ = "token"

@@ -1,10 +1,13 @@
-from fastapi import HTTPException, Depends, status
+from fastapi import Depends, HTTPException, status
 from sqlalchemy.orm import Session
-import src.schemas.schemas as schemas
+
 import src.models.permissionModel as permissionModel
+import src.schemas.schemas as schemas
 from src.database.database import get_session
-from src.models.rolModel import UsuarioFincaRol, Rol
-from src.models.permissionModel import Permission, RolPermiso 
+from src.models.farmRoleModel import UserFarmRol
+from src.models.permissionModel import Permission, RolPermiso
+from src.models.rolModel import Rol
+
 
 def createPermission(permission: schemas.CreatePermission, session: Session = Depends(get_session)):
     newPermission = permissionModel.Permission(nombre=permission.name, descripcion=permission.description)
@@ -59,7 +62,7 @@ def deletePermission(permission_id: int, session: Session = Depends(get_session)
     return {"message": "Permission deleted successfully"}
 
 def check_permission(user_id: int, permission_name: str, db: Session):
-    user_roles = db.query(UsuarioFincaRol).filter(UsuarioFincaRol.usuario_id == user_id).all()
+    user_roles = db.query(UserFarmRol).filter(UserFarmRol.usuario_id == user_id).all()
     if not user_roles:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,

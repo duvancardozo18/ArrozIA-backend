@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from src.database.database import Base, engine
 from src.routes.cropRoutes import CROP_ROUTES
+from src.routes.farmRoleRoutes import USER_FARM_ROL_ROUTES
 from src.routes.farmRoutes import FARM_ROUTES
 from src.routes.landRoutes import LAND_ROUTES
 from src.routes.passwordResetRouter import PASSWORD_RESET_ROUTES
@@ -48,6 +49,9 @@ app.include_router(VARIETY_ARROZ_ROUTES, prefix="/varieties", tags=["Varieties o
 
 # Incluir las rutas para cultivo
 app.include_router(CROP_ROUTES)
+
+# Incluir las rutas para USUARIO FINCA ROLE
+app.include_router(USER_FARM_ROL_ROUTES)
 
 # Configuración del middleware de CORS
 app.add_middleware(
