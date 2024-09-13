@@ -2,21 +2,23 @@ import os
 import uuid
 from datetime import datetime, timedelta
 from typing import Any, Union
-
+from passlib.context import CryptContext
+from jose import jwt, JWTError
 from fastapi import Depends, HTTPException, status
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
-
 from src.database.database import get_session
+
+from src.models.userModel import User
+from src.models.userFarmRoleModel import UserFarmRole
+from src.models.rolModel import Rol
+from src.models.permissionModel import Permission, RolPermiso
 from src.helpers.auth_bearer import JWTBearer
 from src.helpers.config import (ACCESS_TOKEN_EXPIRE_MINUTES, ALGORITHM,
                                 JWT_REFRESH_SECRET_KEY, JWT_SECRET_KEY,
                                 REFRESH_TOKEN_EXPIRE_MINUTES)
-from src.models.farmRoleModel import UserFarmRol
-from src.models.permissionModel import Permission, RolPermiso
-from src.models.rolModel import Rol
-from src.models.userModel import User
+
 
 # Contraseñas
 passwordContext = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -28,15 +30,35 @@ def verify_password(password: str, hashed_pass: str) -> bool:
     return passwordContext.verify(password, hashed_pass)
 
 
-def generate_password_reset_token() -> str:
-    return str(uuid.uuid4())
+# Actualización para generar token asociado a un usuario específico
+def generate_password_reset_token(user_id: int) -> str:
+    expiration = datetime.utcnow() + timedelta(hours=1)  # El token será válido por 1 hora
+    token_data = {"user_id": user_id, "exp": expiration.timestamp()}
+    return jwt.encode(token_data, JWT_SECRET_KEY, algorithm=ALGORITHM)
+
+# Función para verificar el token de restablecimiento de contraseña
+def verify_password_reset_token(token: str):
+    try:
+        payload = jwt.decode(token, JWT_SECRET_KEY, algorithms=[ALGORITHM])
+        user_id = payload.get("user_id")
+        
+        if user_id is None:
+            return None
+        
+        expiration = payload.get("exp")
+        if datetime.utcnow() > datetime.utcfromtimestamp(expiration):
+            return None
+        
+        return payload  # Retorna los datos del token si es válido
+    except JWTError:
+        return None
 
 
 def send_password_reset_email(email: str, token: str):
     print(f"Se ha enviado un correo electrónico a {email} con el token de restablecimiento de contraseña: {token}")
 
 
-#Tokens
+# Tokens
 def create_access_token(subject: Union[str, Any], expiresDelta: int = None) -> str:
     if expiresDelta:
         expire = datetime.utcnow() + expiresDelta
@@ -59,7 +81,7 @@ def create_refresh_token(subject: Union[str, Any], expiresDelta: int = None) -> 
     return encodedJwt
 
 
-#Obtiene el usuario actual autenticado utilizando el token JWT
+# Obtiene el usuario actual autenticado utilizando el token JWT
 def get_current_user(token: str = Depends(JWTBearer()), db: Session = Depends(get_session)) -> User:
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
@@ -81,12 +103,13 @@ def get_current_user(token: str = Depends(JWTBearer()), db: Session = Depends(ge
     return user
 
 
-#Permisos
+# Permisos
 def verify_permission(permission_name: str):
-    #Verifica si el usuario actual tiene el permiso necesario.
+    # Verifica si el usuario actual tiene el permiso necesario.
     def verify(user: User = Depends(get_current_user), db: Session = Depends(get_session)):
         # Obtener todos los roles del usuario
         user_roles = db.query(UserFarmRol).filter(UserFarmRol.usuario_id == user.id).all()
+
         
         # Verificar si se encontraron roles para el usuario
         if not user_roles:

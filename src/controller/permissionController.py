@@ -9,6 +9,12 @@ from src.models.permissionModel import Permission, RolPermiso
 from src.models.rolModel import Rol
 
 
+def get_all_permissions(db: Session):
+    permissions = db.query(Permission).all()
+    permissions_list = [{"id": permission.id, "nombre": permission.nombre, "descripcion": permission.descripcion} for permission in permissions]
+    return {"permissions": permissions_list}
+
+
 def createPermission(permission: schemas.CreatePermission, session: Session = Depends(get_session)):
     newPermission = permissionModel.Permission(nombre=permission.name, descripcion=permission.description)
     session.add(newPermission)
@@ -60,6 +66,15 @@ def deletePermission(permission_id: int, session: Session = Depends(get_session)
     session.delete(permission)
     session.commit()
     return {"message": "Permission deleted successfully"}
+
+
+def getPermission(permission_id: int, session: Session = Depends(get_session)):
+    permission = session.query(permissionModel.Permission).filter(permissionModel.Permission.id == permission_id).first()
+    if permission is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Permission not found")
+    
+    return permission  # FastAPI se encargará de la serialización
+
 
 def check_permission(user_id: int, permission_name: str, db: Session):
     user_roles = db.query(UserFarmRol).filter(UserFarmRol.usuario_id == user_id).all()

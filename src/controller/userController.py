@@ -20,14 +20,20 @@ def registerUser(user: schemas.CrearUsuario, session: Session = Depends(get_sess
 
     encryptedPassword = get_hashed_password(user.password)
 
-    newUser = userModel.User(nombre=user.nombre, apellido=user.apellido, email=user.email, password=encryptedPassword )
+    newUser = userModel.User(
+        nombre=user.nombre,
+        apellido=user.apellido,
+        email=user.email,
+        password=encryptedPassword
+    )
     
-
     session.add(newUser)
     session.commit()
     session.refresh(newUser)
 
-    return {"message":"user created successfully"}
+    # Devolver el ID del usuario recién creado
+    return {"id": newUser.id, "message": "user created successfully"}
+
 
 def login(request: schemas.LoginRequest, db: Session = Depends(get_session)):
     user = db.query(User).filter(User.email == request.email).first()
@@ -137,4 +143,3 @@ def changePassword(request: schemas.ChangePassword, db: Session = Depends(get_se
     db.commit()
     
     return {"message": "Password changed successfully"}
-

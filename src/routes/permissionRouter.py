@@ -1,10 +1,15 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 import src.schemas.schemas as schemas
-from src.controller.permissionController import createPermission, getPermission, updatePermission, deletePermission
+from src.controller.permissionController import get_all_permissions, createPermission, getPermission, updatePermission, deletePermission
 from src.database.database import get_session
 
 PERMISSION_ROUTES = APIRouter()
+
+@PERMISSION_ROUTES.get("/permissions", response_model=dict)
+def get_all_permissions_route(db: Session = Depends(get_session)):
+    return get_all_permissions(db)
+
 
 @PERMISSION_ROUTES.post("/permissions/create", response_model=schemas.PermissionSchema)
 def createPermissionRoute(permission: schemas.CreatePermission, session: Session = Depends(get_session)):

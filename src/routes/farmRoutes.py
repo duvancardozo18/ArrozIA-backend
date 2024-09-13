@@ -5,7 +5,7 @@ from src.controller.farmCrontroller import (createFarm, deleteFarm,
                                             getAllFarms, getFarmById,
                                             updateFarm)
 from src.database.database import get_session
-from src.schemas.farmSchema import FarmSchema
+from src.schemas.farmSchema import FarmSchema, UpdateFarmSchema
 
 FARM_ROUTES = APIRouter()
 
@@ -22,7 +22,7 @@ def gotFarm(farm_id: int, session: Session = Depends(get_session)):
     return getFarmById(farm_id, session)
 
 @FARM_ROUTES.put('/update/farm/{farm_id}')
-def updaFarm(farm_id: int, farm: FarmSchema, session: Session = Depends(get_session)):
+def updaFarm(farm_id: int, farm: UpdateFarmSchema, session: Session = Depends(get_session)):
     return updateFarm(farm_id, farm, session)
 
 @FARM_ROUTES.delete('/delete/farm/{farm_id}')
