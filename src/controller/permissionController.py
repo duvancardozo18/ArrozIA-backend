@@ -1,11 +1,13 @@
-from fastapi import HTTPException, Depends, status
+from fastapi import Depends, HTTPException, status
 from sqlalchemy.orm import Session
-import src.schemas.schemas as schemas
+
 import src.models.permissionModel as permissionModel
+import src.schemas.schemas as schemas
 from src.database.database import get_session
-from src.models.userFarmRoleModel import UserFarmRole
+from src.models.farmRoleModel import UserFarmRol
+from src.models.permissionModel import Permission, RolPermiso
 from src.models.rolModel import Rol
-from src.models.permissionModel import Permission, RolPermiso 
+
 
 def get_all_permissions(db: Session):
     permissions = db.query(Permission).all()
@@ -75,7 +77,7 @@ def getPermission(permission_id: int, session: Session = Depends(get_session)):
 
 
 def check_permission(user_id: int, permission_name: str, db: Session):
-    user_roles = db.query(UserFarmRole).filter(UserFarmRole.usuario_id == user_id).all()
+    user_roles = db.query(UserFarmRol).filter(UserFarmRol.usuario_id == user_id).all()
     if not user_roles:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,

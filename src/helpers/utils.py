@@ -1,24 +1,24 @@
 import os
 import uuid
 from datetime import datetime, timedelta
-from typing import Union, Any
+from typing import Any, Union
 from passlib.context import CryptContext
 from jose import jwt, JWTError
 from fastapi import Depends, HTTPException, status
+from jose import JWTError, jwt
+from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 from src.database.database import get_session
+
 from src.models.userModel import User
 from src.models.userFarmRoleModel import UserFarmRole
 from src.models.rolModel import Rol
 from src.models.permissionModel import Permission, RolPermiso
 from src.helpers.auth_bearer import JWTBearer
-from src.helpers.config import (
-    JWT_SECRET_KEY,
-    JWT_REFRESH_SECRET_KEY,
-    ALGORITHM,
-    ACCESS_TOKEN_EXPIRE_MINUTES,
-    REFRESH_TOKEN_EXPIRE_MINUTES
-)
+from src.helpers.config import (ACCESS_TOKEN_EXPIRE_MINUTES, ALGORITHM,
+                                JWT_REFRESH_SECRET_KEY, JWT_SECRET_KEY,
+                                REFRESH_TOKEN_EXPIRE_MINUTES)
+
 
 # Contraseñas
 passwordContext = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -108,7 +108,8 @@ def verify_permission(permission_name: str):
     # Verifica si el usuario actual tiene el permiso necesario.
     def verify(user: User = Depends(get_current_user), db: Session = Depends(get_session)):
         # Obtener todos los roles del usuario
-        user_roles = db.query(UserFarmRole).filter(UserFarmRole.usuario_id == user.id).all()
+        user_roles = db.query(UserFarmRol).filter(UserFarmRol.usuario_id == user.id).all()
+
         
         # Verificar si se encontraron roles para el usuario
         if not user_roles:
