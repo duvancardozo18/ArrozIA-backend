@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.database.database import Base, engine
 from src.routes.cropRoutes import CROP_ROUTES
-from src.routes.farmRoleRoutes import USER_FARM_ROL_ROUTES
+# from src.routes.farmRoleRoutes import USER_FARM_ROL_ROUTES
 from src.routes.farmLotRoutes import FARM_LOT_ROUTES
 from src.routes.farmRoutes import FARM_ROUTES
 from src.routes.landRoutes import LAND_ROUTES
@@ -76,7 +76,7 @@ app.include_router(LAND_CROP_ROUTES)
 app.include_router(FARM_LOT_ROUTES)  # Añadir esta línea
 
 # Incluir las rutas para USUARIO FINCA ROLE
-app.include_router(USER_FARM_ROL_ROUTES)
+# app.include_router(USER_FARM_ROL_ROUTES)
 
 # Obtener las direcciones permitidas desde las variables de entorno
 allow_origins = os.getenv("ALLOW_ORIGINS", "").split(",")
