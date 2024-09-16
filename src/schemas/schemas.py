@@ -53,7 +53,7 @@ class UpdatePermission(BaseModel):
 
 class PermissionSchema(BaseModel):
     id: int
-    name: str
+    nombre: str
     description: str = None
 
     class Config:
@@ -81,6 +81,7 @@ class RoleUpdate(RoleBase):
 
 class Role(RoleBase):
     id: int
+    descripcion: Optional[str] = None
 
     class Config:
         from_attributes = True

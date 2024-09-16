@@ -20,7 +20,7 @@ def register(user: schemas.CrearUsuario, session: Session = Depends(get_session)
 def loginRoute(request: schemas.LoginRequest, db: Session = Depends(get_session)):
     return login(request, db)
 
-@USER_ROUTES.get("/users", dependencies=[Depends(verify_permission("view_secure_data"))])
+@USER_ROUTES.get("/users", dependencies=[Depends(verify_permission("crear_usuario"))])
 async def get_users(db: Session = Depends(get_session), current_user: User = Depends(get_current_user)):
     users = db.query(User).all()
     return users

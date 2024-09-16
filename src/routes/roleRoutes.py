@@ -13,7 +13,7 @@ def create_role_route(role: RoleCreate, db: Session = Depends(get_session)):
 @ROLE_ROUTES.get("/roles", response_model=dict)
 def get_roles_route(db: Session = Depends(get_session)):
     roles_data = get_roles(db)
-    roles = [Role.from_orm(role) for role in roles_data["roles"]]
+    roles = [Role.from_orm(role) for role in roles_data["roles"] if role.descripcion is not None]
     return {"message": roles_data["message"], "roles": roles}
 
 @ROLE_ROUTES.get("/roles/{role_id}", response_model=dict)

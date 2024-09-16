@@ -20,14 +20,3 @@ def get_role_permissions(role_id: int, db: Session = Depends(get_session)):
     # Cambia role.name a role.nombre
     return {"role": role.nombre, "permissions": [permission.nombre for permission in permissions]}
 
-@ROL_PERMISSION_ROUTES.get("/view-secure-data")
-def view_secure_data(user_id: int, db: Session = Depends(get_session)):
-    permission_name = "view_secure_data"
-    check_permission(user_id, permission_name, db)
-    return {"message": "You have access to view secure data"}
-
-@ROL_PERMISSION_ROUTES.get("/edit-secure-data")
-def edit_secure_data(user_id: int, db: Session = Depends(get_session)):
-    permission_name = "edit_secure_data"
-    check_permission(user_id, permission_name, db)
-    return {"message": "You have access to edit secure data"}
