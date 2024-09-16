@@ -48,8 +48,8 @@ class CreatePermission(BaseModel):
     description: str = None
 
 class UpdatePermission(BaseModel):
-    name: str = None
-    description: str = None
+    name: Optional[str] = None
+    description: Optional[str] = None
 
 class PermissionSchema(BaseModel):
     id: int

@@ -101,3 +101,50 @@ def check_permission(user_id: int, permission_name: str, db: Session):
         status_code=status.HTTP_403_FORBIDDEN,
         detail="Insufficient permissions"
     )
+
+
+
+
+
+def remove_permission_from_role(role_id: int, permission_id: int, session: Session = Depends(get_session)):
+    role = session.query(Rol).filter(Rol.id == role_id).first()
+    if not role:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Role not found")
+
+    permission = session.query(Permission).filter(Permission.id == permission_id).first()
+    if not permission:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Permission not found")
+
+    role_permission = session.query(RolPermiso).filter(
+        RolPermiso.rol_id == role.id, RolPermiso.permiso_id == permission.id
+    ).first()
+
+    if not role_permission:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Role does not have this permission")
+
+    session.delete(role_permission)
+    session.commit()
+
+    return {"message": f"Permission '{permission.nombre}' removed from role '{role.nombre}' successfully"}
+
+
+
+# Función para actualizar los permisos de un rol
+def update_permissions_of_role(role_id: int, permisos: list[int], db: Session = Depends(get_session)):
+    role = db.query(Rol).filter(Rol.id == role_id).first()
+
+    if not role:
+        raise HTTPException(status_code=404, detail=f"Role with ID {role_id} not found")
+
+    # Limpiar los permisos actuales del rol
+    role.permissions.clear()
+
+    # Agregar los nuevos permisos
+    for permiso_id in permisos:
+        permission = db.query(Permission).filter(Permission.id == permiso_id).first()
+        if not permission:
+            raise HTTPException(status_code=404, detail=f"Permission with ID {permiso_id} not found")
+        role.permissions.append(permission)
+
+    db.commit()
+    return {"message": "Permissions updated successfully", "role": role.nombre, "permissions": [permission.nombre for permission in role.permissions]}

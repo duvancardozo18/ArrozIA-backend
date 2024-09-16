@@ -32,8 +32,9 @@ def verify_password(password: str, hashed_pass: str) -> bool:
 
 # Actualización para generar token asociado a un usuario específico
 def generate_password_reset_token(user_id: int) -> str:
-    expiration = datetime.utcnow() + timedelta(hours=1)  # El token será válido por 1 hora
-    token_data = {"user_id": user_id, "exp": expiration.timestamp()}
+    # expiration = datetime.utcnow() + timedelta(hours=1)  # El token será válido por 1 hora expiracion
+    # token_data = {"user_id": user_id, "exp": expiration.timestamp()}
+    token_data = {"user_id": user_id}
     return jwt.encode(token_data, JWT_SECRET_KEY, algorithm=ALGORITHM)
 
 # Función para verificar el token de restablecimiento de contraseña
