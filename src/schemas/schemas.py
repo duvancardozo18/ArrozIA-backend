@@ -42,6 +42,7 @@ class UpdateUser(BaseModel):
     apellido: Optional[str] = None
     email: Optional[str] = None
     password: Optional[str] = None
+    primer_login: Optional[bool] = None
  
 class CreatePermission(BaseModel):
     name: str

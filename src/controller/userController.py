@@ -89,31 +89,31 @@ def getUser(user_id: int, db: Session = Depends(get_session)):
 
 
 def updateUser(user_id: int, user_update: schemas.UpdateUser, db: Session = Depends(get_session)):
-    # Buscar el usuario en la base de datos
-    user = db.query(userModel.User).filter(userModel.User.id == user_id).first()
+    # Obtener el usuario de la base de datos
+    user = db.query(userModel.User).filter(userModel.User.id == user_id).first()  # Cambiado userModel a userModel.User
 
-    if user is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
 
-    # Actualizar la información del usuario solo si se proporciona un nuevo valor
+    # Actualizar solo los campos que se pasen en el body
     if user_update.nombre is not None:
         user.nombre = user_update.nombre
     if user_update.apellido is not None:
         user.apellido = user_update.apellido
     if user_update.email is not None:
-        # Verificar si el nuevo email ya está registrado
-        existing_user = db.query(userModel.User).filter(userModel.User.email == user_update.email).first()
-        if existing_user and existing_user.id != user_id:
-            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Email already registered")
-        user.email = user_update.email  
-
+        user.email = user_update.email
     if user_update.password is not None:
-        user.password = get_hashed_password(user_update.password)
-    
+        user.password = get_hashed_password(user_update.password)  # Asegúrate de hash la contraseña
+    if user_update.primer_login is not None:
+        user.primer_login = user_update.primer_login
+
+    # Guardar los cambios en la base de datos
     db.commit()
     db.refresh(user)
-    
+
     return {"message": "User updated successfully", "user": user}
+
+
 
 def deleteUser(user_id: int, db: Session = Depends(get_session)):
     # Buscar el usuario en la base de datos
