@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from src.controller.landController import (createLand, deleteLand, getAllLands,
                                            getLandById, updateLand)
 from src.database.database import get_session
-from src.schemas.landSchema import LandSchema
+from src.schemas.landSchema import LandSchema, UpdateLandSchema
 
 LAND_ROUTES = APIRouter()
 
@@ -21,7 +21,7 @@ def getLote(land_id: int, session: Session = Depends(get_session)):
     return getLandById(land_id, session)
 
 @LAND_ROUTES.put('/update/land/{land_id}')
-def updLand(land_id: int, land: LandSchema, session: Session = Depends(get_session)):
+def updLand(land_id: int, land: UpdateLandSchema, session: Session = Depends(get_session)):
     return updateLand(land_id, land, session)
 
 @LAND_ROUTES.delete('/delete/land/{land_id}')
