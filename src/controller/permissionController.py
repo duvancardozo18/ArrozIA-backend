@@ -2,7 +2,7 @@ from fastapi import Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
 import src.models.permissionModel as permissionModel
-import src.schemas.schemas as schemas
+from src.schemas.PermissionSchema import CreatePermission , UpdatePermission
 from src.database.database import get_session
 from src.models.userFarmRoleModel import UserFarmRole
 from src.models.permissionModel import Permission, RolPermiso
@@ -15,7 +15,7 @@ def get_all_permissions(db: Session):
     return {"permissions": permissions_list}
 
 
-def createPermission(permission: schemas.CreatePermission, session: Session = Depends(get_session)):
+def createPermission(permission: CreatePermission, session: Session = Depends(get_session)):
     newPermission = permissionModel.Permission(nombre=permission.name, descripcion=permission.description)
     session.add(newPermission)
     session.commit()
@@ -38,7 +38,7 @@ def getPermission(permission_id: int, session: Session = Depends(get_session)):
         "description": permission.descripcion,
     }
 
-def updatePermission(permission_id: int, permission_update: schemas.UpdatePermission, session: Session = Depends(get_session)):
+def updatePermission(permission_id: int, permission_update: UpdatePermission, session: Session = Depends(get_session)):
     permission = session.query(permissionModel.Permission).filter(permissionModel.Permission.id == permission_id).first()
     if permission is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Permission not found")

@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from src.controller.roleController import create_role, get_roles, get_role_by_id, update_role, delete_role
 from src.database.database import get_session
-from src.schemas.schemas import Role, RoleCreate, RoleUpdate
+from src.schemas.roleShema import Role, RoleCreate, RoleUpdate
 
 ROLE_ROUTES = APIRouter()
 

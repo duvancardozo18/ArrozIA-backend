@@ -3,10 +3,10 @@ from sqlalchemy.orm import Session
 from src.database.database import get_session
 import src.models.userModel as userModel
 from src.models.userModel import User
-import src.schemas.schemas as schemas
+from src.schemas.userShema import CrearUsuario, UpdateUser
 from src.helpers.utils import (get_current_user, get_hashed_password)
 
-def registerUser(user: schemas.CrearUsuario, session: Session = Depends(get_session)):
+def registerUser(user: CrearUsuario, session: Session = Depends(get_session)):
     existingUser = session.query(userModel.User).filter_by(email=user.email).first()
     if existingUser:
         raise HTTPException(status_code=400, detail="Email already registered")
@@ -36,7 +36,7 @@ def getUser(user_id: int, db: Session = Depends(get_session)):
     return user
 
 
-def updateUser(user_id: int, user_update: schemas.UpdateUser, db: Session = Depends(get_session)):
+def updateUser(user_id: int, user_update: UpdateUser, db: Session = Depends(get_session)):
     user = db.query(userModel.User).filter(userModel.User.id == user_id).first()  # Cambiado userModel a userModel.User
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
