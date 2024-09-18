@@ -12,7 +12,7 @@ USER_ROUTES = APIRouter()
 def register(user: CrearUsuario, session: Session = Depends(get_session)):
     return registerUser(user, session)
 
-@USER_ROUTES.get('/users/{user_id}', dependencies=[Depends(verify_permission("ver_usuarios"))])
+@USER_ROUTES.get('/users/{user_id}', dependencies=[Depends(verify_permission("ver_usuario"))])
 def getUserId(user_id: int, db: Session = Depends(get_session)):
     return getUser(user_id, db)
 
