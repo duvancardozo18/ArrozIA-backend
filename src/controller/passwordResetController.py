@@ -10,7 +10,7 @@ from src.helpers.utils import generate_password_reset_token, get_hashed_password
 from src.helpers.email_helper import send_email  
 
 # Obtener el valor de FRONTEND_URL desde el .env
-FRONTEND_URL = os.getenv("FRONTEND_URL")
+FRONTEND_URL = os.getenv("ALLOW_ORIGINS")
 
 def changePassword(request: ChangePassword, db: Session = Depends(get_session)):
     user = db.query(User).filter(User.email == request.email).first()
