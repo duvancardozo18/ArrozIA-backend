@@ -130,21 +130,23 @@ def remove_permission_from_role(role_id: int, permission_id: int, session: Sessi
 
 
 # Función para actualizar los permisos de un rol
-def update_permissions_of_role(role_id: int, permisos: list[int], db: Session = Depends(get_session)):
+def add_permission_to_role(role_id: int, permission_id: int, db: Session):
     role = db.query(Rol).filter(Rol.id == role_id).first()
+    permission = db.query(Permission).filter(Permission.id == permission_id).first()
 
     if not role:
-        raise HTTPException(status_code=404, detail=f"Role with ID {role_id} not found")
+        raise HTTPException(status_code=404, detail="Role not found")
+    
+    if not permission:
+        raise HTTPException(status_code=404, detail="Permission not found")
 
-    # Limpiar los permisos actuales del rol
-    role.permissions.clear()
-
-    # Agregar los nuevos permisos
-    for permiso_id in permisos:
-        permission = db.query(Permission).filter(Permission.id == permiso_id).first()
-        if not permission:
-            raise HTTPException(status_code=404, detail=f"Permission with ID {permiso_id} not found")
-        role.permissions.append(permission)
-
+    # Verifica si el permiso ya está asignado al rol
+    if permission in role.permissions:
+        raise HTTPException(status_code=400, detail="Permission already assigned to role")
+    
+    # Agregar el permiso al rol
+    role.permissions.append(permission)
     db.commit()
-    return {"message": "Permissions updated successfully", "role": role.nombre, "permissions": [permission.nombre for permission in role.permissions]}
+    db.refresh(role)
+    
+    return {"message": f"Permission '{permission.nombre}' successfully added to role '{role.nombre}'"}
