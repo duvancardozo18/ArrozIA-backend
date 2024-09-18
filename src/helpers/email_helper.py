@@ -1,13 +1,18 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from dotenv import load_dotenv
+import os
+
+# Cargar las variables de entorno desde el archivo .env
+load_dotenv()
 
 def send_email(recipient: str, token: str, user_name: str):
-    sender_email = "arrozia@outlook.com"  # Reemplaza con tu correo de Outlook
-    sender_password = "pachito15"  # Reemplaza con tu contraseña de Outlook
+    sender_email = os.getenv("SENDER_EMAIL")
+    sender_password = os.getenv("SENDER_PASSWORD")
 
-    # URL de restablecimiento de contraseña
-    reset_password_url = f"http://127.0.0.1:8000/Reset_Password/{token}"
+    # URL de restablecimiento de contraseña desde variable de entorno
+    reset_password_url = f"{os.getenv('RESET_PASSWORD_URL')}/{token}"
 
     # Configuración del mensaje con un enlace HTML
     subject = "Solicitud de Restablecimiento de Contraseña"
@@ -25,14 +30,14 @@ def send_email(recipient: str, token: str, user_name: str):
     message["From"] = sender_email
     message["To"] = recipient
     message["Subject"] = subject
-    message.attach(MIMEText(body, "html", "utf-8"))  # Cambia el tipo a 'html'
+    message.attach(MIMEText(body, "html", "utf-8"))
 
     try:
         # Conectar al servidor SMTP de Outlook
         server = smtplib.SMTP("smtp-mail.outlook.com", 587)
         server.starttls()  # Asegurar la conexión
         server.login(sender_email, sender_password)
-        server.sendmail(sender_email, recipient, message.as_string())  # No se necesita .encode('utf-8') aquí
+        server.sendmail(sender_email, recipient, message.as_string())
         server.quit()
         print("Correo enviado exitosamente")
     except Exception as e:

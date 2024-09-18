@@ -16,7 +16,7 @@ def register(user: CrearUsuario, session: Session = Depends(get_session)):
 def getUserId(user_id: int, db: Session = Depends(get_session)):
     return getUser(user_id, db)
 
-@USER_ROUTES.get("/users", dependencies=[Depends(verify_permission("ver_usuarios"))])
+@USER_ROUTES.get("/users", dependencies=[Depends(verify_permission("crear_usuario"))])
 async def get_users(db: Session = Depends(get_session), current_user: User = Depends(get_current_user)):
     users = db.query(User).all()
     return users

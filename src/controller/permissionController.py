@@ -10,10 +10,9 @@ from src.models.rolModel import Rol
 
 
 def get_all_permissions(db: Session):
-    permissions = db.query(Permission).all()
+    permissions = db.query(Permission).order_by(Permission.id).all()  
     permissions_list = [{"id": permission.id, "nombre": permission.nombre, "descripcion": permission.descripcion} for permission in permissions]
     return {"permissions": permissions_list}
-
 
 def createPermission(permission: CreatePermission, session: Session = Depends(get_session)):
     newPermission = permissionModel.Permission(nombre=permission.name, descripcion=permission.description)
