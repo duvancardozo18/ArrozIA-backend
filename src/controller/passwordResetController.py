@@ -5,7 +5,7 @@ import os
 from src.database.database import get_session
 from src.models.userModel import User
 from src.models.passwordResetModel import PasswordReset
-from src.schemas.passwordShema import ChangePassword, PasswordResetRequest, PasswordResetVerify, PasswordUpdate
+from src.schemas.passwordShema import ChangePassword, PasswordResetRequest, PasswordUpdate
 from src.helpers.utils import generate_password_reset_token, get_hashed_password, verify_password, verify_password_reset_token
 from src.helpers.email_helper import send_email  
 
@@ -45,22 +45,6 @@ def requestPasswordReset(request: PasswordResetRequest, db: Session = Depends(ge
     return {"message": "Password reset email sent successfully"}
 
 
-def verifyPasswordReset(request: PasswordResetVerify, db: Session = Depends(get_session)):
-    # Verificar si el token es válido
-    token_data = verify_password_reset_token(request.token)
-    if not token_data:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired token")
-    # Buscar el registro de restablecimiento de contraseña
-    password_reset = db.query(PasswordReset).filter(PasswordReset.token == request.token).first()
-    if not password_reset:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Password reset request not found")
-    
-    # Buscar al usuario
-    user = db.query(User).filter(User.id == token_data["user_id"]).first()
-    if not user:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
-    
-    return {"message": "Token is valid", "user": user}
 
 
 def updatePassword(token: str, password_data: PasswordUpdate, db: Session = Depends(get_session)):

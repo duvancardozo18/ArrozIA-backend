@@ -15,7 +15,7 @@ from src.routes.landRoutes import LAND_ROUTES
 from src.routes.cropRoutes import CROP_ROUTES
 from src.routes.farmLotRoutes import FARM_LOT_ROUTES
 from src.routes.landCropRoutes import LAND_CROP_ROUTES
-from src.routes.passwordResetRouter import PASSWORD_RESET_ROUTES
+from src.routes.passwordResetRoutes import PASSWORD_RESET_ROUTES
 from src.routes.unidadesAreasRoutes import UNIDAD_AREA_ROUTE
 from src.routes.varietyArrozRoutes import VARIETY_ARROZ_ROUTES
 
