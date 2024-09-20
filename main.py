@@ -29,6 +29,9 @@ load_dotenv()
 Base.metadata.create_all(engine)
 
 # Incluir Rutas
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to my API"}
 app.include_router(AUTH_ROUTES)
 app.include_router(USER_ROUTES)
 app.include_router(ROLE_ROUTES)
