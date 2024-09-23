@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from src.database.database import Base, engine
 from dotenv import load_dotenv
@@ -19,8 +19,13 @@ from src.routes.passwordResetRoutes import PASSWORD_RESET_ROUTES
 from src.routes.unidadesAreasRoutes import UNIDAD_AREA_ROUTE
 from src.routes.varietyArrozRoutes import VARIETY_ARROZ_ROUTES
 
+from src.helpers.utils import get_current_user
+
 # Inicializar la aplicación FastAPI
-app = FastAPI()
+#app = FastAPI()
+app = FastAPI(
+    dependencies=[Depends(get_current_user)]  # Protege todas las rutas con autenticación
+)
 
 # Cargar variables de entorno desde el archivo .env
 load_dotenv()
