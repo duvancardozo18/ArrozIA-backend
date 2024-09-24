@@ -4,6 +4,7 @@ from src.database.database import Base, engine
 from dotenv import load_dotenv
 import os
 
+#Rutas
 from src.routes.authRoutes import AUTH_ROUTES
 from src.routes.userRoutes import USER_ROUTES
 from src.routes.roleRoutes import ROLE_ROUTES
@@ -28,10 +29,22 @@ load_dotenv()
 # Crear las tablas en la base de datos
 Base.metadata.create_all(engine)
 
+# Obtener las direcciones permitidas desde las variables de entorno
+allow_origins = os.getenv("ALLOW_ORIGINS", "").split(",")
+
+# Depuración: Imprimir los orígenes permitidos
+print("Orígenes permitidos para CORS:", allow_origins)
+
+# Configuración del middleware de CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=allow_origins,  # Permite solicitudes desde las URLs especificadas en la variable de entorno
+    allow_credentials=True,
+    allow_methods=["*"],  # Permite todos los métodos HTTP (GET, POST, etc.)
+    allow_headers=["*"],  # Permite todos los encabezados
+)
+
 # Incluir Rutas
-@app.get("/")
-def read_root():
-    return {"message": "Welcome to my API"}
 app.include_router(AUTH_ROUTES)
 app.include_router(USER_ROUTES)
 app.include_router(ROLE_ROUTES)
@@ -47,14 +60,6 @@ app.include_router(LAND_CROP_ROUTES)
 app.include_router(FARM_LOT_ROUTES)
 app.include_router(PASSWORD_RESET_ROUTES)  
 
-# Obtener las direcciones permitidas desde las variables de entorno
-allow_origins = os.getenv("ALLOW_ORIGINS", "").split(",")
-
-# Configuración del middleware de CORS
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=allow_origins,  # Permite solicitudes desde las URLs especificadas en la variable de entorno
-    allow_credentials=True,
-    allow_methods=["*"],  # Permite todos los métodos HTTP (GET, POST, etc.)
-    allow_headers=["*"],  # Permite todos los encabezados
-)
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to my API"}
