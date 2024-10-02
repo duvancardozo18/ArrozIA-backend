@@ -8,7 +8,8 @@ from src.schemas.landSchema import LandSchema, UpdateLandSchema
 
 def createLand(land:  LandSchema, session: Session = Depends(get_session) ):
     
-    newLand = Land(nombre = land.nombre, finca_id = land.finca_id, area = land.area, unidad_area_id = land.unidad_area_id, latitud = land.latitud, longitud = land.longitud)
+    newLand = Land(nombre = land.nombre, finca_id = land.finca_id, area = land.area, latitud = land.latitud, longitud = land.longitud)
+    #newLand = Land(nombre = land.nombre, finca_id = land.finca_id, area = land.area, unidad_area_id = land.unidad_area_id, latitud = land.latitud, longitud = land.longitud)
     session.add(newLand)
     session.commit()
     session.refresh(newLand)

@@ -17,7 +17,7 @@ from src.routes.cropRoutes import CROP_ROUTES
 from src.routes.farmLotRoutes import FARM_LOT_ROUTES
 from src.routes.landCropRoutes import LAND_CROP_ROUTES
 from src.routes.passwordResetRoutes import PASSWORD_RESET_ROUTES
-from src.routes.unidadesAreasRoutes import UNIDAD_AREA_ROUTE
+# from src.routes.unidadesAreasRoutes import UNIDAD_AREA_ROUTE
 from src.routes.varietyArrozRoutes import VARIETY_ARROZ_ROUTES
 
 # Inicializar la aplicación FastAPI
@@ -54,7 +54,7 @@ app.include_router(ROL_PERMISSION_ROUTES)
 app.include_router(FARM_ROUTES)
 app.include_router(USER_FARM_ROUTES)
 app.include_router(LAND_ROUTES)
-app.include_router(UNIDAD_AREA_ROUTE)
+# app.include_router(UNIDAD_AREA_ROUTE)
 app.include_router(VARIETY_ARROZ_ROUTES)
 app.include_router(CROP_ROUTES)
 app.include_router(LAND_CROP_ROUTES)

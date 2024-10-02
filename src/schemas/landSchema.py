@@ -9,7 +9,6 @@ class LandSchema(BaseModel):
     nombre: str
     finca_id: int
     area: float
-    unidad_area_id: int
     latitud: Optional[Decimal]  
     longitud: Optional[Decimal] 
 

@@ -9,8 +9,8 @@ class FarmSchema(BaseModel):
     nombre: str
     ubicacion: str
     area_total: float
-    latitud: Decimal
-    longitud: Decimal 
+    latitud: Optional[Decimal] = None
+    longitud: Optional[Decimal] = None
 
 
 class FincaResponseSchema(FarmSchema):
