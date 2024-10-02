@@ -10,6 +10,7 @@ from src.routes.userRoutes import USER_ROUTES
 from src.routes.roleRoutes import ROLE_ROUTES
 from src.routes.permissionRouter import PERMISSION_ROUTES
 from src.routes.rol_permissionRoutes import ROL_PERMISSION_ROUTES
+from src.routes.userRoleRoutes import USER_ROLE_ROUTES
 from src.routes.farmRoutes import FARM_ROUTES
 from src.routes.user_farmRoutes import USER_FARM_ROUTES
 from src.routes.landRoutes import LAND_ROUTES
@@ -51,6 +52,7 @@ app.include_router(USER_ROUTES)
 app.include_router(ROLE_ROUTES)
 app.include_router(PERMISSION_ROUTES)
 app.include_router(ROL_PERMISSION_ROUTES)
+app.include_router(USER_ROLE_ROUTES)
 app.include_router(FARM_ROUTES)
 app.include_router(USER_FARM_ROUTES)
 app.include_router(LAND_ROUTES)

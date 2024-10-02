@@ -9,7 +9,7 @@ def create_user_farm(user_farm: UserFarmRoleCreate, db: Session):
     new_user_farm = UserFarmRole(
         usuario_id=user_farm.usuario_id, 
         finca_id=user_farm.finca_id, 
-        rol_id=user_farm.rol_id
+        # rol_id=user_farm.rol_id
     )
     db.add(new_user_farm)
     db.commit()
