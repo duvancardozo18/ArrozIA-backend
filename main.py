@@ -12,7 +12,7 @@ from src.routes.permissionRouter import PERMISSION_ROUTES
 from src.routes.rol_permissionRoutes import ROL_PERMISSION_ROUTES
 from src.routes.userRoleRoutes import USER_ROLE_ROUTES
 from src.routes.farmRoutes import FARM_ROUTES
-from src.routes.user_farmRoutes import USER_FARM_ROUTES
+from src.routes.userFarmRoutes import USER_FARM_ROUTES
 from src.routes.landRoutes import LAND_ROUTES
 from src.routes.cropRoutes import CROP_ROUTES
 from src.routes.farmLotRoutes import FARM_LOT_ROUTES

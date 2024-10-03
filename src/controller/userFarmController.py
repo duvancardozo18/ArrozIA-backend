@@ -37,7 +37,7 @@ def update_user_farm_role_by_id(user_id: int, updated_data: UserFarmRoleUpdate, 
         )
     
     # Actualizar los campos con la nueva información
-    farmUserRol.rol_id = updated_data.rol_id
+    # farmUserRol.rol_id = updated_data.rol_id
     farmUserRol.finca_id = updated_data.finca_id
 
     # Guardar los cambios en la base de datos

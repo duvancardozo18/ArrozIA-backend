@@ -39,9 +39,10 @@ async def get_user_roles(db: Session = Depends(get_session), current_user: UserR
     roles = db.query(UserRole).all()
     return roles
 
-@USER_ROLE_ROUTES.put('/user-roles/update/{role_id}', dependencies=[Depends(verify_permission("actualizar_usuario"))])
-def modify_user_role(role_id: int, user_role_update: UpdateUserRole, db: Session = Depends(get_session)):
-    return updateUserRole(role_id, user_role_update, db)
+@USER_ROLE_ROUTES.put('/user-roles/update/{usuario_id}', dependencies=[Depends(verify_permission("actualizar_usuario"))])
+def modify_user_role(usuario_id: int, user_role_update: UpdateUserRole, db: Session = Depends(get_session)):
+    return updateUserRole(usuario_id, user_role_update, db)
+
 
 @USER_ROLE_ROUTES.delete('/user-roles/delete/{role_id}', dependencies=[Depends(verify_permission("eliminar_usuario"))])
 def remove_user_role(role_id: int, db: Session = Depends(get_session)):

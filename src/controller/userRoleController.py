@@ -1,3 +1,4 @@
+from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from src.models.userRoleModel import UserRole
 from src.schemas.userRoleSchema import CreateUserRole, UpdateUserRole
@@ -22,14 +23,30 @@ def getUserRoleByUserId(user_id: int, db: Session):
 
 
 # Update an existing user role
-def updateUserRole(rol_id: int, user_role_update: UpdateUserRole, db: Session):
-    user_role = db.query(UserRole).filter(UserRole.id == rol_id).first()
-    if user_role:
-        if user_role_update.rol_id is not None:
-            user_role.rol_id = user_role_update.rol_id
-        db.commit()
-        db.refresh(user_role)
+def updateUserRole(usuario_id: int, user_role_update: UpdateUserRole, db: Session):
+    # print(f"usuario_id recibido: {usuario_id}")
+    # print(f"Datos de actualización recibidos: {user_role_update}")
+    
+    # Buscar el rol de usuario por su usuario_id en la tabla usuario_rol
+    user_role = db.query(UserRole).filter(UserRole.usuario_id == usuario_id).first()
+    # print(f"Resultado de la consulta user_role: {user_role}")
+    
+    if not user_role:
+        raise HTTPException(status_code=404, detail="User role not found")
+    
+    # Actualizar rol_id si es proporcionado
+    if user_role_update.rol_id is not None:
+        user_role.rol_id = user_role_update.rol_id
+    
+    db.commit()
+    db.refresh(user_role)
+    
     return user_role
+
+
+
+
+
 
 # Delete a user role
 def deleteUserRole(rol_id: int, db: Session):

@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from src.controller.userFarmRoleController import (
+from src.controller.userFarmController import (
     create_user_farm, get_all_user_farms, getUserFarmRolById, update_user_farm_role_by_id, delete_user_farm
 )
 from src.database.database import get_session
@@ -48,7 +48,7 @@ def user_farm_role_with_farm(user_id: int, session: Session = Depends(get_sessio
     }
 
 # Ruta para actualizar un registro de UserFarmRole
-@USER_FARM_ROUTES.put('/user-farm-rol/update/{user_id}', response_model=UserFarmRoleShema)
+@USER_FARM_ROUTES.put('/user-farm/update/{user_id}', response_model=UserFarmRoleShema)
 def update_user_farm_role_route(user_id: int, updated_data: UserFarmRoleUpdate, session: Session = Depends(get_session)):
     return update_user_farm_role_by_id(user_id, updated_data, session)
 

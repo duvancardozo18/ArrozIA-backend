@@ -11,7 +11,8 @@ class CreateUserRole(BaseModel):
 
 
 class UpdateUserRole(BaseModel):
-    rol_id: Optional[int]
+    usuario_id: int
+    rol_id: int
 
     class Config:
         orm_mode = True
