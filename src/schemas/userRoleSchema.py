@@ -3,7 +3,6 @@ from typing import Optional
 
 
 class CreateUserRole(BaseModel):
-    id: int
     usuario_id: int
     rol_id: int
 

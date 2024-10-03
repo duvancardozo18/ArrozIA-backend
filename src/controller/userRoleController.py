@@ -4,11 +4,12 @@ from src.schemas.userRoleSchema import CreateUserRole, UpdateUserRole
 
 # Register a new user role
 def registerUserRole(user_role: CreateUserRole, db: Session):
-    new_user_role = UserRole(user_id=user_role.user_id, rol_id=user_role.rol_id)
+    new_user_role = UserRole(usuario_id=user_role.usuario_id, rol_id=user_role.rol_id)
     db.add(new_user_role)
     db.commit()
     db.refresh(new_user_role)
     return new_user_role
+
 
 # Get a user role by ID
 def getUserRoleByUserId(user_id: int, db: Session):

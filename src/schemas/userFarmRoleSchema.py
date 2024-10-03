@@ -8,8 +8,8 @@ from pydantic import BaseModel, condecimal
 class UserFarmRoleShema(BaseModel):
     usuario_id: int
     finca_id: int
-    farm_name: str
-    # rol_id: int
+    farm_name: Optional[str] = None
+    
 
     class Config:
         orm_mode = True
@@ -18,8 +18,7 @@ class UserFarmRoleShema(BaseModel):
 class UserFarmRoleCreate(BaseModel):
     usuario_id: int
     finca_id: int
-    # rol_id: int
-
+    
     class Config:
         orm_mode = True
 
@@ -28,8 +27,7 @@ class UserFarmRoleCreate(BaseModel):
 class UserFarmRoleUpdate(BaseModel):
     usuario_id: Optional[int] = None  
     finca_id: Optional[int] = None    
-    # rol_id: Optional[int] = None 
-
+   
     class Config:
         orm_mode = True
 
