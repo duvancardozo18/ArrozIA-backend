@@ -8,6 +8,7 @@ from pydantic import BaseModel, condecimal
 class UserFarmRoleShema(BaseModel):
     usuario_id: int
     finca_id: int
+    farm_name: str
     # rol_id: int
 
     class Config:
