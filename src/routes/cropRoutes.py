@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from src.controller.cropController import createCrop, getCrop, updateCrop, deleteCrop, getAllCrops
+from src.controller.cropController import createCrop, getCrop, updateCrop, deleteCrop, getAllCrops, getCropInfo
 from src.database.database import get_session
 from src.schemas.cropSchema import CropCreate, CropOut, CropUpdate
 
@@ -9,7 +9,7 @@ CROP_ROUTES = APIRouter()
 @CROP_ROUTES.post("/crops", response_model=CropOut)
 def createCropRoute(crop: CropCreate, db: Session = Depends(get_session)):
     return createCrop(crop, db)
-
+ 
 @CROP_ROUTES.get("/crops", response_model=list[CropOut])
 def getAllCropsRoute(db: Session = Depends(get_session)):
     return getAllCrops(db)
@@ -25,3 +25,7 @@ def updateCropRoute(crop_id: int, crop: CropUpdate, db: Session = Depends(get_se
 @CROP_ROUTES.delete("/crops/{crop_id}")
 def deleteCropRoute(crop_id: int, db: Session = Depends(get_session)):
     return deleteCrop(crop_id, db)
+
+@CROP_ROUTES.get("/crops/{nombre_finca}/{nombre_lote}/{nombre_cultivo}", response_model=CropOut)
+def get_crop_route(nombre_finca: str, nombre_lote: str, nombre_cultivo: str, db: Session = Depends(get_session)):
+    return getCropInfo(nombre_lote, nombre_cultivo, db)

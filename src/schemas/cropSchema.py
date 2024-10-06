@@ -7,19 +7,27 @@ class CropBase(BaseModel):
     plotId: int
     plantingDate: date | None = None
     estimatedHarvestDate: date | None = None
-    actualHarvestDate: date | None = None
-    harvestedQuantity: float | None = None
-    weightUnitId: int | None = None
-    income: float | None = None
+   
+  
 
     class Config:
         from_attributes = True
 
-class CropCreate(CropBase):
+class CropCreate(CropBase): 
     pass
 
 class CropUpdate(CropBase):
     pass
 
-class CropOut(CropBase):
+class CropOut(BaseModel):
     id: int
+    cropName: str
+    varietyId: int
+    varietyName: str  # Asegúrate de incluir el nombre de la variedad de arroz
+    plotId: int
+    plotName: str      # Asegúrate de incluir el nombre del lote
+    plantingDate: date | None = None
+    estimatedHarvestDate: date | None = None
+
+    class Config:
+        orm_mode = True

@@ -9,4 +9,4 @@ class WeightUnit(Base):
     unit = Column(String(50), nullable=False)
 
     # Inverse relationship
-    crops = relationship("Crop", order_by="Crop.id", back_populates="weightUnit")
+    #crops = relationship("Crop", order_by="Crop.id", back_populates="weightUnit")

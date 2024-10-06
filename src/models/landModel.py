@@ -17,7 +17,7 @@ class Land(Base):
     
     # Relaciones
     finca = relationship("Farm", back_populates="lotes")   
-    # unidad_area = relationship("UnidadArea", back_populates="lotes")
+    #unidad_area = relationship("UnidadArea", back_populates="lotes")
     crops = relationship("Crop", back_populates="lotes") 
 
 
@@ -27,5 +27,6 @@ class Land(Base):
 #     id = Column(Integer, primary_key=True, autoincrement=True)
 #     unidad = Column(String(50), nullable=False)
 
-#     # Relación inversa
-#     lotes = relationship("Land", order_by=Land.id, back_populates="unidad_area")
+    # Relación inversa
+    #lotes = relationship("Land", order_by=Land.id, back_populates="unidad_area")
+
