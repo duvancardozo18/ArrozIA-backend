@@ -1,16 +1,20 @@
 from decimal import Decimal
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class FarmSchema(BaseModel):
-    id: int
+    id: Optional[int] = Field(None, description="ID de la finca")
     nombre: str
     ubicacion: str
     area_total: float
-    latitud: Decimal
-    longitud: Decimal 
+    latitud: Optional[Decimal] = None
+    longitud: Optional[Decimal] = None
+
+
+class FincaResponseSchema(FarmSchema):
+    id: Optional[int] = Field(None, description="ID de la finca")
     
 class UpdateFarmSchema(BaseModel):
     nombre: Optional[str] = None

@@ -3,7 +3,7 @@ from jwt.exceptions import InvalidKeyTypeError
 from fastapi import FastAPI, Depends, HTTPException,status
 from fastapi import Request, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from src.models.userModel import TokenTable
+from src.models.authModel import TokenTable
 from jose import jwt
 from src.helpers.config import JWT_SECRET_KEY, ALGORITHM
 
