@@ -6,8 +6,21 @@ from src.models.authModel import TokenTable
 from src.models.userModel import User
 from src.schemas.authShema import LoginRequest
 from src.helpers.utils import (create_access_token, create_refresh_token, verify_password)
+import re
 
 def login(request: LoginRequest, db: Session = Depends(get_session)):
+    # Validate email contains '@'
+    if "@" not in request.email:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid email format. Email must contain '@'.")
+    
+    # Validate password contains at least one uppercase letter, one lowercase letter, one digit, and has at least 8 characters
+    password_pattern = re.compile(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$")
+    if not password_pattern.match(request.password):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, and a number."
+        )
+    
     user = db.query(User).filter(User.email == request.email).first()
     if user is None:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Incorrect email")
