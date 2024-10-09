@@ -1,29 +1,34 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from src.controller.varietyArrozController import (
-    createVariety, deleteVariety, getVariety, listVarieties, updateVariety
+    createVariety, getVariety, listVarieties, updateVariety, deleteVariety
 )
-from src.database.database import get_session
-from src.schemas.varietyArrozSchema import VariedadArrozCreate, VariedadArrozResponse
+from src.database.database import get_db
+from src.schemas.varietyArrozSchema import VarietyArrozCreate, VarietyArrozResponse
 
 VARIETY_ARROZ_ROUTES = APIRouter()
 
-@VARIETY_ARROZ_ROUTES.post('/registrar-variedad', response_model=VariedadArrozResponse)
-def register_variety(variety: VariedadArrozCreate, session: Session = Depends(get_session)):
-    return createVariety(variety, session)
+# Ruta para crear una nueva variedad de arroz
+@VARIETY_ARROZ_ROUTES.post('/register-variety', response_model=VarietyArrozResponse)
+def register_variety(variety: VarietyArrozCreate, db: Session = Depends(get_db)):
+    return createVariety(variety, db)
 
-@VARIETY_ARROZ_ROUTES.get('/variedades', response_model=list[VariedadArrozResponse])
-def all_varieties(session: Session = Depends(get_session)):
-    return listVarieties(session)
+# Ruta para listar todas las variedades de arroz
+@VARIETY_ARROZ_ROUTES.get('/list-varieties', response_model=list[VarietyArrozResponse])
+def list_varieties(db: Session = Depends(get_db)):
+    return listVarieties(db)
 
-@VARIETY_ARROZ_ROUTES.get('/variedad/{variety_id}', response_model=VariedadArrozResponse)
-def get_variety(variety_id: int, session: Session = Depends(get_session)):
-    return getVariety(variety_id, session)
+# Ruta para obtener una variedad de arroz por ID
+@VARIETY_ARROZ_ROUTES.get('/get-variety/{variety_id}', response_model=VarietyArrozResponse)
+def get_variety(variety_id: int, db: Session = Depends(get_db)):
+    return getVariety(variety_id, db)
 
-@VARIETY_ARROZ_ROUTES.put('/actualizar/variedad/{variety_id}', response_model=VariedadArrozResponse)
-def update_variety(variety_id: int, variety: VariedadArrozCreate, session: Session = Depends(get_session)):
-    return updateVariety(variety_id, variety, session)
+# Ruta para actualizar una variedad de arroz
+@VARIETY_ARROZ_ROUTES.put('/update-variety/{variety_id}', response_model=VarietyArrozResponse)
+def update_variety(variety_id: int, variety: VarietyArrozCreate, db: Session = Depends(get_db)):
+    return updateVariety(variety_id, variety, db)
 
-@VARIETY_ARROZ_ROUTES.delete('/eliminar/variedad/{variety_id}')
-def delete_variety(variety_id: int, session: Session = Depends(get_session)):
-    return deleteVariety(variety_id, session)
+# Ruta para eliminar una variedad de arroz
+@VARIETY_ARROZ_ROUTES.delete('/delete-variety/{variety_id}')
+def delete_variety(variety_id: int, db: Session = Depends(get_db)):
+    return deleteVariety(variety_id, db)

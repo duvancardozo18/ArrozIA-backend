@@ -1,12 +1,12 @@
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
-from src.models.varietyArrozModel import VariedadArroz
-from src.schemas.varietyArrozSchema import VariedadArrozCreate
+from src.models.varietyArrozModel import VarietyArrozModel
+from src.schemas.varietyArrozSchema import VarietyArrozCreate
 
-#Crear variedad de arroz
-def createVariety(varietyData: VariedadArrozCreate, db: Session):
+# Crear variedad de arroz
+def createVariety(varietyData: VarietyArrozCreate, db: Session):
     try:
-        newVariety = VariedadArroz(**varietyData.dict())
+        newVariety = VarietyArrozModel(**varietyData.dict())
         db.add(newVariety)
         db.commit()
         db.refresh(newVariety)
@@ -15,10 +15,10 @@ def createVariety(varietyData: VariedadArrozCreate, db: Session):
         raise HTTPException(status_code=400, detail="Error creating variety: " + str(e))
 
 
-#Modificar variedad de arroz 
+# Obtener variedad de arroz por ID
 def getVariety(varietyId: int, db: Session):
     try:
-        variety = db.query(VariedadArroz).filter(VariedadArroz.id == varietyId).first()
+        variety = db.query(VarietyArrozModel).filter(VarietyArrozModel.id == varietyId).first()
         if not variety:
             raise HTTPException(status_code=404, detail="Variety not found")
         return variety
@@ -26,17 +26,18 @@ def getVariety(varietyId: int, db: Session):
         raise HTTPException(status_code=400, detail="Error retrieving variety: " + str(e))
 
 
-#lista de variedad arroz
+# Listar todas las variedades de arroz
 def listVarieties(db: Session):
     try:
-        varieties = db.query(VariedadArroz).all()
+        varieties = db.query(VarietyArrozModel).all()
         return varieties
     except Exception as e:
         raise HTTPException(status_code=400, detail="Error listing varieties: " + str(e))
 
-def updateVariety(varietyId: int, updatedData: VariedadArrozCreate, db: Session):
+# Actualizar una variedad de arroz
+def updateVariety(varietyId: int, updatedData: VarietyArrozCreate, db: Session):
     try:
-        variety = db.query(VariedadArroz).filter(VariedadArroz.id == varietyId).first()
+        variety = db.query(VarietyArrozModel).filter(VarietyArrozModel.id == varietyId).first()
         if not variety:
             raise HTTPException(status_code=404, detail="Variety not found")
         
@@ -50,10 +51,10 @@ def updateVariety(varietyId: int, updatedData: VariedadArrozCreate, db: Session)
         raise HTTPException(status_code=400, detail="Error updating variety: " + str(e))
 
 
-#Eliminar variedad de arroz 
+# Eliminar variedad de arroz
 def deleteVariety(varietyId: int, db: Session):
     try:
-        variety = db.query(VariedadArroz).filter(VariedadArroz.id == varietyId).first()
+        variety = db.query(VarietyArrozModel).filter(VarietyArrozModel.id == varietyId).first()
         if not variety:
             raise HTTPException(status_code=404, detail="Variety not found")
         
