@@ -4,7 +4,7 @@ from fastapi import HTTPException
 from src.models.cropModel import Crop
 from src.schemas.cropSchema import CropCreate, CropUpdate
 from src.models.landModel import Land
-from src.models.varietyArrozModel import VariedadArroz
+from src.models.varietyArrozModel import VarietyArrozModel
 
 def createCrop(crop: CropCreate, db: Session):
     db_crop = Crop(
@@ -71,7 +71,7 @@ def getCropInfo(nombre_lote: str, nombre_cultivo: str, db: Session):
         raise HTTPException(status_code=404, detail="Cultivo not found")
 
     # Buscar la variedad de arroz asociada
-    variedad = db.query(VariedadArroz).filter(VariedadArroz.id == cultivo.varietyId).first()
+    variedad = db.query(VarietyArrozModel).filter(VarietyArrozModel.id == cultivo.varietyId).first()
     if not variedad:
         raise HTTPException(status_code=404, detail="Variedad de arroz not found")
 
