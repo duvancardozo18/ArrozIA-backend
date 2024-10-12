@@ -1,23 +1,25 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from src.database.database import Base, engine
-from dotenv import load_dotenv
 import os
 
+from dotenv import load_dotenv
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+from src.database.database import Base, engine
+from src.routes.agriculturalInputRoutes import AGRICULTURAL_INPUT_ROUTES
 #Rutas
 from src.routes.authRoutes import AUTH_ROUTES
-from src.routes.userRoutes import USER_ROUTES
-from src.routes.roleRoutes import ROLE_ROUTES
-from src.routes.permissionRouter import PERMISSION_ROUTES
-from src.routes.rol_permissionRoutes import ROL_PERMISSION_ROUTES
-from src.routes.userRoleRoutes import USER_ROLE_ROUTES
-from src.routes.farmRoutes import FARM_ROUTES
-from src.routes.userFarmRoutes import USER_FARM_ROUTES
-from src.routes.landRoutes import LAND_ROUTES
 from src.routes.cropRoutes import CROP_ROUTES
 from src.routes.farmLotRoutes import FARM_LOT_ROUTES
+from src.routes.farmRoutes import FARM_ROUTES
 from src.routes.landCropRoutes import LAND_CROP_ROUTES
+from src.routes.landRoutes import LAND_ROUTES
 from src.routes.passwordResetRoutes import PASSWORD_RESET_ROUTES
+from src.routes.permissionRouter import PERMISSION_ROUTES
+from src.routes.rol_permissionRoutes import ROL_PERMISSION_ROUTES
+from src.routes.roleRoutes import ROLE_ROUTES
+from src.routes.userFarmRoutes import USER_FARM_ROUTES
+from src.routes.userRoleRoutes import USER_ROLE_ROUTES
+from src.routes.userRoutes import USER_ROUTES
 # from src.routes.unidadesAreasRoutes import UNIDAD_AREA_ROUTE
 from src.routes.varietyArrozRoutes import VARIETY_ARROZ_ROUTES
 
@@ -62,6 +64,7 @@ app.include_router(CROP_ROUTES)
 app.include_router(LAND_CROP_ROUTES)
 app.include_router(FARM_LOT_ROUTES)
 app.include_router(PASSWORD_RESET_ROUTES)  
+app.include_router(AGRICULTURAL_INPUT_ROUTES)  
 
 @app.get("/")
 def read_root():
