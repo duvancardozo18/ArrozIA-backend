@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from src.database.database import Base, engine
 from src.routes.agriculturalInputRoutes import AGRICULTURAL_INPUT_ROUTES
 #Rutas
+from src.routes import cropCycleRoutes, culturalLaborsPlanRoutes
 from src.routes.authRoutes import AUTH_ROUTES
 from src.routes.cropRoutes import CROP_ROUTES
 from src.routes.farmLotRoutes import FARM_LOT_ROUTES
@@ -65,7 +66,8 @@ app.include_router(LAND_CROP_ROUTES)
 app.include_router(FARM_LOT_ROUTES)
 app.include_router(PASSWORD_RESET_ROUTES)  
 app.include_router(AGRICULTURAL_INPUT_ROUTES)  
-
+app.include_router(cropCycleRoutes.router, prefix="/crop-cycle")
+app.include_router(culturalLaborsPlanRoutes.router, prefix="/cultural-labors-plan")
 @app.get("/")
 def read_root():
     return {"message": "Welcome to my API"}
