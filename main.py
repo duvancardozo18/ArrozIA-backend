@@ -23,6 +23,7 @@ from src.routes.userRoleRoutes import USER_ROLE_ROUTES
 from src.routes.userRoutes import USER_ROUTES
 # from src.routes.unidadesAreasRoutes import UNIDAD_AREA_ROUTE
 from src.routes.varietyArrozRoutes import VARIETY_ARROZ_ROUTES
+from src.routes.opMechRoutes import OP_MECH_ROUTES
 
 # Inicializar la aplicación FastAPI
 app = FastAPI()
@@ -68,6 +69,10 @@ app.include_router(PASSWORD_RESET_ROUTES)
 app.include_router(AGRICULTURAL_INPUT_ROUTES)  
 app.include_router(cropCycleRoutes.router, prefix="/crop-cycle")
 app.include_router(culturalLaborsPlanRoutes.router, prefix="/cultural-labors-plan")
+
+app.include_router(OP_MECH_ROUTES) 
+
+
 @app.get("/")
 def read_root():
     return {"message": "Welcome to my API"}
