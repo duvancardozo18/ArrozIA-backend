@@ -69,7 +69,10 @@ app.include_router(PASSWORD_RESET_ROUTES)
 app.include_router(AGRICULTURAL_INPUT_ROUTES)  
 app.include_router(cropCycleRoutes.router, prefix="/crop-cycle")
 app.include_router(culturalLaborsPlanRoutes.router, prefix="/cultural-labors-plan")
+
 app.include_router(OP_MECH_ROUTES) 
+
+
 @app.get("/")
 def read_root():
     return {"message": "Welcome to my API"}
