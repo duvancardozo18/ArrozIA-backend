@@ -7,7 +7,7 @@ from src.controller.agricultralInputController import (createInput,
                                                        getInputById,
                                                        updateInput)
 from src.database.database import get_session
-from src.schemas.agriculturalInputSchema import (AgriculturalInputCreate,
+from src.schemas.agriculturalInputSchema import (AgriculturalInput, AgriculturalInputCreate,
                                                  AgriculturalInputUpdate)
 
 AGRICULTURAL_INPUT_ROUTES = APIRouter()
@@ -16,11 +16,11 @@ AGRICULTURAL_INPUT_ROUTES = APIRouter()
 def registerinput(input: AgriculturalInputCreate, session: Session = Depends(get_session)):
     return createInput(input, session)
     
-@AGRICULTURAL_INPUT_ROUTES.get('/inputs', response_model=list[AgriculturalInputCreate])
+@AGRICULTURAL_INPUT_ROUTES.get('/inputs', response_model=list[AgriculturalInput])  # Cambia el esquema de respuesta a AgriculturalInput
 def listinputs(session: Session = Depends(get_session)):
     return getAllInput(session)
 
-@AGRICULTURAL_INPUT_ROUTES.get('/input/{input_id}', response_model=AgriculturalInputCreate)
+@AGRICULTURAL_INPUT_ROUTES.get('/input/{input_id}', response_model=AgriculturalInput)  # Cambia el esquema de respuesta a AgriculturalInput
 def getinput(input_id: int, session: Session = Depends(get_session)):
     return getInputById(input_id, session)
 

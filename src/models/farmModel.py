@@ -1,6 +1,5 @@
 from sqlalchemy import DECIMAL, Column, Float, Integer, String
 from sqlalchemy.orm import relationship
-
 from src.database.database import Base
 from src.models.landModel import Land
 
@@ -14,6 +13,6 @@ class Farm(Base):
     area_total = Column(Float, nullable=True)
     latitud = Column(DECIMAL(10, 5), nullable=True)
     longitud = Column(DECIMAL(10, 5), nullable=True)
+    slug = Column(String(255), nullable=False)  # Agregar este campo para el slug
     
     lotes = relationship(Land, back_populates="finca")
-    #usuario_fincas = relationship("UsuarioFinca", back_populates="finca")

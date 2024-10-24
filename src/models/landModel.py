@@ -14,12 +14,17 @@ class Land(Base):
     # unidad_area_id = Column(Integer, ForeignKey('unidad_area.id'), nullable=False)
     latitud = Column(DECIMAL(10, 5), nullable=True)
     longitud = Column(DECIMAL(10, 5), nullable=True)
+    slug = Column(String(255), nullable=False)  # Asegúrate de que el slug está definido
+
     
     # Relaciones
     finca = relationship("Farm", back_populates="lotes")   
     #unidad_area = relationship("UnidadArea", back_populates="lotes")
     crops = relationship("Crop", back_populates="lotes") 
 
+    # Relación inversa con finca
+    def __repr__(self):
+        return f"<Land(id={self.id}, nombre={self.nombre}, slug={self.slug})>"
 
 # class UnidadArea(Base):
 #     __tablename__ = 'unidad_area'

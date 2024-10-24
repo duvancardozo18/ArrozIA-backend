@@ -23,9 +23,7 @@ class CropOut(BaseModel):
     id: int
     cropName: str
     varietyId: int
-    varietyName: str  # Asegúrate de incluir el nombre de la variedad de arroz
     plotId: int
-    plotName: str      # Asegúrate de incluir el nombre del lote
     plantingDate: date | None = None
     estimatedHarvestDate: date | None = None
 
