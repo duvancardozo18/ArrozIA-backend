@@ -7,6 +7,7 @@ class CropBase(BaseModel):
     plotId: int
     plantingDate: date | None = None
     estimatedHarvestDate: date | None = None
+    slug: str
    
   
 
@@ -14,7 +15,13 @@ class CropBase(BaseModel):
         from_attributes = True
 
 class CropCreate(CropBase): 
-    pass
+    cropName: str = Field(..., max_length=100)
+    varietyId: int
+    plotId: int
+    plantingDate: date | None = None
+    estimatedHarvestDate: date | None = None
+    slug: str | None = None
+
 
 class CropUpdate(CropBase):
     pass
