@@ -44,13 +44,7 @@ def createCrop(crop: CropCreate, db: Session):
             raise HTTPException(status_code=404, detail="Finca not found")
 
         # Verificar si los slugs están presentes
-        if not lote.slug:
-            raise HTTPException(status_code=500, detail="Plot slug not found")
-        if not finca.slug:
-            raise HTTPException(status_code=500, detail="Farm slug not found")
-        
-        # Verifica si los slugs están presentes antes de devolver la respuesta
-        print(f"Slugs: cropSlug={db_crop.slug}, plotSlug={lote.slug}, fincaSlug={finca.slug}")
+      
 
         # Retornar los datos junto con los slugs y otros campos
         return {

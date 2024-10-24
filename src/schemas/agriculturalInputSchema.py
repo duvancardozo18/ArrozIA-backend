@@ -24,7 +24,7 @@ class UniInputUpdate(BaseModel):
 class AgriculturalInputBase(BaseModel):
     nombre: str
     descripcion: Optional[str] = None  # Usa Optional en lugar de '|'
-    unidad_id: int
+    unidad: str
     costo_unitario: float
 
 class AgriculturalInputCreate(AgriculturalInputBase):

@@ -11,7 +11,7 @@ def createInput(insumo: AgriculturalInputCreate, session: Session = Depends(get_
     newInsumo = AgriculturalInput(
         nombre=insumo.nombre,
         descripcion=insumo.descripcion,
-        unidad_id=insumo.unidad_id,
+        unidad=insumo.unidad,
         costo_unitario=insumo.costo_unitario
     )
     session.add(newInsumo)
