@@ -7,6 +7,7 @@ from src.schemas.farmSchema import FarmSchema, UpdateFarmSchema
 
 
 def createFarm(farm:  FarmSchema, session: Session = Depends(get_session) ):
+    print(f"Datos recibidos: {farm}")
     # Validación de los campos de texto como antes
     if not farm.nombre.strip():
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Farm name cannot be empty or only spaces.")
@@ -39,7 +40,19 @@ def createFarm(farm:  FarmSchema, session: Session = Depends(get_session) ):
 
 def getAllFarms(session: Session = Depends(get_session)):
     farms = session.query(Farm).all()
-    return farms
+    # Asegurarse de que ubicacion y area_total no sean None en la respuesta
+    farms_list = [
+        {
+            "id": farm.id,
+            "nombre": farm.nombre,
+            "ubicacion": farm.ubicacion if farm.ubicacion else "",  # Asignar cadena vacía si es None
+            "area_total": farm.area_total if farm.area_total is not None else 0.0,  # Asignar 0.0 si es None
+            "latitud": farm.latitud,
+            "longitud": farm.longitud
+        }
+        for farm in farms
+    ]
+    return farms_list
 
 def getFarmById(farm_id: int, session: Session = Depends(get_session)):
     farm = session.query(Farm).filter(Farm.id == farm_id).first()

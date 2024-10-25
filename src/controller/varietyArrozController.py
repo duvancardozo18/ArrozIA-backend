@@ -30,6 +30,10 @@ def getVariety(varietyId: int, db: Session):
 def listVarieties(db: Session):
     try:
         varieties = db.query(VarietyArrozModel).all()
+        # Convertir el campo 'numero_registro_productor_ica' a string para cada variedad
+        for variety in varieties:
+            if variety.numero_registro_productor_ica is not None:
+                variety.numero_registro_productor_ica = str(variety.numero_registro_productor_ica)
         return varieties
     except Exception as e:
         raise HTTPException(status_code=400, detail="Error listing varieties: " + str(e))

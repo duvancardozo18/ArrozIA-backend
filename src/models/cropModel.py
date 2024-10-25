@@ -16,6 +16,7 @@ class Crop(Base):
     plotId = Column('lote_id', Integer, ForeignKey('lote.id'), nullable=False)
     plantingDate = Column('fecha_siembra', Date, nullable=True)
     estimatedHarvestDate = Column('fecha_estimada_cosecha', Date, nullable=True)
+    slug = Column(String, unique=True, index=True)
 
     # Relaciones
     variety = relationship("VarietyArrozModel", back_populates="crops")

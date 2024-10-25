@@ -6,6 +6,6 @@ from src.schemas.cropSchema import CropOut  # Usar CropOut en lugar de CropSchem
 
 LAND_CROP_ROUTES = APIRouter()
 
-@LAND_CROP_ROUTES.get("/lands/{landId}/crops", response_model=list[CropOut])  # Cambiar a CropOut
+@LAND_CROP_ROUTES.get("/land/{landId}", response_model=list[CropOut])  # Cambiar a CropOut
 def getCrops(landId: int, db: Session = Depends(get_db)):
     return getCropsByLandId(landId, db)
