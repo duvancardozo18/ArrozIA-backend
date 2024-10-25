@@ -26,6 +26,7 @@ from src.routes.userRoutes import USER_ROUTES
 from src.routes.varietyArrozRoutes import VARIETY_ARROZ_ROUTES
 from src.routes.opMechRoutes import OP_MECH_ROUTES
 from src.routes.taskRouetes import TASK_ROUTES
+from src.routes.machineryRoutes import MACHINERY_ROUTES
 
 # Inicializar la aplicación FastAPI
 app = FastAPI()
@@ -72,11 +73,9 @@ app.include_router(AGRICULTURAL_INPUT_ROUTES)
 
 app.include_router(LABOR_CULTURAL_ROUTES)
 app.include_router(CROP_CYCLE_ROUTES)
-app.include_router(cropCycleRoutes.router, prefix="/crop-cycle")
-app.include_router(culturalLaborsPlanRoutes.router, prefix="/cultural-labors-plan")
 app.include_router(OP_MECH_ROUTES)
 app.include_router(TASK_ROUTES)
-
+app.include_router(MACHINERY_ROUTES)
 
 @app.get("/")
 def read_root():
