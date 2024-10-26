@@ -37,6 +37,12 @@ def update_machinery(machinery_id: int, machinery: MaquinariaAgricolaUpdate, db:
     if not db_machinery:
         raise HTTPException(status_code=404, detail="Maquinaria no encontrada")
 
+    # Verificar si el nuevo nombre ya está en uso por otra maquinaria
+    if machinery.name:
+        existing_machinery = db.query(Machinery).filter(Machinery.name == machinery.name, Machinery.id != machinery_id).first()
+        if existing_machinery:
+            raise HTTPException(status_code=400, detail="Ya existe una maquinaria con el mismo nombre")
+
     # Actualizar solo los campos que se hayan proporcionado
     for key, value in machinery.dict(exclude_unset=True).items():
         setattr(db_machinery, key, value)
