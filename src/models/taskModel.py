@@ -20,3 +20,6 @@ class Task(Base):
 
     # Relación con OpMech
     operationMechanization = relationship("OpMech", back_populates="task")
+
+    # Relación inversa hacia los diagnósticos fitosanitarios
+    diagnostics = relationship("Diagnostic", back_populates="task")
