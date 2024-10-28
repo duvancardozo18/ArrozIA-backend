@@ -22,6 +22,9 @@ class Land(Base):
     #unidad_area = relationship("UnidadArea", back_populates="lotes")
     crops = relationship("Crop", back_populates="lotes") 
 
+    # Relación inversa con SoilAnalysis
+    analisis_edafologico = relationship("SoilAnalysis", back_populates="lote")
+
     # Relación inversa con finca
     def __repr__(self):
         return f"<Land(id={self.id}, nombre={self.nombre}, slug={self.slug})>"
