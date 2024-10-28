@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from src.models.opMechModel import OpMech
 from src.schemas.opMechSchema import OpMechCreate, OpMechUpdate
-
+from sqlalchemy.orm import joinedload 
 
 # Crear una nueva operación mecanización
 def create_op_mech(operation: OpMechCreate, db: Session):
@@ -26,18 +26,26 @@ def create_op_mech(operation: OpMechCreate, db: Session):
     return db_operation
 
 
-# Obtener una operación mecanización por ID
+# Obtener una operación mecanización por ID, incluyendo la información de la maquinaria
 def get_op_mech_by_id(op_mech_id: int, db: Session):
-    return db.query(OpMech).filter(OpMech.id == op_mech_id).first()
+    return db.query(OpMech).options(joinedload(OpMech.machinery)).filter(OpMech.id == op_mech_id).first()
 
 
-# Obtener todas las operaciones mecanización
+
+# Obtener todas las operaciones mecanización, incluyendo la información de la maquinaria
 def get_all_op_mechs(db: Session):
-    return db.query(OpMech).all()
+    # Utiliza joinedload para cargar la relación con la maquinaria
+    return db.query(OpMech).options(joinedload(OpMech.machinery)).all()
 
 
 # Actualizar una operación mecanización por ID
 def update_op_mech(op_mech_id: int, operation: OpMechUpdate, db: Session):
+    # Verificar si existe otra operación con el mismo taskId
+    existing_operation = db.query(OpMech).filter(OpMech.taskId == operation.taskId, OpMech.id != op_mech_id).first()
+    
+    if existing_operation:
+        raise HTTPException(status_code=400, detail="Ya existe otra operación mecanización con el mismo taskId")
+
     db_operation = db.query(OpMech).filter(OpMech.id == op_mech_id).first()
     if db_operation:
         db_operation.taskId = operation.taskId

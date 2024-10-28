@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from src.controller.opMechController import create_op_mech, get_op_mech_by_id, get_all_op_mechs, update_op_mech, delete_op_mech
-from src.schemas.opMechSchema import OpMechCreate, OpMechUpdate
+from src.schemas.opMechSchema import OpMechCreate, OpMechUpdate, OpMechResponse
 from src.database.database import get_db
 
 OP_MECH_ROUTES = APIRouter()
@@ -14,18 +14,19 @@ def create_operation_mechanization(operation: OpMechCreate, db: Session = Depend
 
 
 # Obtener una operación mecanización por ID
-@OP_MECH_ROUTES.get("/operation-mechanization/{op_mech_id}", response_model=OpMechCreate)
+@OP_MECH_ROUTES.get("/operation-mechanization/{op_mech_id}", response_model=OpMechResponse)
 def read_operation_mechanization(op_mech_id: int, db: Session = Depends(get_db)):
     db_op_mech = get_op_mech_by_id(op_mech_id, db)
     if db_op_mech is None:
-        raise HTTPException(status_code=404, detail="Operation mechanization not found")
+        raise HTTPException(status_code=404, detail="Operación mecanización no encontrada")
     return db_op_mech
 
 
 # Obtener todas las operaciones mecanización
-@OP_MECH_ROUTES.get("/operation-mechanizations/", response_model=list[OpMechCreate])
+@OP_MECH_ROUTES.get("/operation-mechanizations/", response_model=list[OpMechResponse])
 def read_all_operation_mechanizations(db: Session = Depends(get_db)):
     return get_all_op_mechs(db)
+
 
 
 # Actualizar una operación mecanización
