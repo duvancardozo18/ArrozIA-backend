@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from src.database.database import Base, engine
 
 #Rutas
+from src.routes.weatherRecordRoute import WEATHER_RECORD_ROUTES
 from src.routes.laborCulturalRoutes import LABOR_CULTURAL_ROUTES
 from src.routes.cropCycleRoutes import CROP_CYCLE_ROUTES
 from src.routes.agriculturalInputRoutes import AGRICULTURAL_INPUT_ROUTES
@@ -71,12 +72,12 @@ app.include_router(LAND_CROP_ROUTES)
 app.include_router(FARM_LOT_ROUTES)
 app.include_router(PASSWORD_RESET_ROUTES)  
 app.include_router(AGRICULTURAL_INPUT_ROUTES)  
-
 app.include_router(LABOR_CULTURAL_ROUTES)
 app.include_router(CROP_CYCLE_ROUTES)
 app.include_router(OP_MECH_ROUTES)
 app.include_router(TASK_ROUTES)
 app.include_router(MACHINERY_ROUTES)
+app.include_router(WEATHER_RECORD_ROUTES)
 app.include_router(SOIL_ANALYSIS_ROUTES)
 
 @app.get("/")
