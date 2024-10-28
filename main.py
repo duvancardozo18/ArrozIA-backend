@@ -29,6 +29,7 @@ from src.routes.opMechRoutes import OP_MECH_ROUTES
 from src.routes.taskRouetes import TASK_ROUTES
 from src.routes.machineryRoutes import MACHINERY_ROUTES
 from src.routes.soilAnalysisRoutes import SOIL_ANALYSIS_ROUTES
+from src.routes.diagnosticRoutes import DIAGNOSTIC_ROUTES
 
 # Inicializar la aplicación FastAPI
 app = FastAPI()
@@ -79,6 +80,7 @@ app.include_router(TASK_ROUTES)
 app.include_router(MACHINERY_ROUTES)
 app.include_router(WEATHER_RECORD_ROUTES)
 app.include_router(SOIL_ANALYSIS_ROUTES)
+app.include_router(DIAGNOSTIC_ROUTES)
 
 @app.get("/")
 def read_root():
