@@ -10,5 +10,5 @@ class Monitoring(Base):
     variedad_arroz_etapa_fenologica_id = Column(Integer, ForeignKey("variedad_arroz_etapa_fenologica.id"), nullable=True)
     recomendacion = Column(Text)
 
-    # Relación hacia la tabla variedad_arroz_etapa_fenologica
-    variedad_arroz_etapa_fenologica = relationship("RiceVarStageModel", back_populates="monitoreos")
+    # Relación hacia el modelo VarietyRiceStageModel
+    variedad_arroz_etapa_fenologica = relationship("VarietyRiceStageModel", back_populates="monitoreos")

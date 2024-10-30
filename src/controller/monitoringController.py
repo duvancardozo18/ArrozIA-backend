@@ -2,12 +2,13 @@ from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from src.models.monitoringModel import Monitoring
 from src.schemas.monitoringSchema import MonitoringCreate, MonitoringUpdate
-from src.models.riceVarStageModel import RiceVarStageModel
+from src.models.varietyRiceStageModel import VarietyRiceStageModel
+
 
 def create_monitoring(db: Session, monitoring: MonitoringCreate):
     if monitoring.variedad_arroz_etapa_fenologica_id is not None:
-        # Verificar si el ID de la variedad de arroz existe en la tabla correspondiente
-        if not db.query(RiceVarStageModel).filter(RiceVarStageModel.id == monitoring.variedad_arroz_etapa_fenologica_id).first():
+        # Verificar si el ID de la variedad de arroz existe en la tabla VarietyRiceStageModel
+        if not db.query(VarietyRiceStageModel).filter(VarietyRiceStageModel.id == monitoring.variedad_arroz_etapa_fenologica_id).first():
             raise HTTPException(status_code=400, detail="ID de variedad de arroz no válida")
 
         db_monitoring = Monitoring(**monitoring.dict())

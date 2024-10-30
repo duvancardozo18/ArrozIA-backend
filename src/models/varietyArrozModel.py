@@ -10,5 +10,8 @@ class VarietyArrozModel(Base):
     numero_registro_productor_ica = Column(String(50), nullable=False)  # Cambiado a String
     caracteristicas_variedad = Column(Text, nullable=True)
 
-    # Relación inversa
+    # Relación con la tabla de cultivos (crops)
     crops = relationship("Crop", order_by="Crop.id", back_populates="variety")
+
+    # Relación inversa con VarietyRiceStageModel
+    stages = relationship("VarietyRiceStageModel", back_populates="variety", cascade="all, delete-orphan")
