@@ -18,3 +18,4 @@ class Task(Base):
     usuario_id = Column(Integer, ForeignKey("usuario.id", ondelete="CASCADE"), nullable=False)
     tiempo_hora = Column(Integer, nullable=True)
     maquinaria_agricola_id = Column(Integer, ForeignKey("maquinaria_agricola.id", ondelete="SET NULL"), nullable=True)
+
