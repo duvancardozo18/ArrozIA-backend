@@ -1,18 +1,16 @@
 from fastapi import Depends, HTTPException, status
 from sqlalchemy.orm import Session
-
 from src.database.database import get_session
-from src.models.agriculturalInputModel import AgriculturalInput
-from src.schemas.agriculturalInputSchema import (AgriculturalInputCreate,
-                                                 AgriculturalInputUpdate)
-
+from src.models.agriculturalInputModel import AgriculturalInput, UnidadInsumo
+from src.schemas.agriculturalInputSchema import (AgriculturalInputCreate, AgriculturalInputUpdate)
 
 def createInput(insumo: AgriculturalInputCreate, session: Session = Depends(get_session)):
     newInsumo = AgriculturalInput(
         nombre=insumo.nombre,
         descripcion=insumo.descripcion,
-        unidad=insumo.unidad,
-        costo_unitario=insumo.costo_unitario
+        unidad_id=insumo.unidad_id,
+        costo_unitario=insumo.costo_unitario,
+        cantidad=insumo.cantidad
     )
     session.add(newInsumo)
     session.commit()
@@ -20,11 +18,9 @@ def createInput(insumo: AgriculturalInputCreate, session: Session = Depends(get_
     
     return {"msg": "Insumo agrícola creado satisfactoriamente", "newInsumo": newInsumo}
 
-
 def getAllInput(session: Session = Depends(get_session)):
     insumos = session.query(AgriculturalInput).all()
     return insumos
-
 
 def getInputById(insumo_id: int, session: Session = Depends(get_session)):
     insumo = session.query(AgriculturalInput).filter(AgriculturalInput.id == insumo_id).first()
@@ -34,7 +30,6 @@ def getInputById(insumo_id: int, session: Session = Depends(get_session)):
             detail=f"Insumo agrícola con id {insumo_id} no encontrado"
         )
     return insumo
-
 
 def updateInput(insumo_id: int, insumo_data: AgriculturalInputUpdate, session: Session = Depends(get_session)):
     insumo = session.query(AgriculturalInput).filter(AgriculturalInput.id == insumo_id).first()
@@ -54,8 +49,7 @@ def updateInput(insumo_id: int, insumo_data: AgriculturalInputUpdate, session: S
     session.commit()
     session.refresh(insumo)
 
-    return {"msg": "Insumo agrícola actualizado satisfactoriamente", "insumo":insumo}
-
+    return {"msg": "Insumo agrícola actualizado satisfactoriamente", "insumo": insumo}
 
 def deleteInput(insumo_id: int, session: Session = Depends(get_session)):
     insumo = session.query(AgriculturalInput).filter(AgriculturalInput.id == insumo_id).first()
@@ -69,3 +63,6 @@ def deleteInput(insumo_id: int, session: Session = Depends(get_session)):
     session.commit()
 
     return {"msg": "Insumo agrícola eliminado satisfactoriamente"}
+
+def get_all_units(session: Session):
+    return session.query(UnidadInsumo).all()

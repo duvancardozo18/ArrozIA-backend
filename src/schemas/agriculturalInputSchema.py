@@ -1,21 +1,10 @@
 from typing import Optional
 from pydantic import BaseModel
 
-# Esquema de UniInput
-class UniInputBase(BaseModel):
-    nombre: str
-
-class UniInputCreate(UniInputBase):
-    pass
-
-class UniInput(UniInputBase):
+# Esquema de UnidadInsumo
+class UnidadInsumoSchema(BaseModel):
     id: int
-
-    class Config:
-        orm_mode = True
-
-class UniInputUpdate(BaseModel):
-    nombre: Optional[str] = None
+    nombre: str
 
     class Config:
         orm_mode = True
@@ -23,16 +12,16 @@ class UniInputUpdate(BaseModel):
 # Esquema de AgriculturalInput
 class AgriculturalInputBase(BaseModel):
     nombre: str
-    descripcion: Optional[str] = None  # Usa Optional en lugar de '|'
-    unidad: str
+    descripcion: Optional[str] = None
     costo_unitario: float
+    cantidad: float
 
 class AgriculturalInputCreate(AgriculturalInputBase):
-    pass
+    unidad_id: int  # unidad_id se usa solo en la creación
 
-# Agrega el campo id aquí para devolverlo en las respuestas
 class AgriculturalInput(AgriculturalInputBase):
-    id: int  # Asegúrate de incluir este campo
+    id: int
+    unidad: UnidadInsumoSchema  # Cambiado a objeto para incluir el nombre de la unidad
 
     class Config:
         orm_mode = True
@@ -42,6 +31,7 @@ class AgriculturalInputUpdate(BaseModel):
     descripcion: Optional[str] = None
     unidad_id: Optional[int] = None
     costo_unitario: Optional[float] = None
+    cantidad: Optional[float] = None
 
     class Config:
         orm_mode = True

@@ -3,9 +3,12 @@ import os
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from src.models.estadoModel import Estado
+from src.models.taskModel import Task
 from src.database.database import Base, engine
 
 #Rutas
+
 from src.routes.weatherRecordRoute import WEATHER_RECORD_ROUTES
 from src.routes.laborCulturalRoutes import LABOR_CULTURAL_ROUTES
 from src.routes.cropCycleRoutes import CROP_CYCLE_ROUTES
@@ -26,7 +29,7 @@ from src.routes.userRoutes import USER_ROUTES
 # from src.routes.unidadesAreasRoutes import UNIDAD_AREA_ROUTE
 from src.routes.varietyArrozRoutes import VARIETY_ARROZ_ROUTES
 from src.routes.opMechRoutes import OP_MECH_ROUTES
-from src.routes.taskRouetes import TASK_ROUTES
+from src.routes.taskRoutes import TASK_ROUTES
 from src.routes.machineryRoutes import MACHINERY_ROUTES
 from src.routes.soilAnalysisRoutes import SOIL_ANALYSIS_ROUTES
 from src.routes.diagnosticRoutes import DIAGNOSTIC_ROUTES
