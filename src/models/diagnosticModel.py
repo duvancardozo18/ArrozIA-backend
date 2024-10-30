@@ -1,5 +1,6 @@
-from sqlalchemy import Column, Integer, JSON, String
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, JSON, String
 from src.database.database import Base
+from sqlalchemy.orm import relationship
 
 class Diagnostic(Base):
     __tablename__ = "diagnostico_fitosanitario"
