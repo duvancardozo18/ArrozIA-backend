@@ -1,24 +1,15 @@
 from pydantic import BaseModel
-from typing import Optional, Any
+from typing import Optional
 
 class DiagnosticBase(BaseModel):
-    resultado_ia: Any
-    tarea_labor_id: int
-    online: bool
-    sincronizado: Optional[bool] = False
+    resultado_ia: Optional[dict] = None
+    ruta: Optional[str] = None
 
 class DiagnosticCreate(DiagnosticBase):
     pass
 
-class DiagnosticUpdate(BaseModel):
-    resultado_ia: Optional[Any] = None
-    tarea_labor_id: Optional[int] = None
-    online: Optional[bool] = None
-    sincronizado: Optional[bool] = None
-
-
-class DiagnosticResponse(DiagnosticBase):
+class Diagnostic(DiagnosticBase):
     id: int
 
     class Config:
-        from_attributes = True
+        orm_mode = True
