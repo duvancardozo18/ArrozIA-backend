@@ -11,11 +11,12 @@ class VarietyRiceStageModel(Base):
     dias_duracion = Column(Integer)
     variedad_arroz_id = Column(Integer, ForeignKey("variedad_arroz.id", ondelete="CASCADE"))
 
-    # Relación inversa con el modelo Monitoring
-    monitoreos = relationship("Monitoring", back_populates="variedad_arroz_etapa_fenologica")
-    
     # Relación con la tabla `variedad_arroz`
     variety = relationship("VarietyArrozModel", back_populates="stages")
 
     # Relación con la tabla `etapa_fenologica`
     phenological_stage = relationship("PhenologicalStage", back_populates="varieties")
+
+
+    # Relación inversa con el modelo Monitoring
+    monitoreos = relationship("Monitoring", back_populates="variedad_arroz_etapa_fenologica")

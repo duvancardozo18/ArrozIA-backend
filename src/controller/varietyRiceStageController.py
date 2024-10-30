@@ -1,6 +1,8 @@
 from sqlalchemy.orm import Session
 from src.models.varietyRiceStageModel import VarietyRiceStageModel
 from src.schemas.varietyRiceStageSchema import VarietyRiceStageCreate, VarietyRiceStageUpdate
+from sqlalchemy.orm import joinedload
+
 
 def create_variety_rice_stage(stage: VarietyRiceStageCreate, db: Session):
     new_stage = VarietyRiceStageModel(**stage.dict())
@@ -10,7 +12,10 @@ def create_variety_rice_stage(stage: VarietyRiceStageCreate, db: Session):
     return new_stage
 
 def get_variety_rice_stages(db: Session):
-    return db.query(VarietyRiceStageModel).all()
+    return db.query(VarietyRiceStageModel).options(
+        joinedload(VarietyRiceStageModel.variety),  # Cambio aquí
+        joinedload(VarietyRiceStageModel.phenological_stage)  # Y aquí
+    ).all()
 
 def get_variety_rice_stage_by_id(stage_id: int, db: Session):
     return db.query(VarietyRiceStageModel).filter(VarietyRiceStageModel.id == stage_id).first()
