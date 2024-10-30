@@ -1,43 +1,37 @@
 from sqlalchemy.orm import Session
-from fastapi import HTTPException
 from src.models.taskModel import Task
 from src.schemas.taskSchema import TaskCreate, TaskUpdate
-from typing import List
 
-def create_task(task: TaskCreate, session: Session):
-    new_task = Task(**task.dict())
-    session.add(new_task)
-    session.commit()
-    session.refresh(new_task)
-    return new_task
+def get_all_tasks(db: Session):
+    # Obtiene todas las tareas sin cargar relaciones
+    return db.query(Task).all()
 
-def get_all_tasks(session: Session) -> List[Task]:
-    tasks = session.query(Task).all()
-    return tasks
+def get_task_by_id(db: Session, task_id: int):
+    # Obtiene una tarea por ID sin cargar relaciones
+    return db.query(Task).filter(Task.id == task_id).first()
 
-def get_task_by_id(task_id: int, session: Session):
-    task = session.query(Task).filter(Task.id == task_id).first()
-    if not task:
-        raise HTTPException(status_code=404, detail="Task not found")
-    return task
+def create_task(db: Session, task: TaskCreate):
+    # Crea una nueva tarea solo con los campos necesarios
+    db_task = Task(**task.dict())
+    db.add(db_task)
+    db.commit()
+    db.refresh(db_task)
+    return db_task
 
-def update_task(task_id: int, task: TaskUpdate, session: Session):
-    task_to_update = session.query(Task).filter(Task.id == task_id).first()
-    if not task_to_update:
-        raise HTTPException(status_code=404, detail="Task not found")
-    
-    for key, value in task.dict().items():
-        setattr(task_to_update, key, value)
+def update_task(db: Session, task_id: int, task: TaskUpdate):
+    # Actualiza una tarea existente sin cargar relaciones
+    db_task = get_task_by_id(db, task_id)
+    if db_task:
+        for key, value in task.dict(exclude_unset=True).items():
+            setattr(db_task, key, value)
+        db.commit()
+        db.refresh(db_task)
+    return db_task
 
-    session.commit()
-    session.refresh(task_to_update)
-    return task_to_update
-
-def delete_task(task_id: int, session: Session):
-    task_to_delete = session.query(Task).filter(Task.id == task_id).first()
-    if not task_to_delete:
-        raise HTTPException(status_code=404, detail="Task not found")
-
-    session.delete(task_to_delete)
-    session.commit()
-    return {"message": "Task deleted successfully"}
+def delete_task(db: Session, task_id: int):
+    # Elimina una tarea por ID sin cargar relaciones
+    db_task = get_task_by_id(db, task_id)
+    if db_task:
+        db.delete(db_task)
+        db.commit()
+    return db_task

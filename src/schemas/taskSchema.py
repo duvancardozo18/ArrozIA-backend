@@ -1,51 +1,25 @@
 from pydantic import BaseModel
 from datetime import date
+from typing import Optional
 
-# Esquema para crear una tarea
-class TaskCreate(BaseModel):
-    fechaEstimada: date
-    fechaRealizacion: date
-    descripcion: str
-    estadoId: int
-    planeadaAutomaticamente: bool
-    esMecanizable: bool
-    cultivoId: int
-    laborId: int
-    insumoId: int
-    manoObraId: int
+class TaskBase(BaseModel):
+    fecha_estimada: date
+    fecha_realizacion: Optional[date] = None
+    descripcion: Optional[str] = None
+    estado_id: int
+    es_mecanizable: bool
+    cultivo_id: int
+    labor_cultural_id: int
+    insumo_agricola_id: Optional[int] = None
+    usuario_id: int
+    tiempo_hora: Optional[int] = None
+    maquinaria_agricola_id: Optional[int] = None
 
-    class Config:
-        orm_mode = True
+class TaskCreate(TaskBase):
+    pass
 
-# Esquema para actualizar una tarea
-class TaskUpdate(BaseModel):
-    fechaEstimada: date
-    fechaRealizacion: date
-    descripcion: str
-    estadoId: int
-    planeadaAutomaticamente: bool
-    esMecanizable: bool
-    cultivoId: int
-    laborId: int
-    insumoId: int
-    manoObraId: int
+class TaskUpdate(TaskBase):
+    pass
 
-    class Config:
-        orm_mode = True
-
-# Esquema de respuesta
-class TaskResponse(BaseModel):
+class TaskOut(TaskBase):
     id: int
-    fechaEstimada: date
-    fechaRealizacion: date
-    descripcion: str
-    estadoId: int
-    planeadaAutomaticamente: bool
-    esMecanizable: bool
-    cultivoId: int
-    laborId: int
-    insumoId: int
-    manoObraId: int
-
-    class Config:
-        orm_mode = True

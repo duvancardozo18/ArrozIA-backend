@@ -12,4 +12,4 @@ class Diagnostic(Base):
     sincronizado = Column(Boolean, default=False)
 
     # Relación con la tarea
-    task = relationship("Task", back_populates="diagnostics")
+    #task = relationship("Task", back_populates="diagnostics")

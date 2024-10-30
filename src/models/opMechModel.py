@@ -15,5 +15,5 @@ class OpMech(Base):
     hoursUsed = Column('horas_uso', Numeric(5, 2), nullable=False)
 
     # Relaciones
-    task = relationship("Task", back_populates="operationMechanization")
+    #task = relationship("Task", back_populates="operationMechanization")
     machinery = relationship("Machinery", back_populates="operationMechanization")
