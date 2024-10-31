@@ -21,3 +21,4 @@ class Crop(Base):
     # Relaciones
     variety = relationship("VarietyArrozModel", back_populates="crops")
     lotes = relationship("Land", back_populates="crops")
+    tasks = relationship("Task", back_populates="cultivo")  # Nueva relación

@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from src.database.database import get_db
 from src.controller.taskController import (
-    get_all_tasks, get_task_by_id, create_task, update_task, delete_task
+    get_all_tasks, get_task_by_id, create_task, update_task, delete_task, get_tasks_by_crop_id
 )
 from src.schemas.taskSchema import TaskCreate, TaskUpdate, TaskOut
 
@@ -37,3 +37,10 @@ def delete_existing_task(task_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Task not found")
     return db_task
 
+# Nuevo endpoint para obtener tareas asociadas a un cultivo específico
+@TASK_ROUTES.get("/crops/{crop_id}/tasks", response_model=list[TaskOut])
+def get_tasks_for_crop(crop_id: int, db: Session = Depends(get_db)):
+    tasks = get_tasks_by_crop_id(db, crop_id)
+    if not tasks:
+        raise HTTPException(status_code=404, detail="No tasks found for this crop")
+    return tasks

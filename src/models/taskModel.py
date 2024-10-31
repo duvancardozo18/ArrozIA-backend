@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, Date, ForeignKey, Boolean
 from src.database.database import Base
+from sqlalchemy.orm import relationship  #
 
 class Task(Base):
     __tablename__ = "tarea_labor_cultural"
@@ -9,7 +10,7 @@ class Task(Base):
     fecha_realizacion = Column(Date, nullable=True)
     descripcion = Column(String, nullable=True)
     
-    # Declaración de claves foráneas con carga diferida
+    # Claves foráneas
     estado_id = Column(Integer, ForeignKey("estado.id", ondelete="CASCADE"), nullable=False)
     es_mecanizable = Column(Boolean, default=False)
     cultivo_id = Column(Integer, ForeignKey("cultivo.id", ondelete="CASCADE"), nullable=False)
@@ -18,4 +19,8 @@ class Task(Base):
     usuario_id = Column(Integer, ForeignKey("usuario.id", ondelete="CASCADE"), nullable=False)
     tiempo_hora = Column(Integer, nullable=True)
     maquinaria_agricola_id = Column(Integer, ForeignKey("maquinaria_agricola.id", ondelete="SET NULL"), nullable=True)
+
+    # Relación inversa hacia Crop
+    cultivo = relationship("Crop", back_populates="tasks")
+
 
