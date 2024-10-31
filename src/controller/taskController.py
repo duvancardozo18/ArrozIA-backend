@@ -35,3 +35,8 @@ def delete_task(db: Session, task_id: int):
         db.delete(db_task)
         db.commit()
     return db_task
+
+# Nueva función para obtener tareas asociadas a un cultivo específico
+def get_tasks_by_crop_id(db: Session, crop_id: int):
+    # Obtiene todas las tareas relacionadas con un cultivo específico por su ID
+    return db.query(Task).filter(Task.cultivo_id == crop_id).all()
