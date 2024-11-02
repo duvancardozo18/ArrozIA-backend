@@ -1,23 +1,56 @@
 from datetime import date, datetime, timedelta
 from sqlalchemy.orm import Session
+from sqlalchemy import desc
 from fastapi import HTTPException
 from src.models.weatherRecordModel import WeatherRecord
 from src.schemas.weatherRecordSchema import WeatherRecordCreate
+from src.models.landModel import Land
+import requests
+import os
 
-def createWeatherRecord(db: Session, record: WeatherRecordCreate):
-    dbRecord = WeatherRecord(**record.dict())
-    db.add(dbRecord)
+# Función para crear un registro meteorológico desde la API de OpenWeather
+import json  # Importa json para almacenar la respuesta como texto
+
+def createWeatherRecordFromAPI(db: Session, lote_id: int):
+    # Obtener coordenadas del lote desde la base de datos
+    lote = db.query(Land).filter(Land.id == lote_id).first()
+    if not lote:
+        raise HTTPException(status_code=404, detail="Lote no encontrado")
+    
+    # Configuración de la solicitud a OpenWeather
+    api_key = os.getenv("OPENWEATHER_API_KEY")
+    url = f"http://api.openweathermap.org/data/2.5/weather?lat={lote.latitud}&lon={lote.longitud}&appid={api_key}&units=metric"
+    
+    # Realizar la solicitud a OpenWeather
+    response = requests.get(url)
+    if response.status_code != 200:
+        raise HTTPException(status_code=502, detail="Error al obtener datos de OpenWeather")
+    
+    # Extraer los datos relevantes y guardar la respuesta completa
+    data = response.json()
+    weather_record = WeatherRecord(
+        lote_id=lote_id,
+        fecha=date.today(),
+        hora=datetime.now().time(),
+        temperatura=data["main"]["temp"],
+        presion_atmosferica=data["main"]["pressure"],
+        humedad=data["main"]["humidity"],
+        precipitacion=data.get("rain", {}).get("1h", 0.0),
+        indice_ultravioleta=0.0,
+        horas_sol=data["clouds"]["all"],
+        fuente_datos="api",
+        api_respuesta=json.dumps(data)  # Guardar la respuesta completa como JSON
+    )
+
+    # Guardar el registro en la base de datos
+    db.add(weather_record)
     db.commit()
-    db.refresh(dbRecord)
-    return dbRecord
+    db.refresh(weather_record)
+    return weather_record
 
-def fetchWeatherRecord(db: Session, fecha: date, lote_id: int):
-    return db.query(WeatherRecord).filter(
-        WeatherRecord.fecha == fecha,
-        WeatherRecord.lote_id == lote_id
-    ).first()
 
-def fetchWeatherHistory(db: Session, lote_id: int, start_date: str = None, end_date: str = None):
+# Función para obtener el historial meteorológico de un lote con filtros opcionales
+def fetchWeatherHistory(db: Session, lote_id: int, start_date: str = None, end_date: str = None, fuente_datos: str = None):
     # Si no se proporciona start_date, usar un año atrás desde la fecha actual
     if not start_date:
         start_date = (datetime.now() - timedelta(days=365)).date()
@@ -31,17 +64,54 @@ def fetchWeatherHistory(db: Session, lote_id: int, start_date: str = None, end_d
         end_date = datetime.strptime(end_date, "%Y-%m-%d").date()
 
     # Obtener registros en el rango de fechas especificado
-    registros = db.query(WeatherRecord).filter(
+    query = db.query(WeatherRecord).filter(
         WeatherRecord.lote_id == lote_id,
         WeatherRecord.fecha >= start_date,
         WeatherRecord.fecha <= end_date
-    ).all()
+    )
+    
+    # Si se proporciona fuente_datos, filtrar por eso
+    if fuente_datos:
+        query = query.filter(WeatherRecord.fuente_datos == fuente_datos)
+
+    registros = query.all()
 
     if not registros:
         raise HTTPException(status_code=404, detail="No se encontraron registros en el rango de fechas especificado")
 
     return registros
 
+# Función para obtener el detalle de un registro meteorológico específico
+def fetchWeatherRecordDetail(db: Session, id: int):
+    record = db.query(WeatherRecord).filter(WeatherRecord.id == id).first()
+    if not record:
+        raise HTTPException(status_code=404, detail="Registro no encontrado")
+    return record
+
+# Función para crear un registro meteorológico manual
+def createManualWeatherRecord(db: Session, record: WeatherRecordCreate):
+    dbRecord = WeatherRecord(**record.dict(), fuente_datos="manual")
+    db.add(dbRecord)
+    db.commit()
+    db.refresh(dbRecord)
+    return dbRecord
+
+# Función para crear un registro meteorológico general
+def createWeatherRecord(db: Session, record: WeatherRecordCreate):
+    dbRecord = WeatherRecord(**record.dict())
+    db.add(dbRecord)
+    db.commit()
+    db.refresh(dbRecord)
+    return dbRecord
+
+# Función para obtener un registro meteorológico específico por fecha y lote
+def fetchWeatherRecord(db: Session, fecha: date, lote_id: int):
+    return db.query(WeatherRecord).filter(
+        WeatherRecord.fecha == fecha,
+        WeatherRecord.lote_id == lote_id
+    ).first()
+
+# Función para generar recomendaciones meteorológicas basadas en registros de un lote
 def getWeatherRecommendations(db: Session, lote_id: int):
     # Obtener todos los registros meteorológicos del lote especificado
     registros = db.query(WeatherRecord).filter(WeatherRecord.lote_id == lote_id).all()
@@ -62,3 +132,17 @@ def getWeatherRecommendations(db: Session, lote_id: int):
 
     # Retornar la recomendación generada
     return {"recomendacion": recomendacion, "promedio_temperatura": promedio_temperatura}
+
+# Función para actualizar un registro meteorológico específico
+def updateWeatherRecord(db: Session, record_id: int, record_data: WeatherRecordCreate):
+    existing_record = db.query(WeatherRecord).filter(WeatherRecord.id == record_id).first()
+    if not existing_record:
+        raise HTTPException(status_code=404, detail="Registro no encontrado")
+    
+    # Actualizar todos los campos del registro existente
+    for key, value in record_data.dict(exclude_unset=True).items():
+        setattr(existing_record, key, value)
+    
+    db.commit()
+    db.refresh(existing_record)
+    return existing_record
