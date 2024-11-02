@@ -5,7 +5,8 @@ from src.controller.monitoringController import (
     get_monitorings,
     get_monitoring,
     update_monitoring,
-    delete_monitoring
+    delete_monitoring,
+    get_monitorings_by_crop  # Importamos la nueva función
 )
 from src.schemas.monitoringSchema import (
     MonitoringCreate,
@@ -36,3 +37,10 @@ def update_monitoring_route(monitoring_id: int, monitoring: MonitoringUpdate, db
 @MONITORING_ROUTES.delete("/monitoring/{monitoring_id}", status_code=status.HTTP_200_OK)
 def delete_monitoring_route(monitoring_id: int, db: Session = Depends(get_db)):
     return delete_monitoring(db, monitoring_id)
+
+# Ruta para obtener monitoreos específicos de un cultivo mediante `crop_id`
+@MONITORING_ROUTES.get("/monitoring/by_crop/{crop_id}", response_model=list[MonitoringOut])
+def get_monitorings_by_crop_route(crop_id: int, db: Session = Depends(get_db)):
+    return get_monitorings_by_crop(db, crop_id)
+
+
