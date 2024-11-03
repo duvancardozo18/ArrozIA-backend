@@ -1,38 +1,45 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, UploadFile, File, Body
 from sqlalchemy.orm import Session
 from src.controller.soilAnalysisController import (
     create_soil_analysis,
-    get_soil_analysis,
-    get_all_soil_analyses,
+    get_analyses_by_lote,
+    get_analysis_detail,
     update_soil_analysis,
     delete_soil_analysis
 )
+from src.schemas.soilAnalysisSchema import SoilAnalysisCreate, SoilAnalysisOut, SoilAnalysisSimpleOut
 from src.database.database import get_db
-from src.schemas.soilAnalysisSchema import SoilAnalysisCreate, SoilAnalysisUpdate, SoilAnalysisOut
 
 SOIL_ANALYSIS_ROUTES = APIRouter()
 
-# Crear un nuevo análisis edafológico
-@SOIL_ANALYSIS_ROUTES.post("/soil-analyses/", response_model=SoilAnalysisOut)
-def create_soil_analysis_route(analysis: SoilAnalysisCreate, db: Session = Depends(get_db)):
-    return create_soil_analysis(db, analysis)
+@SOIL_ANALYSIS_ROUTES.post("/soil_analysis", response_model=SoilAnalysisSimpleOut, status_code=201)
+def create_soil_analysis_route(
+    soil_data: SoilAnalysisCreate = Body(...),
+    db: Session = Depends(get_db)
+):
+    # Crear el análisis de suelo y obtener el ID
+    analysis = create_soil_analysis(soil_data, db)
+    
+    # Crear la respuesta simplificada con el ID y mensaje
+    response_data = SoilAnalysisSimpleOut(
+        id=analysis.id,
+        message=f"Análisis de suelo creado exitosamente con el id: {analysis.id}"
+    )
+    
+    return response_data
 
-# Obtener un análisis edafológico por ID
-@SOIL_ANALYSIS_ROUTES.get("/soil-analyses/{analysis_id}", response_model=SoilAnalysisOut)
-def get_soil_analysis_route(analysis_id: int, db: Session = Depends(get_db)):
-    return get_soil_analysis(db, analysis_id)
+@SOIL_ANALYSIS_ROUTES.get("/soil_analysis/{lote_id}")
+def get_analyses_by_lote_route(lote_id: int, db: Session = Depends(get_db)):
+    return get_analyses_by_lote(lote_id, db)
 
-# Listar todos los análisis edafológicos
-@SOIL_ANALYSIS_ROUTES.get("/soil-analyses/", response_model=list[SoilAnalysisOut])
-def list_soil_analyses_route(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
-    return get_all_soil_analyses(db, skip, limit)
+@SOIL_ANALYSIS_ROUTES.get("/soil_analysis/{lote_id}/{analysis_id}", response_model=SoilAnalysisOut)
+def get_analysis_detail_route(lote_id: int, analysis_id: int, db: Session = Depends(get_db)):
+    return get_analysis_detail(lote_id, analysis_id, db)
 
-# Actualizar un análisis edafológico
-@SOIL_ANALYSIS_ROUTES.put("/soil-analyses/{analysis_id}", response_model=SoilAnalysisOut)
-def update_soil_analysis_route(analysis_id: int, analysis_update: SoilAnalysisUpdate, db: Session = Depends(get_db)):
-    return update_soil_analysis(db, analysis_id, analysis_update)
+@SOIL_ANALYSIS_ROUTES.put("/soil_analysis/{lote_id}/{analysis_id}")
+def update_soil_analysis_route(lote_id: int, analysis_id: int, soil_data: SoilAnalysisCreate, db: Session = Depends(get_db)):
+    return update_soil_analysis(lote_id, analysis_id, soil_data, db)
 
-# Eliminar un análisis edafológico
-@SOIL_ANALYSIS_ROUTES.delete("/soil-analyses/{analysis_id}")
-def delete_soil_analysis_route(analysis_id: int, db: Session = Depends(get_db)):
-    return delete_soil_analysis(db, analysis_id)
+@SOIL_ANALYSIS_ROUTES.delete("/soil_analysis/{lote_id}/{analysis_id}")
+def delete_soil_analysis_route(lote_id: int, analysis_id: int, db: Session = Depends(get_db)):
+    return delete_soil_analysis(lote_id, analysis_id, db)

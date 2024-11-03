@@ -23,7 +23,7 @@ class Land(Base):
     crops = relationship("Crop", back_populates="lotes") 
 
     # Relación inversa con SoilAnalysis
-    analisis_edafologico = relationship("SoilAnalysis", back_populates="lote")
+    soil_analysis = relationship("SoilAnalysisModel", back_populates="lote")
 
     # Relación inversa con finca
     def __repr__(self):
