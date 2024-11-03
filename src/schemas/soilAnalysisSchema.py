@@ -11,16 +11,18 @@ class BiologicalParamOut(BaseModel):
         "from_attributes": True
     }
 
-# Soil Type Output
+# Soil Type Output with id
 class SoilTypeOut(BaseModel):
+    id: int
     descripcion: str
 
     model_config = {
         "from_attributes": True
     }
 
-# Land Output
+# Land Output with id
 class LandOut(BaseModel):
+    id: int
     nombre: str
 
     model_config = {
@@ -65,7 +67,7 @@ class ChemicalParamOut(BaseModel):
         "from_attributes": True
     }
 
-# Physical Parameter Output
+# Physical Parameter Output with additional fields for texture and color descriptions
 class PhysicalParamOut(BaseModel):
     textura_id: Optional[int] = None
     textura_descripcion: Optional[str] = None
@@ -91,7 +93,7 @@ class SoilAnalysisCreate(BaseModel):
         "from_attributes": True
     }
 
-# Soil Analysis Output
+# Soil Analysis Output with id and detailed fields
 class SoilAnalysisOut(BaseModel):
     id: int
     fecha_analisis: str
@@ -115,7 +117,6 @@ class SoilAnalysisOut(BaseModel):
         if isinstance(fecha_analisis, date):
             values.fecha_analisis = fecha_analisis.strftime("%Y-%m-%d")
         return values
-    
 
 class SoilAnalysisSimpleOut(BaseModel):
     id: int

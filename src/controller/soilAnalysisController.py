@@ -99,7 +99,7 @@ def create_soil_analysis(
     return response_data
 
 def get_analyses_by_lote(lote_id: int, db: Session):
-    # Obtener el nombre del lote
+    # Obtener el lote completo (id y nombre)
     lote = db.query(Land).filter(Land.id == lote_id).first()
     if not lote:
         raise HTTPException(status_code=404, detail="El lote especificado no existe.")
@@ -126,11 +126,9 @@ def get_analyses_by_lote(lote_id: int, db: Session):
         for analysis in analyses
     ]
     
-    return {"lote_name": lote.nombre, "analyses": formatted_analyses}
+    return {"lote_id": lote.id, "lote_name": lote.nombre, "analyses": formatted_analyses}
 
-from sqlalchemy.orm import joinedload
-
-def get_analysis_detail(lote_id: int, analysis_id: int, db: Session):
+def get_analysis_detail(lote_id: int, analysis_id: int, db: Session): 
     analysis = db.query(SoilAnalysisModel).options(
         joinedload(SoilAnalysisModel.soil_type),
         joinedload(SoilAnalysisModel.lote),
@@ -147,8 +145,14 @@ def get_analysis_detail(lote_id: int, analysis_id: int, db: Session):
     result = {
         "id": analysis.id,
         "fecha_analisis": analysis.fecha_analisis.strftime("%Y-%m-%d") if analysis.fecha_analisis else None,
-        "soil_type": {"descripcion": analysis.soil_type.descripcion} if analysis.soil_type else None,
-        "lote": {"nombre": analysis.lote.nombre} if analysis.lote else None,
+        "soil_type": {
+            "id": analysis.soil_type.id,
+            "descripcion": analysis.soil_type.descripcion
+        } if analysis.soil_type else None,
+        "lote": {
+            "id": analysis.lote.id,
+            "nombre": analysis.lote.nombre
+        } if analysis.lote else None,
         "archivo_reporte": analysis.archivo_reporte,
         "parametro_biologico": {
             "biomasa_microbiana": analysis.biological_params.biomasa_microbiana,
