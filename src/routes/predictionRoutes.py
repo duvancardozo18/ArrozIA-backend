@@ -1,6 +1,10 @@
-from fastapi import APIRouter, File, Form, UploadFile
+from fastapi import APIRouter, File, Form, UploadFile, Depends
 
-from src.controller.predictionController import predict_image
+from sqlalchemy.orm import Session
+from typing import List
+from src.database.database import get_db
+from src.controller.predictionController import predict_image,get_diagnostics_by_cultivo, get_diagnostic_detail
+from src.schemas.phytosanitaryDiagnosisSchema import DiagnosticoFitosanitarioOut
 
 PREDICTION_ROUTES = APIRouter()
 
@@ -12,3 +16,11 @@ async def predict(file: UploadFile = File(...), cultivo_id: int = Form(...)):
     # Llamar a la función de predicción en el controlador
     predicted_class = predict_image(image_data, cultivo_id)
     return {"prediction": predicted_class}
+
+@PREDICTION_ROUTES.get("/diagnostics/history/{cultivo_id}", response_model=List[DiagnosticoFitosanitarioOut])
+def read_diagnostics_history(cultivo_id: int, db: Session = Depends(get_db)):
+    return get_diagnostics_by_cultivo(db, cultivo_id)
+
+@PREDICTION_ROUTES.get("/diagnostics/detail/{id}", response_model=DiagnosticoFitosanitarioOut)
+def read_diagnostic_detail(id: int, db: Session = Depends(get_db)):
+    return get_diagnostic_detail(db, id)
