@@ -8,6 +8,8 @@ from PIL import Image
 from timm import create_model
 from torchvision import transforms
 from dotenv import load_dotenv
+from fastapi import HTTPException
+from sqlalchemy.orm import Session, joinedload
 
 from src.database.database import SessionLocal  # Importa la sesión de base de datos
 from src.models.phytosanitaryDiagnosisModel import DiagnosticoFitosanitario  # Importa el modelo
@@ -89,3 +91,27 @@ def predict_image(image_data: bytes, cultivo_id: int):
         db.close()
 
     return diagnostico
+
+def get_diagnostics_by_cultivo(db: Session, cultivo_id: int):
+    # Cargar la relación 'cultivo' para incluir el nombre y id del cultivo
+    diagnostics = (
+        db.query(DiagnosticoFitosanitario)
+        .options(joinedload(DiagnosticoFitosanitario.cultivo))  # Carga la relación 'cultivo'
+        .filter(DiagnosticoFitosanitario.cultivo_id == cultivo_id)
+        .all()
+    )
+    if not diagnostics:
+        raise HTTPException(status_code=404, detail="No se encontraron diagnósticos para este cultivo.")
+    return diagnostics
+
+def get_diagnostic_detail(db: Session, diagnostic_id: int):
+    # Cargar la relación 'cultivo' para el detalle del diagnóstico
+    diagnostic = (
+        db.query(DiagnosticoFitosanitario)
+        .options(joinedload(DiagnosticoFitosanitario.cultivo))  # Carga la relación 'cultivo'
+        .filter(DiagnosticoFitosanitario.id == diagnostic_id)
+        .first()
+    )
+    if diagnostic is None:
+        raise HTTPException(status_code=404, detail="Diagnóstico no encontrado.")
+    return diagnostic

@@ -2,6 +2,8 @@ from sqlalchemy import (Boolean, Column, Date, Float, ForeignKey, Integer,
                         String)
 from sqlalchemy.orm import relationship
 
+from src.models.cropModel import Crop
+
 from src.database.database import \
     Base  # Asegúrate de importar tu base correctamente
 
@@ -20,5 +22,5 @@ class DiagnosticoFitosanitario(Base):
     exportado = Column(Boolean, default=False)
     comparacion_diagnostico = Column(String, nullable=True)
 
-    # Relación con la tabla 'cultivo', si es necesario
-    #crop = relationship("Crop", back_populates="diagnostics")
+    # Relación con el modelo Crop para obtener datos del cultivo
+    cultivo = relationship("Crop", back_populates="diagnosticos")
