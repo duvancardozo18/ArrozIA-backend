@@ -33,3 +33,13 @@ class UserFarmRoleUpdate(BaseModel):
 
 
 
+class AssignFarmRequest(BaseModel):
+    farm_id: int
+
+class FarmSchema(BaseModel):
+    id: int
+    nombre: str
+    # Agrega otros campos de la finca si los necesitas
+
+    class Config:
+        orm_mode = True

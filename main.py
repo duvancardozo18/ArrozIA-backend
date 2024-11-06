@@ -35,6 +35,7 @@ from src.routes.diagnosticRoutes import DIAGNOSTIC_ROUTES
 from src.routes.monitoringRoutes import MONITORING_ROUTES
 from src.routes.phenologicalStageRoutes import PHENOLOGICAL_STAGE_ROUTES
 from src.routes.varietyRiceStageRoutes import VARIETY_RICE_STAGE_ROUTES
+from src.routes.farmCropRoutes import FARM_CROP_ROUTES
 
 # Inicializar la aplicación FastAPI
 app = FastAPI()
@@ -88,6 +89,7 @@ app.include_router(DIAGNOSTIC_ROUTES)
 app.include_router(MONITORING_ROUTES)
 app.include_router(PHENOLOGICAL_STAGE_ROUTES)
 app.include_router(VARIETY_RICE_STAGE_ROUTES)  # Ruta sin prefijo adicional
+app.include_router(FARM_CROP_ROUTES)
 
 # Ruta raíz
 @app.get("/")
