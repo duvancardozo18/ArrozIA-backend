@@ -28,6 +28,24 @@ def create_soil_analysis(
     if not soil_type_existente:
         raise HTTPException(status_code=400, detail="El tipo de suelo especificado no existe.")
 
+# def create_soil_analysis(
+#     soil_data: SoilAnalysisCreate,
+#     db: Session,
+#     archivo_reporte: UploadFile = None
+# ) -> SoilAnalysisSimpleOut:
+#     # Buscar lote por nombre
+#     lote_existente = db.query(Land).filter(Land.nombre == soil_data.lote_nombre).first()
+#     if not lote_existente:
+#         raise HTTPException(status_code=400, detail="El lote especificado no existe.")
+    
+#     # Asigna el lote_id encontrado
+#     soil_data.lote_id = lote_existente.id
+    
+#     # Validar que el tipo de suelo especificado en soil_data existe
+#     soil_type_existente = db.query(SoilTypeModel).filter(SoilTypeModel.id == soil_data.tipo_suelo_id).first()
+#     if not soil_type_existente:
+#         raise HTTPException(status_code=400, detail="El tipo de suelo especificado no existe.")
+
     # Validar que textura_id especificado en soil_data existe si se proporciona
     if soil_data.parametro_fisico and soil_data.parametro_fisico.textura_id is not None:
         textura_existente = db.query(TextureModel).filter(TextureModel.id == soil_data.parametro_fisico.textura_id).first()
@@ -109,11 +127,8 @@ def get_analyses_by_lote(lote_id: int, db: Session):
         joinedload(SoilAnalysisModel.soil_type),
         joinedload(SoilAnalysisModel.chemical_params)
     ).filter(SoilAnalysisModel.lote_id == lote_id).all()
-
-    if not analyses:
-        raise HTTPException(status_code=404, detail="No existen análisis para el lote especificado.")
     
-    # Formatear la respuesta para incluir los campos adicionales
+    # Formatear la respuesta para incluir los campos adicionales o devolver lista vacía si no hay análisis
     formatted_analyses = [
         {
             "id": analysis.id,
@@ -128,6 +143,33 @@ def get_analyses_by_lote(lote_id: int, db: Session):
     
     return {"lote_id": lote.id, "lote_name": lote.nombre, "analyses": formatted_analyses}
 
+# def get_analyses_by_lote(lote_nombre: str, db: Session):
+#     # Obtener el lote completo (id y nombre) usando el nombre
+#     lote_nombre = str(lote_nombre)
+#     lote = db.query(Land).filter(Land.nombre == lote_nombre).first()
+#     if not lote:
+#         raise HTTPException(status_code=404, detail="El lote especificado no existe.")
+    
+#     # Obtener todos los análisis del lote
+#     analyses = db.query(SoilAnalysisModel).options(
+#         joinedload(SoilAnalysisModel.soil_type),
+#         joinedload(SoilAnalysisModel.chemical_params)
+#     ).filter(SoilAnalysisModel.lote_id == lote.id).all()
+    
+#     formatted_analyses = [
+#         {
+#             "id": analysis.id,
+#             "tipo_suelo_id": analysis.tipo_suelo_id,
+#             "tipo_suelo_descripcion": analysis.soil_type.descripcion if analysis.soil_type else None,
+#             "fecha_analisis": analysis.fecha_analisis.strftime("%Y-%m-%d") if analysis.fecha_analisis else None,
+#             "ph": analysis.chemical_params.ph if analysis.chemical_params else None,
+#             "materia_organica": analysis.chemical_params.materia_organica if analysis.chemical_params else None
+#         }
+#         for analysis in analyses
+#     ]
+    
+#     return {"lote_name": lote.nombre, "analyses": formatted_analyses}
+
 def get_analysis_detail(lote_id: int, analysis_id: int, db: Session): 
     analysis = db.query(SoilAnalysisModel).options(
         joinedload(SoilAnalysisModel.soil_type),
@@ -141,6 +183,24 @@ def get_analysis_detail(lote_id: int, analysis_id: int, db: Session):
 
     if not analysis:
         raise HTTPException(status_code=404, detail="Análisis no encontrado para el lote especificado.")
+
+# def get_analysis_detail(lote_nombre: str, analysis_id: int, db: Session): 
+#     lote = db.query(Land).filter(Land.nombre == lote_nombre).first()
+#     if not lote:
+#         raise HTTPException(status_code=404, detail="El lote especificado no existe.")
+    
+#     analysis = db.query(SoilAnalysisModel).options(
+#         joinedload(SoilAnalysisModel.soil_type),
+#         joinedload(SoilAnalysisModel.lote),
+#         joinedload(SoilAnalysisModel.biological_params),
+#         joinedload(SoilAnalysisModel.chemical_params).joinedload(ChemicalParamModel.macronutrients),
+#         joinedload(SoilAnalysisModel.chemical_params).joinedload(ChemicalParamModel.micronutrients),
+#         joinedload(SoilAnalysisModel.physical_params).joinedload(PhysicalParamModel.texture),
+#         joinedload(SoilAnalysisModel.physical_params).joinedload(PhysicalParamModel.color)
+#     ).filter_by(id=analysis_id, lote_id=lote.id).first()
+    
+#     if not analysis:
+#         raise HTTPException(status_code=404, detail="Análisis no encontrado para el lote especificado.")
 
     result = {
         "id": analysis.id,
@@ -271,3 +331,21 @@ def delete_soil_analysis(lote_id: int, analysis_id: int, db: Session):
     db.commit()
     
     return {"message": "Análisis y parámetros relacionados eliminados correctamente"}
+
+# Example function to get soil types
+def get_soil_types(db: Session):
+    soil_types = db.query(SoilTypeModel).all()
+    print("Fetched soil types from database:", soil_types)  # Log data
+    return soil_types
+
+def get_textures(db: Session):
+    # Directly query the TextureModel table
+    textures = db.query(TextureModel).all()
+    print("Fetched textures:", textures)
+    return textures
+
+def get_colors(db: Session):
+    # Directly query the ColorModel table
+    colors = db.query(ColorModel).all()
+    print("Fetched colors:", colors)
+    return colors
