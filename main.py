@@ -55,7 +55,7 @@ print("Orígenes permitidos para CORS:", allow_origins)
 # Configuración del middleware de CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Permite solicitudes desde cualquier origen
+    allow_origins=["http://localhost:5173"],  # Permite solicitudes desde cualquier origen
     # allow_origins=allow_origins,  # Utilizar `allow_origins` si deseas configurarlo desde el .env
     allow_credentials=True,
     allow_methods=["*"],  # Permite todos los métodos HTTP (GET, POST, etc.)
