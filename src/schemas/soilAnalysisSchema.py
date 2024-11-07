@@ -20,6 +20,15 @@ class SoilTypeOut(BaseModel):
         "from_attributes": True
     }
 
+class TextureOut(BaseModel):
+    id: int
+    descripcion: str
+
+# Define Color output schema
+class ColorOut(BaseModel):
+    id: int
+    descripcion: str
+
 # Land Output with id
 class LandOut(BaseModel):
     id: int

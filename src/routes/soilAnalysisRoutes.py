@@ -5,9 +5,12 @@ from src.controller.soilAnalysisController import (
     get_analyses_by_lote,
     get_analysis_detail,
     update_soil_analysis,
-    delete_soil_analysis
+    delete_soil_analysis,
+    get_soil_types,
+    get_textures,
+    get_colors
 )
-from src.schemas.soilAnalysisSchema import SoilAnalysisCreate, SoilAnalysisOut, SoilAnalysisSimpleOut
+from src.schemas.soilAnalysisSchema import SoilAnalysisCreate, SoilAnalysisOut, SoilAnalysisSimpleOut, SoilTypeOut, TextureOut, ColorOut, PhysicalParamOut
 from src.database.database import get_db
 
 SOIL_ANALYSIS_ROUTES = APIRouter()
@@ -43,3 +46,18 @@ def update_soil_analysis_route(lote_id: int, analysis_id: int, soil_data: SoilAn
 @SOIL_ANALYSIS_ROUTES.delete("/soil_analysis/{lote_id}/{analysis_id}")
 def delete_soil_analysis_route(lote_id: int, analysis_id: int, db: Session = Depends(get_db)):
     return delete_soil_analysis(lote_id, analysis_id, db)
+
+
+@SOIL_ANALYSIS_ROUTES.get("/soil_types", response_model=list[SoilTypeOut])
+def get_soil_types_route(db: Session = Depends(get_db)):
+    soil_types = get_soil_types(db)
+    print("Response for /soil_types route:", soil_types)  # Log response
+    return soil_types
+
+@SOIL_ANALYSIS_ROUTES.get("/textures", response_model=list[TextureOut])
+def get_textures_route(db: Session = Depends(get_db)):
+    return get_textures(db)
+
+@SOIL_ANALYSIS_ROUTES.get("/colors", response_model=list[ColorOut])
+def get_colors_route(db: Session = Depends(get_db)):
+    return get_colors(db)
