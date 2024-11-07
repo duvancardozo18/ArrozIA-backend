@@ -2,7 +2,6 @@ import io
 import json
 import os
 from datetime import date
-
 import torch
 from PIL import Image
 from timm import create_model
@@ -10,7 +9,7 @@ from torchvision import transforms
 from dotenv import load_dotenv
 from fastapi import HTTPException
 from sqlalchemy.orm import Session, joinedload
-
+from datetime import datetime
 from src.database.database import SessionLocal  # Importa la sesión de base de datos
 from src.models.phytosanitaryDiagnosisModel import DiagnosticoFitosanitario  # Importa el modelo
 
@@ -70,17 +69,23 @@ def predict_image(image_data: bytes, cultivo_id: int):
         _, predicted = torch.max(output, 1)
     predicted_class = classes[predicted.item()]
 
+    # Guardar la imagen en el servidor
+    image_filename = f"{os.urandom(16).hex()}.jpg"
+    image_path = os.path.join("src", "images", image_filename)
+    with open(image_path, "wb") as img_file:
+        img_file.write(image_data)
+
     # Guardar el diagnóstico en la base de datos
     db = SessionLocal()
     try:
         diagnostico = DiagnosticoFitosanitario(
             resultado_ia=json.dumps(predicted_class),
-            ruta="ruta/del/archivo",  # Reemplaza esto con la ruta real del archivo si la tienes
+            ruta=image_path,  # Guardar la ruta real de la imagen
             cultivo_id=cultivo_id,
             fecha_diagnostico=date.today(),
             confianza_promedio=output[0, predicted.item()].item(),
             tipo_problema=predicted_class,
-            imagenes_analizadas=json.dumps(1),  # Ajusta según el número de imágenes analizadas
+            imagenes_analizadas=json.dumps(1),  # JSON válido (cambiar int a JSON)
             exportado=False,
             comparacion_diagnostico=None
         )
@@ -92,17 +97,40 @@ def predict_image(image_data: bytes, cultivo_id: int):
 
     return diagnostico
 
-def get_diagnostics_by_cultivo(db: Session, cultivo_id: int):
-    # Cargar la relación 'cultivo' para incluir el nombre y id del cultivo
-    diagnostics = (
-        db.query(DiagnosticoFitosanitario)
-        .options(joinedload(DiagnosticoFitosanitario.cultivo))  # Carga la relación 'cultivo'
-        .filter(DiagnosticoFitosanitario.cultivo_id == cultivo_id)
-        .all()
-    )
+
+
+def get_diagnostics_by_cultivo(db: Session, cultivo_id: int, start_date: datetime = None, end_date: datetime = None):
+    # Log para depuración
+    print(f"cultivo_id: {cultivo_id}, start_date: {start_date}, end_date: {end_date}")
+
+    query = db.query(DiagnosticoFitosanitario).filter(DiagnosticoFitosanitario.cultivo_id == cultivo_id)
+
+    if start_date:
+        if isinstance(start_date, str):
+            try:
+                start_date = datetime.strptime(start_date, "%Y-%m-%d")
+            except ValueError:
+                raise HTTPException(status_code=400, detail="Formato de fecha no válido para start_date")
+        query = query.filter(DiagnosticoFitosanitario.fecha_diagnostico >= start_date)
+
+    if end_date:
+        if isinstance(end_date, str):
+            try:
+                end_date = datetime.strptime(end_date, "%Y-%m-%d")
+            except ValueError:
+                raise HTTPException(status_code=400, detail="Formato de fecha no válido para end_date")
+        query = query.filter(DiagnosticoFitosanitario.fecha_diagnostico <= end_date)
+
+    diagnostics = query.all()
+
+    # Log para depuración de los resultados
+    print(f"diagnostics encontrados: {len(diagnostics)}")
+
     if not diagnostics:
-        raise HTTPException(status_code=404, detail="No se encontraron diagnósticos para este cultivo.")
+        raise HTTPException(status_code=404, detail="No se encontraron diagnósticos para este cultivo en el rango de fechas especificado.")
+
     return diagnostics
+
 
 def get_diagnostic_detail(db: Session, diagnostic_id: int):
     # Cargar la relación 'cultivo' para el detalle del diagnóstico
