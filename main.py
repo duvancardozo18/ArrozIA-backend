@@ -9,6 +9,7 @@ from src.models.estadoModel import Estado
 from src.models.taskModel import Task
 
 # Importar todas las rutas
+from src.routes.variableCostRoutes import VARIABLE_COST_ROUTES
 from src.routes.weatherRecordRoute import WEATHER_RECORD_ROUTES
 from src.routes.laborCulturalRoutes import LABOR_CULTURAL_ROUTES
 from src.routes.cropCycleRoutes import CROP_CYCLE_ROUTES
@@ -36,7 +37,7 @@ from src.routes.phenologicalStageRoutes import PHENOLOGICAL_STAGE_ROUTES
 from src.routes.varietyRiceStageRoutes import VARIETY_RICE_STAGE_ROUTES
 from src.routes.farmCropRoutes import FARM_CROP_ROUTES
 from src.routes.predictionRoutes import PREDICTION_ROUTES
-
+from src.routes.financialRoutes import FINANCIAL_ROUTES
 # Inicializar la aplicación FastAPI
 app = FastAPI()
 
@@ -90,6 +91,8 @@ app.include_router(PHENOLOGICAL_STAGE_ROUTES)
 app.include_router(VARIETY_RICE_STAGE_ROUTES)  
 app.include_router(FARM_CROP_ROUTES)
 app.include_router(PREDICTION_ROUTES)
+app.include_router(FINANCIAL_ROUTES)
+app.include_router(VARIABLE_COST_ROUTES)
 
 
 
