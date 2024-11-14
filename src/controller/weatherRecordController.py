@@ -1,4 +1,4 @@
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, time
 from sqlalchemy.orm import Session
 from sqlalchemy import desc
 from fastapi import HTTPException
@@ -7,10 +7,9 @@ from src.schemas.weatherRecordSchema import WeatherRecordCreate
 from src.models.landModel import Land
 import requests
 import os
-
-# Función para crear un registro meteorológico desde la API de OpenWeather
 import json  # Importa json para almacenar la respuesta como texto
 
+# Función para crear un registro meteorológico desde la API de OpenWeather
 def createWeatherRecordFromAPI(db: Session, lote_id: int):
     # Obtener coordenadas del lote desde la base de datos
     lote = db.query(Land).filter(Land.id == lote_id).first()
@@ -31,7 +30,7 @@ def createWeatherRecordFromAPI(db: Session, lote_id: int):
     weather_record = WeatherRecord(
         lote_id=lote_id,
         fecha=date.today(),
-        hora=datetime.now().time(),
+        hora=datetime.now().time() if datetime.now().time() else time(0, 0),  # Hora predeterminada si no está presente
         temperatura=data["main"]["temp"],
         presion_atmosferica=data["main"]["pressure"],
         humedad=data["main"]["humidity"],
@@ -75,6 +74,11 @@ def fetchWeatherHistory(db: Session, lote_id: int, start_date: str = None, end_d
         query = query.filter(WeatherRecord.fuente_datos == fuente_datos)
 
     registros = query.all()
+
+    # Asignar una hora predeterminada (00:00:00) a los registros donde `hora` es None
+    for record in registros:
+        if record.hora is None:
+            record.hora = time(0, 0)
 
     if not registros:
         raise HTTPException(status_code=404, detail="No se encontraron registros en el rango de fechas especificado")

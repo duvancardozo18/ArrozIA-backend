@@ -20,14 +20,14 @@ class WeatherRecordResponse(BaseModel):
     id: int
     lote_id: int
     fecha: date
-    hora: time
+    hora: Optional[time]  # Cambiado a Optional para aceptar None
     temperatura: float
     presion_atmosferica: float
     humedad: float
     precipitacion: Optional[float] = None
     indice_ultravioleta: float
     horas_sol: float
-    fuente_datos: Optional[str]  # Ahora acepta None
+    fuente_datos: Optional[str]  # Acepta None
     api_respuesta: Optional[Union[dict, Any]] = None  # Para el campo JSON
 
     class Config:

@@ -11,7 +11,7 @@ from src.controller.weatherRecordController import (
     fetchWeatherHistory,
     createManualWeatherRecord,
     createWeatherRecordFromAPI,
-    fetchWeatherRecordDetail   # Nueva función para obtener detalles específicos
+    fetchWeatherRecordDetail
 )
 
 WEATHER_RECORD_ROUTES = APIRouter()
@@ -71,7 +71,7 @@ def updateWeatherRecord(
         raise HTTPException(status_code=404, detail="Registro no encontrado")
 
     # Actualizar los campos del registro existente
-    for key, value in record.dict().items():
+    for key, value in record.dict(exclude_unset=True).items():
         setattr(existing_record, key, value)
 
     # Asignar valor por defecto a 'fuente_datos' si está vacío

@@ -7,7 +7,7 @@ class WeatherRecord(Base):
     id = Column(Integer, primary_key=True, index=True)
     lote_id = Column(Integer, ForeignKey('lote.id'), nullable=False)
     fecha = Column(Date, nullable=False)
-    hora = Column(Time, nullable=False)  # Agregar el campo hora
+    hora = Column(Time, nullable=True)  # Cambiado a nullable=True para permitir None
     temperatura = Column(Float, nullable=False)
     presion_atmosferica = Column(Float, nullable=False)
     humedad = Column(Float, nullable=False)
