@@ -1,5 +1,5 @@
 from fastapi import Depends, HTTPException, status
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from src.database.database import get_session
 from src.models.agriculturalInputModel import AgriculturalInput, UnidadInsumo
 from src.schemas.agriculturalInputSchema import (AgriculturalInputCreate, AgriculturalInputUpdate)
@@ -19,7 +19,8 @@ def createInput(insumo: AgriculturalInputCreate, session: Session = Depends(get_
     return {"msg": "Insumo agrícola creado satisfactoriamente", "newInsumo": newInsumo}
 
 def getAllInput(session: Session = Depends(get_session)):
-    insumos = session.query(AgriculturalInput).all()
+    # Usar joinedload para cargar la relación `unidad`
+    insumos = session.query(AgriculturalInput).options(joinedload(AgriculturalInput.unidad)).all()
     return insumos
 
 def getInputById(insumo_id: int, session: Session = Depends(get_session)):

@@ -6,7 +6,13 @@ from src.database.database import get_db
 
 # Crear una nueva labor cultural
 def create_labor_cultural(labor: LaborCulturalCreate, db: Session = Depends(get_db)):
-    db_labor = LaborCultural(nombre=labor.nombre, descripcion=labor.descripcion)
+    db_labor = LaborCultural(
+        nombre=labor.nombre,
+        descripcion=labor.descripcion,
+        precio_hora_real=labor.precio_hora_real,
+        precio_hora_estimado=labor.precio_hora_estimado,
+        id_etapa_fenologica=labor.id_etapa_fenologica
+    )
     db.add(db_labor)
     db.commit()
     db.refresh(db_labor)
@@ -23,6 +29,9 @@ def update_labor_cultural(labor_id: int, labor: LaborCulturalUpdate, db: Session
         raise HTTPException(status_code=404, detail="Labor Cultural no encontrada")
     db_labor.nombre = labor.nombre
     db_labor.descripcion = labor.descripcion
+    db_labor.precio_hora_real = labor.precio_hora_real
+    db_labor.precio_hora_estimado = labor.precio_hora_estimado
+    db_labor.id_etapa_fenologica = labor.id_etapa_fenologica
     db.commit()
     db.refresh(db_labor)
     return db_labor

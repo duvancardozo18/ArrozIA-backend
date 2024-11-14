@@ -7,7 +7,7 @@ class UnidadInsumoSchema(BaseModel):
     nombre: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # Esquema de AgriculturalInput
 class AgriculturalInputBase(BaseModel):
@@ -21,10 +21,10 @@ class AgriculturalInputCreate(AgriculturalInputBase):
 
 class AgriculturalInput(AgriculturalInputBase):
     id: int
-    unidad: UnidadInsumoSchema  # Cambiado a objeto para incluir el nombre de la unidad
+    unidad: Optional[UnidadInsumoSchema] = None  # Permitir que unidad sea None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class AgriculturalInputUpdate(BaseModel):
     nombre: Optional[str] = None
@@ -34,4 +34,4 @@ class AgriculturalInputUpdate(BaseModel):
     cantidad: Optional[float] = None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
