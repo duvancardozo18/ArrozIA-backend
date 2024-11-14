@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, validator
 class FarmSchema(BaseModel):
     id: Optional[int] = Field(None, description="ID de la finca")
     nombre: str
-    ubicacion: str
+    ubicacion: Optional[str] = None
     area_total: float
     latitud: Optional[Union[float, Decimal]] = None
     longitud: Optional[Union[float, Decimal]] = None

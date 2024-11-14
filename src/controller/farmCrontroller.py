@@ -1,17 +1,18 @@
 from fastapi import Depends, HTTPException, status
 from sqlalchemy.orm import Session
-
 from src.database.database import get_session
 from src.models.farmModel import Farm
 from src.schemas.farmSchema import FarmSchema, UpdateFarmSchema
 
 def createFarm(farm: FarmSchema, session: Session = Depends(get_session)):
     print(f"Datos recibidos: {farm}")
+    
     # Validación de los campos de texto
     if not farm.nombre.strip():
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Farm name cannot be empty or only spaces.")
     
-    if not farm.ubicacion.strip():
+    # Verificar si ubicacion no es None antes de usar .strip()
+    if farm.ubicacion and not farm.ubicacion.strip():  # Si ubicacion existe y es vacía o tiene solo espacios
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Location cannot be empty or only spaces.")
     
     # Validación del largo de nombre y ubicación
@@ -21,7 +22,7 @@ def createFarm(farm: FarmSchema, session: Session = Depends(get_session)):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Location must be at most 100 characters.")
     
     # Validación de que los campos de texto no contengan caracteres especiales
-    if not farm.ubicacion.replace(" ", "").isalpha():
+    if farm.ubicacion and not farm.ubicacion.replace(" ", "").isalpha():
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Farm location must only contain letters."
