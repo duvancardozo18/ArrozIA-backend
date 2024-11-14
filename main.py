@@ -37,8 +37,10 @@ from src.routes.phenologicalStageRoutes import PHENOLOGICAL_STAGE_ROUTES
 from src.routes.varietyRiceStageRoutes import VARIETY_RICE_STAGE_ROUTES
 from src.routes.farmCropRoutes import FARM_CROP_ROUTES
 from src.routes.predictionRoutes import PREDICTION_ROUTES
+from src.routes.userLoteRoutes import USER_LOT_ROUTES
 from src.routes.financialRoutes import FINANCIAL_ROUTES
 from src.routes.cities_Router import router as cities_router
+
 
 # Inicializar la aplicación FastAPI
 app = FastAPI()
@@ -93,9 +95,11 @@ app.include_router(PHENOLOGICAL_STAGE_ROUTES)
 app.include_router(VARIETY_RICE_STAGE_ROUTES)  
 app.include_router(FARM_CROP_ROUTES)
 app.include_router(PREDICTION_ROUTES)
+app.include_router(USER_LOT_ROUTES)
 app.include_router(FINANCIAL_ROUTES)
 app.include_router(VARIABLE_COST_ROUTES)
 app.include_router(cities_router, prefix="/api")
+
 
 
 
