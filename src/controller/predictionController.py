@@ -1,26 +1,29 @@
 import io
 import json
 import os
-from datetime import date
+from datetime import date, datetime
+
 import torch
-from PIL import Image
-from timm import create_model
-from torchvision import transforms
 from dotenv import load_dotenv
 from fastapi import HTTPException
+from PIL import Image
 from sqlalchemy.orm import Session, joinedload
-from datetime import datetime
-from src.database.database import SessionLocal  # Importa la sesión de base de datos
-from src.models.phytosanitaryDiagnosisModel import DiagnosticoFitosanitario  # Importa el modelo
+from timm import create_model
+from torchvision import transforms
+
+from src.database.database import \
+    SessionLocal  # Importa la sesión de base de datos
+from src.models.phytosanitaryDiagnosisModel import \
+    DiagnosticoFitosanitario  # Importa el modelo
 
 # Cargar variables de entorno
-load_dotenv()
-
+#load_dotenv()
+model_path = os.path.join("src", "models", "swin_transformer_v2.pth")
 # Configuración del dispositivo
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Cargar la ruta del modelo desde el archivo .env
-model_path = os.getenv("SWIN_MODEL_PATH")
+#model_path = os.getenv("SWIN_MODEL_PATH")
 
 # Verificar si la ruta existe
 if not model_path or not os.path.exists(model_path):
