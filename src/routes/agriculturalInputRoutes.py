@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from src.controller.agricultralInputController import (
-    createInput, deleteInput, getAllInput, getInputById, updateInput, get_all_units
+    createInput, deleteInput, getAllInput, getInputById, updateInput, get_all_units, get_all_input_types
 )
 from src.database.database import get_session
 from src.schemas.agriculturalInputSchema import (
@@ -36,3 +36,8 @@ def delete_input_route(input_id: int, session: Session = Depends(get_session)):
 @AGRICULTURAL_INPUT_ROUTES.get('/units', response_model=list[UnidadInsumoSchema])
 def list_units(session: Session = Depends(get_session)):
     return get_all_units(session)
+
+# Ruta para obtener todos los tipos de insumo
+@AGRICULTURAL_INPUT_ROUTES.get('/input-types')
+def list_input_types(session: Session = Depends(get_session)):
+    return get_all_input_types(session)
