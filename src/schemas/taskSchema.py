@@ -12,7 +12,7 @@ class TaskBase(BaseModel):
     labor_cultural_id: int
     insumo_agricola_id: Optional[int] = None
     usuario_id: int
-    tiempo_hora: Optional[int] = None
+    cantidad_insumo: Optional[int] = None
     maquinaria_agricola_id: Optional[int] = None
 
 class TaskCreate(TaskBase):
@@ -28,7 +28,7 @@ class TaskUpdate(BaseModel):
     labor_cultural_id: Optional[int] = None
     insumo_agricola_id: Optional[int] = None
     usuario_id: Optional[int] = None
-    tiempo_hora: Optional[int] = None
+    cantidad_insumo: Optional[int] = None
     maquinaria_agricola_id: Optional[int] = None
 
 class TaskOut(TaskBase):

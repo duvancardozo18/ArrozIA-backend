@@ -40,7 +40,9 @@ from src.routes.predictionRoutes import PREDICTION_ROUTES
 from src.routes.userLoteRoutes import USER_LOT_ROUTES
 from src.routes.financialRoutes import FINANCIAL_ROUTES
 from src.routes.cities_Router import router as cities_router
+from src.routes import preciosinsumoRoutes
 from src.routes.harvestRoute import HARVEST_ROUTES
+
 
 # Inicializar la aplicación FastAPI
 app = FastAPI()
@@ -99,7 +101,9 @@ app.include_router(USER_LOT_ROUTES)
 app.include_router(FINANCIAL_ROUTES)
 app.include_router(VARIABLE_COST_ROUTES)
 app.include_router(cities_router, prefix="/api")
+app.include_router(preciosinsumoRoutes.router, prefix="/api", tags=["Precios Insumo"])
 app.include_router(HARVEST_ROUTES)
+
 
 
 
