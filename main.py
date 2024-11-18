@@ -40,7 +40,8 @@ from src.routes.predictionRoutes import PREDICTION_ROUTES
 from src.routes.userLoteRoutes import USER_LOT_ROUTES
 from src.routes.financialRoutes import FINANCIAL_ROUTES
 from src.routes.cities_Router import router as cities_router
-from src.routes import preciosinsumoRoutes
+from src.routes.preciosinsumoRoutes import router as preciosinsumo_router  # Ajustado
+from src.routes.culturalWorkRoutes import router as cultural_work_router  # Nueva ruta
 
 # Inicializar la aplicación FastAPI
 app = FastAPI()
@@ -92,16 +93,15 @@ app.include_router(WEATHER_RECORD_ROUTES)
 app.include_router(SOIL_ANALYSIS_ROUTES)
 app.include_router(MONITORING_ROUTES)
 app.include_router(PHENOLOGICAL_STAGE_ROUTES)
-app.include_router(VARIETY_RICE_STAGE_ROUTES)  
+app.include_router(VARIETY_RICE_STAGE_ROUTES)
 app.include_router(FARM_CROP_ROUTES)
 app.include_router(PREDICTION_ROUTES)
 app.include_router(USER_LOT_ROUTES)
 app.include_router(FINANCIAL_ROUTES)
 app.include_router(VARIABLE_COST_ROUTES)
-app.include_router(cities_router, prefix="/api")
-app.include_router(preciosinsumoRoutes.router, prefix="/api", tags=["Precios Insumo"])
-
-
+app.include_router(cities_router)
+app.include_router(preciosinsumo_router, tags=["Precios Insumo"])  # Quitado el prefijo
+app.include_router(cultural_work_router, tags=["Cultural Works"])  # Nueva ruta incluida
 
 # Ruta raíz
 @app.get("/")
