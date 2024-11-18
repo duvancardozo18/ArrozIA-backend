@@ -13,3 +13,6 @@ class Machinery(Base):
 
     # Relación con OpMech
     operationMechanization = relationship("OpMech", back_populates="machinery")
+
+    # Relación inversa con Task
+    tasks = relationship("Task", back_populates="maquinaria_agricola")

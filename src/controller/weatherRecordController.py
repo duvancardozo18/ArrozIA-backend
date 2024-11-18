@@ -46,7 +46,7 @@ def createWeatherRecordFromAPI(db: Session, lote_id: int):
     weather_record = WeatherRecord(
         lote_id=lote_id,
         fecha=date.today(),
-        hora=datetime.now().time(),
+        hora=datetime.now().time() if datetime.now().time() else time(0, 0),  # Hora predeterminada si no está presente
         temperatura=data["main"]["temp"],
         presion_atmosferica=data["main"]["pressure"],
         humedad=data["main"]["humidity"],
@@ -92,6 +92,7 @@ def fetchWeatherHistory(db: Session, lote_id: int, start_date: str = None, end_d
         query = query.filter(WeatherRecord.fuente_datos == fuente_datos)
 
     registros = query.all()
+
 
     # Asignar una hora predeterminada (00:00:00) a los registros donde hora es None
     for record in registros:

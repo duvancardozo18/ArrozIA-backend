@@ -7,9 +7,17 @@ class UnidadInsumoSchema(BaseModel):
     nombre: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
-# Esquema de AgriculturalInput
+# Esquema de TipoInsumo
+class TipoInsumoSchema(BaseModel):
+    id: int
+    nombre: str
+
+    class Config:
+        from_attributes = True
+
+# Esquema base de AgriculturalInput
 class AgriculturalInputBase(BaseModel):
     nombre: str
     descripcion: Optional[str] = None
@@ -18,20 +26,23 @@ class AgriculturalInputBase(BaseModel):
 
 class AgriculturalInputCreate(AgriculturalInputBase):
     unidad_id: int  # unidad_id se usa solo en la creación
+    tipo_insumo_id: int  # tipo_insumo_id también se usa solo en la creación
 
 class AgriculturalInput(AgriculturalInputBase):
     id: int
-    unidad: UnidadInsumoSchema  # Cambiado a objeto para incluir el nombre de la unidad
+    unidad: Optional[UnidadInsumoSchema] = None  # Permitir que unidad sea None
+    tipo_insumo: Optional[TipoInsumoSchema] = None  # Permitir que tipo_insumo sea None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class AgriculturalInputUpdate(BaseModel):
     nombre: Optional[str] = None
     descripcion: Optional[str] = None
     unidad_id: Optional[int] = None
+    tipo_insumo_id: Optional[int] = None
     costo_unitario: Optional[float] = None
     cantidad: Optional[float] = None
 
     class Config:
-        orm_mode = True
+        from_attributes = True

@@ -6,10 +6,15 @@ from pydantic import BaseModel, Field, validator
 class FarmSchema(BaseModel):
     id: Optional[int] = Field(None, description="ID de la finca")
     nombre: str
-    ubicacion: str
+    ubicacion: Optional[str] = None
     area_total: float
     latitud: Optional[Union[float, Decimal]] = None
     longitud: Optional[Union[float, Decimal]] = None
+    ciudad: Optional[str] = None
+    departamento: Optional[str] = None
+    pais: Optional[str] = None
+    slug: Optional[str] = None  # Agregar este campo
+
 
     @validator('area_total', pre=True, always=True)
     def validate_area_total(cls, value):
@@ -58,6 +63,9 @@ class UpdateFarmSchema(BaseModel):
     area_total: Optional[float] = None
     latitud: Optional[Union[float, Decimal]] = None
     longitud: Optional[Union[float, Decimal]] = None
+    ciudad: Optional[str] = None  # Nuevo campo
+    departamento: Optional[str] = None  # Nuevo campo
+    pais: Optional[str] = None  # Nuevo campo
 
     @validator('area_total', pre=True, always=True)
     def validate_area_total_update(cls, value):
