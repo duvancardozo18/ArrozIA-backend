@@ -2,6 +2,9 @@ from pydantic import BaseModel
 from datetime import date, time
 from typing import Optional, Union, Any
 
+class LoteIdRequest(BaseModel):
+    lote_id: int
+
 class WeatherRecordCreate(BaseModel):
     lote_id: Optional[int] = None
     fecha: Optional[date] = None
@@ -20,14 +23,14 @@ class WeatherRecordResponse(BaseModel):
     id: int
     lote_id: int
     fecha: date
-    hora: time
+    hora: Optional[time] = None  # Cambiado a Optional para aceptar None
     temperatura: float
     presion_atmosferica: float
     humedad: float
     precipitacion: Optional[float] = None
     indice_ultravioleta: float
     horas_sol: float
-    fuente_datos: Optional[str]  # Ahora acepta None
+    fuente_datos: Optional[str] = None  # Acepta None
     api_respuesta: Optional[Union[dict, Any]] = None  # Para el campo JSON
 
     class Config:
