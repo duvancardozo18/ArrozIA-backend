@@ -23,3 +23,12 @@ class Task(Base):
 
     # Relación hacia AgriculturalInput (insumo agrícola)
     insumo_agricola = relationship("AgriculturalInput", back_populates="tasks")
+
+    # Relación hacia labor cultural (labor-cultural)
+    labor_cultural = relationship("LaborCultural", back_populates="tasks")
+
+    # Relación hacia User (usuario)
+    usuario = relationship("User", back_populates="tasks")
+
+    # Relación con Machinery
+    maquinaria_agricola = relationship("Machinery", back_populates="tasks")
