@@ -11,22 +11,38 @@ import json  # Importa json para almacenar la respuesta como texto
 
 # Función para crear un registro meteorológico desde la API de OpenWeather
 def createWeatherRecordFromAPI(db: Session, lote_id: int):
-    # Obtener coordenadas del lote desde la base de datos
+    # Obtener el lote desde la base de datos
     lote = db.query(Land).filter(Land.id == lote_id).first()
     if not lote:
         raise HTTPException(status_code=404, detail="Lote no encontrado")
-    
+
+    # Validar las coordenadas
+    if not lote.latitud or not lote.longitud:
+        raise HTTPException(status_code=500, detail="Latitud o longitud no configuradas para el lote")
+
     # Configuración de la solicitud a OpenWeather
     api_key = os.getenv("OPENWEATHER_API_KEY")
     url = f"http://api.openweathermap.org/data/2.5/weather?lat={lote.latitud}&lon={lote.longitud}&appid={api_key}&units=metric"
-    
-    # Realizar la solicitud a OpenWeather
+
+    # Realizar la solicitud
     response = requests.get(url)
     if response.status_code != 200:
-        raise HTTPException(status_code=502, detail="Error al obtener datos de OpenWeather")
-    
-    # Extraer los datos relevantes y guardar la respuesta completa
+        raise HTTPException(status_code=502, detail=f"Error de OpenWeather: {response.json().get('message', 'Desconocido')}")
+
+    # Obtener los datos de la respuesta
     data = response.json()
+
+    # Agrega logs para depuración
+    print(f"Datos de OpenWeather: {data}")
+    print(f"Horas de sol recibidas: {data.get('clouds', {}).get('all', 'No especificado')}")
+
+    # Extraer y procesar los datos relevantes
+    horas_sol = data.get('clouds', {}).get('all', 0)  # Ajusta según los datos que devuelve OpenWeather
+    if horas_sol > 99.99:  # Validación adicional
+        horas_sol = 99.99  # Ajusta al rango permitido en la base de datos
+        print(f"Horas de sol ajustadas a: {horas_sol}")
+
+    # Crear el registro meteorológico
     weather_record = WeatherRecord(
         lote_id=lote_id,
         fecha=date.today(),
@@ -36,16 +52,18 @@ def createWeatherRecordFromAPI(db: Session, lote_id: int):
         humedad=data["main"]["humidity"],
         precipitacion=data.get("rain", {}).get("1h", 0.0),
         indice_ultravioleta=0.0,
-        horas_sol=data["clouds"]["all"],
+        horas_sol=horas_sol,  # Usa el valor ajustado
         fuente_datos="api",
-        api_respuesta=json.dumps(data)  # Guardar la respuesta completa como JSON
+        api_respuesta=json.dumps(data)  # Guarda la respuesta completa como JSON
     )
 
-    # Guardar el registro en la base de datos
+    # Guardar en la base de datos
     db.add(weather_record)
     db.commit()
     db.refresh(weather_record)
+
     return weather_record
+
 
 
 # Función para obtener el historial meteorológico de un lote con filtros opcionales
@@ -75,7 +93,8 @@ def fetchWeatherHistory(db: Session, lote_id: int, start_date: str = None, end_d
 
     registros = query.all()
 
-    # Asignar una hora predeterminada (00:00:00) a los registros donde `hora` es None
+
+    # Asignar una hora predeterminada (00:00:00) a los registros donde hora es None
     for record in registros:
         if record.hora is None:
             record.hora = time(0, 0)

@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from src.database.database import get_db
 from src.models.weatherRecordModel import WeatherRecord
-from src.schemas.weatherRecordSchema import WeatherRecordCreate, WeatherRecordResponse
+from src.schemas.weatherRecordSchema import WeatherRecordCreate, WeatherRecordResponse, LoteIdRequest
 from src.controller.weatherRecordController import (
     createWeatherRecord,
     fetchWeatherRecord,
@@ -27,8 +27,11 @@ def registerManualWeatherRecord(
     return createManualWeatherRecord(db, record)
 
 @WEATHER_RECORD_ROUTES.post("/meteorology/api", response_model=WeatherRecordResponse)
-def registerWeatherRecordFromAPI(lote_id: int, db: Session = Depends(get_db)):
-    return createWeatherRecordFromAPI(db, lote_id)
+def registerWeatherRecordFromAPI(data: LoteIdRequest, db: Session = Depends(get_db)):
+    """
+    Endpoint para registrar automáticamente un dato meteorológico basado en la API.
+    """
+    return createWeatherRecordFromAPI(db, data.lote_id)
 
 @WEATHER_RECORD_ROUTES.get("/weather-record/{lote_id}/recommendations")
 def getRecommendations(lote_id: int, db: Session = Depends(get_db)):
@@ -41,7 +44,6 @@ def getWeatherRecord(fecha: str, lote_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Registro no encontrado")
     return record
 
-# Endpoint para consultar el historial meteorológico de un lote
 @WEATHER_RECORD_ROUTES.get("/meteorology/history/{lote_id}", response_model=List[WeatherRecordResponse])
 def getWeatherHistory(
     lote_id: int,
@@ -50,11 +52,16 @@ def getWeatherHistory(
     fuente_datos: Optional[str] = None,
     db: Session = Depends(get_db)
 ):
+    """
+    Endpoint para consultar el historial meteorológico de un lote.
+    """
     return fetchWeatherHistory(db, lote_id, fecha_inicio, fecha_fin, fuente_datos)
 
-# Endpoint para ver el detalle de un registro meteorológico específico
 @WEATHER_RECORD_ROUTES.get("/meteorology/history/detail/{id}", response_model=WeatherRecordResponse)
 def getWeatherRecordDetail(id: int, db: Session = Depends(get_db)):
+    """
+    Endpoint para ver el detalle de un registro meteorológico específico.
+    """
     record = fetchWeatherRecordDetail(db, id)
     if record is None:
         raise HTTPException(status_code=404, detail="Registro no encontrado")
@@ -66,6 +73,9 @@ def updateWeatherRecord(
     record: WeatherRecordCreate,
     db: Session = Depends(get_db)
 ):
+    """
+    Endpoint para actualizar un registro meteorológico existente.
+    """
     existing_record = db.query(WeatherRecord).filter(WeatherRecord.id == id).first()
     if existing_record is None:
         raise HTTPException(status_code=404, detail="Registro no encontrado")
@@ -76,7 +86,7 @@ def updateWeatherRecord(
 
     # Asignar valor por defecto a 'fuente_datos' si está vacío
     if existing_record.fuente_datos is None:
-        existing_record.fuente_datos = "manual"  # Valor por defecto
+        existing_record.fuente_datos = "manual"
 
     db.commit()
     db.refresh(existing_record)
