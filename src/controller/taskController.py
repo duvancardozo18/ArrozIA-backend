@@ -1,6 +1,8 @@
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from src.models.taskModel import Task
 from src.schemas.taskSchema import TaskCreate, TaskUpdate
+
+
 
 def get_all_tasks(db: Session):
     # Obtiene todas las tareas sin cargar relaciones
@@ -39,4 +41,9 @@ def delete_task(db: Session, task_id: int):
 # Nueva función para obtener tareas asociadas a un cultivo específico
 def get_tasks_by_crop_id(db: Session, crop_id: int):
     # Obtiene todas las tareas relacionadas con un cultivo específico por su ID
-    return db.query(Task).filter(Task.cultivo_id == crop_id).all()
+     return (
+        db.query(Task)
+        .filter(Task.cultivo_id == crop_id)
+        .options(joinedload(Task.labor_cultural))  # Carga la relación
+        .all()
+    )
