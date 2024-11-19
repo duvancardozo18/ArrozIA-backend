@@ -26,3 +26,4 @@ class Crop(Base):
     diagnosticos = relationship("DiagnosticoFitosanitario", back_populates="cultivo") # Relación inversa con DiagnosticoFitosanitario
     agricultural_inputs = relationship("AgriculturalInput", back_populates="cultivo")  # Relación inversa
     harvests = relationship("Harvest", back_populates="crop")  # Relación inversa con Cosecha
+    gastos = relationship("Costs", back_populates="cultivo")
