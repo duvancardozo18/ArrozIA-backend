@@ -43,6 +43,9 @@ from src.routes.cities_Router import router as cities_router
 from src.routes.preciosinsumoRoutes import router as preciosinsumo_router  # Ajustado
 from src.routes.culturalWorkRoutes import router as cultural_work_router  # Nueva ruta
 from src.routes.harvestRoute import HARVEST_ROUTES
+from src.routes.costsRoutes import router as costs_router
+from src.routes.totalcostsRoutes import router as totalcosts_router
+
 
 # Inicializar la aplicación FastAPI
 app = FastAPI()
@@ -104,7 +107,8 @@ app.include_router(cities_router)
 app.include_router(preciosinsumo_router, tags=["Precios Insumo"])  # Quitado el prefijo
 app.include_router(cultural_work_router, tags=["Cultural Works"])  # Nueva ruta incluida
 app.include_router(HARVEST_ROUTES)
-
+app.include_router(costs_router)
+app.include_router(totalcosts_router, prefix="")
 
 # Ruta raíz
 @app.get("/")
