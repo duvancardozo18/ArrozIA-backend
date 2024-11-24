@@ -45,7 +45,7 @@ from src.routes.culturalWorkRoutes import router as cultural_work_router  # Nuev
 from src.routes.harvestRoute import HARVEST_ROUTES
 from src.routes.costsRoutes import router as costs_router
 from src.routes.totalcostsRoutes import router as totalcosts_router
-
+from src.routes.auditRoutes import AUDIT_ROUTES
 
 # Inicializar la aplicación FastAPI
 app = FastAPI()
@@ -109,6 +109,7 @@ app.include_router(cultural_work_router, tags=["Cultural Works"])  # Nueva ruta 
 app.include_router(HARVEST_ROUTES)
 app.include_router(costs_router)
 app.include_router(totalcosts_router, prefix="")
+app.include_router(AUDIT_ROUTES)
 
 # Ruta raíz
 @app.get("/")
