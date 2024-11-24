@@ -34,7 +34,8 @@ def send_email(recipient: str, token: str, user_name: str):
 
     try:
         # Conectar al servidor SMTP de Outlook
-        server = smtplib.SMTP("smtp-mail.outlook.com", 587)
+        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server.set_debuglevel(1)
         server.starttls()  # Asegurar la conexión
         server.login(sender_email, sender_password)
         server.sendmail(sender_email, recipient, message.as_string())
