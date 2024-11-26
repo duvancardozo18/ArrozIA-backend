@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session, joinedload
 from sqlalchemy import func, and_
+from decimal import Decimal
 from src.models.taskModel import Task
 from datetime import datetime
 
@@ -18,15 +19,11 @@ def get_total_cultural_works_value(db: Session, cultivo_id: int):
     """
     Calcula el valor total de todas las actividades culturales relacionadas con un cultivo.
     """
-    tasks = db.query(Task).options(
-        joinedload(Task.labor_cultural),
-        joinedload(Task.maquinaria_agricola)
-    ).filter(Task.cultivo_id == cultivo_id).all()
+    tasks = db.query(Task).filter(Task.cultivo_id == cultivo_id).all()
 
+    # Usar directamente el valor de precio_labor_cultural
     total_value_sum = sum(
-        ((task.labor_cultural.precio_hectaria or 0) if task.labor_cultural else 0) +
-        ((task.maquinaria_agricola.costPerHour or 0) if task.maquinaria_agricola else 0)
-        for task in tasks
+        Decimal(task.precio_labor_cultural or 0) for task in tasks
     )
 
     return {"total_value": total_value_sum}
@@ -88,18 +85,21 @@ def _build_cultural_work_list(tasks):
         maquinaria = task.maquinaria_agricola
         usuario = task.usuario
 
-        labor_cost = labor.precio_hectaria if labor else 0
-        machinery_cost = maquinaria.costPerHour if maquinaria else 0
-        total_value = (labor_cost or 0) + (machinery_cost or 0)
+        # Tomar directamente el valor de precio_labor_cultural
+        task_cost = Decimal(task.precio_labor_cultural or 0)
+
+        # Usar fecha_estimada y fecha_realizacion
+        fecha_inicio = task.fecha_estimada if task.fecha_estimada else datetime.now()
+        fecha_culminacion = task.fecha_realizacion if task.fecha_realizacion else datetime.now()
 
         cultural_works.append({
-            "fecha_inicio": task.fecha_realizacion or datetime.now(),
-            "fecha_culminacion": task.fecha_realizacion or datetime.now(),
+            "fecha_inicio": fecha_inicio,
+            "fecha_culminacion": fecha_culminacion,
             "actividad": labor.nombre if labor else "No definida",
             "maquinaria": maquinaria.name if maquinaria else "No aplica",
             "operario": usuario.nombre if usuario else "No definido",
             "descripcion": task.descripcion,
-            "valor": total_value
+            "valor": task_cost  # Usar el valor directo de la tarea
         })
 
     return cultural_works

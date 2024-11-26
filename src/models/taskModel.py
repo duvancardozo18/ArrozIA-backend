@@ -1,5 +1,5 @@
 from sqlalchemy.orm import relationship
-from sqlalchemy import Column, Integer, String, Date, ForeignKey, Boolean
+from sqlalchemy import Column, Integer, String, Date, ForeignKey, Boolean, Numeric
 from src.database.database import Base
 
 class Task(Base):
@@ -17,6 +17,7 @@ class Task(Base):
     usuario_id = Column(Integer, ForeignKey("usuario.id", ondelete="CASCADE"), nullable=False)
     cantidad_insumo = Column(Integer, nullable=True)
     maquinaria_agricola_id = Column(Integer, ForeignKey("maquinaria_agricola.id", ondelete="SET NULL"), nullable=True)
+    precio_labor_cultural = Column(Numeric(10, 2), nullable=True)  # Nueva columna añadida
 
     # Relación hacia Crop (cultivo)
     cultivo = relationship("Crop", back_populates="tasks")
@@ -32,3 +33,6 @@ class Task(Base):
 
     # Relación con Machinery
     maquinaria_agricola = relationship("Machinery", back_populates="tasks")
+
+    # Relación con Estado (nombre del estado)
+    estado = relationship("Estado", back_populates="tasks")
