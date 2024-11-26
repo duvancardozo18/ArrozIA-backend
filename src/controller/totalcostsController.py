@@ -1,4 +1,5 @@
 from sqlalchemy.orm import Session, joinedload
+from decimal import Decimal
 from src.models.costsModel import Costs
 from src.models.taskModel import Task
 
@@ -11,7 +12,7 @@ def get_total_costs(db: Session, cultivo_id: int):
     """
     # Obtener costos de la tabla 'gastos'
     costos = db.query(Costs).filter(Costs.cultivo_id == cultivo_id).all()
-    costos_data = [{"concepto": costo.concepto, "total": costo.precio} for costo in costos]
+    costos_data = [{"concepto": costo.concepto, "total": Decimal(costo.precio)} for costo in costos]
 
     # Calcular el precio total de insumos
     tasks_with_inputs = db.query(Task).options(
@@ -19,21 +20,16 @@ def get_total_costs(db: Session, cultivo_id: int):
     ).filter(Task.cultivo_id == cultivo_id).all()
 
     total_insumos = sum(
-        (task.insumo_agricola.costo_unitario or 0) * (task.cantidad_insumo or 0)
+        (Decimal(task.insumo_agricola.costo_unitario or 0) * Decimal(task.cantidad_insumo or 0))
         for task in tasks_with_inputs
         if task.insumo_agricola
     )
 
-    # Calcular el precio total de labores culturales
-    tasks_with_labors = db.query(Task).options(
-        joinedload(Task.labor_cultural),
-        joinedload(Task.maquinaria_agricola)
-    ).filter(Task.cultivo_id == cultivo_id).all()
+    # Tomar directamente el valor ingresado por el usuario para precio_labor_cultural
+    tasks_with_labors = db.query(Task).filter(Task.cultivo_id == cultivo_id).all()
 
     total_labores = sum(
-        ((task.labor_cultural.precio_hectaria or 0) if task.labor_cultural else 0) +
-        ((task.maquinaria_agricola.costPerHour or 0) if task.maquinaria_agricola else 0)
-        for task in tasks_with_labors
+        Decimal(task.precio_labor_cultural or 0) for task in tasks_with_labors
     )
 
     # Añadir los conceptos quemados para insumos y labores culturales
@@ -44,6 +40,7 @@ def get_total_costs(db: Session, cultivo_id: int):
     response = {"costos": costos_data}
     return response
 
+
 def get_overall_total_cost(db: Session, cultivo_id: int):
     """
     Calcula el total general de costos de un cultivo, sumando:
@@ -53,7 +50,7 @@ def get_overall_total_cost(db: Session, cultivo_id: int):
     """
     # Obtener costos de la tabla 'gastos'
     costos = db.query(Costs).filter(Costs.cultivo_id == cultivo_id).all()
-    total_gastos = sum(costo.precio for costo in costos)
+    total_gastos = sum(Decimal(costo.precio) for costo in costos)
 
     # Calcular el precio total de insumos
     tasks_with_inputs = db.query(Task).options(
@@ -61,21 +58,16 @@ def get_overall_total_cost(db: Session, cultivo_id: int):
     ).filter(Task.cultivo_id == cultivo_id).all()
 
     total_insumos = sum(
-        (task.insumo_agricola.costo_unitario or 0) * (task.cantidad_insumo or 0)
+        (Decimal(task.insumo_agricola.costo_unitario or 0) * Decimal(task.cantidad_insumo or 0))
         for task in tasks_with_inputs
         if task.insumo_agricola
     )
 
-    # Calcular el precio total de labores culturales
-    tasks_with_labors = db.query(Task).options(
-        joinedload(Task.labor_cultural),
-        joinedload(Task.maquinaria_agricola)
-    ).filter(Task.cultivo_id == cultivo_id).all()
+    # Tomar directamente el valor ingresado por el usuario para precio_labor_cultural
+    tasks_with_labors = db.query(Task).filter(Task.cultivo_id == cultivo_id).all()
 
     total_labores = sum(
-        ((task.labor_cultural.precio_hectaria or 0) if task.labor_cultural else 0) +
-        ((task.maquinaria_agricola.costPerHour or 0) if task.maquinaria_agricola else 0)
-        for task in tasks_with_labors
+        Decimal(task.precio_labor_cultural or 0) for task in tasks_with_labors
     )
 
     # Calcular el total general

@@ -1,8 +1,6 @@
 from pydantic import BaseModel
-from datetime import date
+from datetime import date, datetime
 from typing import Optional
-from datetime import datetime
-
 
 
 class CulturalWorkOut(BaseModel):
@@ -16,6 +14,7 @@ class CulturalWorkOut(BaseModel):
 
     class Config:
         orm_mode = True
+
 
 class CropOut(BaseModel):
     id: int
@@ -35,6 +34,7 @@ class LaborCulturalOut(BaseModel):
     class Config:
         orm_mode = True
 
+
 class AgriculturalInputOut(BaseModel):
     id: int
     nombre: str  # Nombre del insumo agrícola
@@ -45,6 +45,7 @@ class AgriculturalInputOut(BaseModel):
     class Config:
         orm_mode = True
 
+
 class UserOut(BaseModel):
     id: int
     nombre: str  # Nombre del usuario
@@ -53,6 +54,7 @@ class UserOut(BaseModel):
 
     class Config:
         orm_mode = True
+
 
 class MachineryOut(BaseModel):
     id: int
@@ -63,6 +65,14 @@ class MachineryOut(BaseModel):
 
     class Config:
         orm_mode = True
+
+class EstadoOut(BaseModel):
+    id: int
+    nombre: str  # Nombre del estado
+
+    class Config:
+        orm_mode = True
+
 
 class TaskBase(BaseModel):
     fecha_estimada: date
@@ -76,6 +86,7 @@ class TaskBase(BaseModel):
     usuario_id: int
     cantidad_insumo: Optional[int] = None
     maquinaria_agricola_id: Optional[int] = None
+    precio_labor_cultural: Optional[float] = None  # Nuevo campo agregado
 
 
 class TaskCreate(TaskBase):
@@ -95,6 +106,7 @@ class TaskUpdate(BaseModel):
     usuario_id: Optional[int] = None
     cantidad_insumo: Optional[int] = None
     maquinaria_agricola_id: Optional[int] = None
+    precio_labor_cultural: Optional[float] = None  # Nuevo campo agregado
 
 
 class TaskOut(TaskBase):
@@ -104,7 +116,7 @@ class TaskOut(TaskBase):
     insumo_agricola: Optional[AgriculturalInputOut] = None  # Relación con AgriculturalInputOut
     usuario: UserOut  # Relación con UserOut
     maquinaria_agricola: Optional[MachineryOut] = None  # Relación con MachineryOut
-
-
+    estado: EstadoOut  # Relación con EstadoOut
+    
     class Config:
         orm_mode = True
