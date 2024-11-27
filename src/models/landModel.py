@@ -18,6 +18,7 @@ class Land(Base):
     finca = relationship("Farm", back_populates="lotes")   
     crops = relationship("Crop", back_populates="lotes") 
     soil_analysis = relationship("SoilAnalysisModel", back_populates="lote")
+    weather_records = relationship("WeatherRecord", back_populates="lote")  # Relación con WeatherRecord
 
     def __repr__(self):
         return f"<Land(id={self.id}, nombre={self.nombre}, slug={self.slug}, arriendo_real={self.arriendo_real})>"

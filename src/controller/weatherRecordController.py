@@ -10,19 +10,19 @@ import os
 import json  # Importa json para almacenar la respuesta como texto
 
 # Función para crear un registro meteorológico desde la API de OpenWeather
-def createWeatherRecordFromAPI(db: Session, lote_id: int):
+def createWeatherRecordFromAPI(db: Session, lote_id: int, latitud: float = None, longitud: float = None):
     # Obtener el lote desde la base de datos
     lote = db.query(Land).filter(Land.id == lote_id).first()
     if not lote:
         raise HTTPException(status_code=404, detail="Lote no encontrado")
 
-    # Validar las coordenadas
-    if not lote.latitud or not lote.longitud:
-        raise HTTPException(status_code=500, detail="Latitud o longitud no configuradas para el lote")
+     # Validar las coordenadas recibidas
+    if not latitud or not longitud:
+        raise HTTPException(status_code=500, detail="Latitud o longitud no proporcionadas")
 
     # Configuración de la solicitud a OpenWeather
     api_key = os.getenv("OPENWEATHER_API_KEY")
-    url = f"http://api.openweathermap.org/data/2.5/weather?lat={lote.latitud}&lon={lote.longitud}&appid={api_key}&units=metric"
+    url = f"http://api.openweathermap.org/data/2.5/weather?lat={latitud}&lon={longitud}&appid={api_key}&units=metric"
 
     # Realizar la solicitud
     response = requests.get(url)
@@ -112,8 +112,26 @@ def fetchWeatherRecordDetail(db: Session, id: int):
     return record
 
 # Función para crear un registro meteorológico manual
-def createManualWeatherRecord(db: Session, record: WeatherRecordCreate):
-    dbRecord = WeatherRecord(**record.dict(), fuente_datos="manual")
+def createManualWeatherRecord(db: Session, record: WeatherRecordCreate, lote_id: int):
+    # Buscar el lote correspondiente a partir del lote_id
+    lote = db.query(Land).filter(Land.id == lote_id).first()
+    if not lote:
+        raise HTTPException(status_code=404, detail="Lote no encontrado")
+
+    # Crear el registro meteorológico con la referencia al lote
+    dbRecord = WeatherRecord(
+        lote_id=lote_id,  # Asociamos el lote_id al registro
+        fecha=record.fecha,
+        hora=record.hora,
+        temperatura=record.temperatura,
+        presion_atmosferica=record.presion_atmosferica,
+        humedad=record.humedad,
+        precipitacion=record.precipitacion,
+        indice_ultravioleta=record.indice_ultravioleta,
+        horas_sol=record.horas_sol,
+        fuente_datos="manual"  # Asignamos "manual" a la fuente de datos
+    )
+    
     db.add(dbRecord)
     db.commit()
     db.refresh(dbRecord)
