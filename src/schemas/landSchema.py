@@ -8,6 +8,7 @@ class LandSchema(BaseModel):
     id: Optional[int] = None
     nombre: str
     finca_id: int
+    finca_nombre: Optional[str] = None  # Nuevo campo para incluir el nombre de la finca
     area: float
     latitud: Optional[Decimal]  
     longitud: Optional[Decimal] 
