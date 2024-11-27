@@ -2,8 +2,14 @@ from pydantic import BaseModel
 from datetime import date, time
 from typing import Optional, Union, Any
 
-class LoteIdRequest(BaseModel):
+# Modelo para recibir la información de la finca con latitud y longitud
+class LoteIdWithCoordinatesRequest(BaseModel):
     lote_id: int
+    latitud: float
+    longitud: float
+
+    class Config:
+        orm_mode = True
 
 class WeatherRecordCreate(BaseModel):
     lote_id: Optional[int] = None

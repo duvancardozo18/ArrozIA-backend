@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from src.database.database import get_db
 from src.models.weatherRecordModel import WeatherRecord
-from src.schemas.weatherRecordSchema import WeatherRecordCreate, WeatherRecordResponse, LoteIdRequest
+from src.schemas.weatherRecordSchema import WeatherRecordCreate, WeatherRecordResponse, LoteIdWithCoordinatesRequest
 from src.controller.weatherRecordController import (
     createWeatherRecord,
     fetchWeatherRecord,
@@ -21,17 +21,26 @@ def registerWeatherRecord(
     record: WeatherRecordCreate, db: Session = Depends(get_db)):
     return createWeatherRecord(db, record)
 
-@WEATHER_RECORD_ROUTES.post("/meteorology/manual", response_model=WeatherRecordResponse)
+# @WEATHER_RECORD_ROUTES.post("/meteorology/manual", response_model=WeatherRecordResponse)
+# def registerManualWeatherRecord(
+#     record: WeatherRecordCreate, db: Session = Depends(get_db)):
+#     return createManualWeatherRecord(db, record)
+
+@WEATHER_RECORD_ROUTES.post("/meteorology/manual/{lote_id}", response_model=WeatherRecordResponse)
 def registerManualWeatherRecord(
-    record: WeatherRecordCreate, db: Session = Depends(get_db)):
-    return createManualWeatherRecord(db, record)
+    lote_id: int,  # Tomamos el lote_id como parámetro
+    record: WeatherRecordCreate,  # Los datos meteorológicos
+    db: Session = Depends(get_db)
+):
+    # Aquí llamamos a la función que crea el registro meteorológico, pasando el lote_id
+    return createManualWeatherRecord(db, record, lote_id)
 
 @WEATHER_RECORD_ROUTES.post("/meteorology/api", response_model=WeatherRecordResponse)
-def registerWeatherRecordFromAPI(data: LoteIdRequest, db: Session = Depends(get_db)):
+def registerWeatherRecordFromAPI(data: LoteIdWithCoordinatesRequest, db: Session = Depends(get_db)):
     """
     Endpoint para registrar automáticamente un dato meteorológico basado en la API.
     """
-    return createWeatherRecordFromAPI(db, data.lote_id)
+    return createWeatherRecordFromAPI(db, data.lote_id, data.latitud, data.longitud)
 
 @WEATHER_RECORD_ROUTES.get("/weather-record/{lote_id}/recommendations")
 def getRecommendations(lote_id: int, db: Session = Depends(get_db)):
