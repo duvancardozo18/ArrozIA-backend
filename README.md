@@ -1,7 +1,7 @@
 # ArrozIA-backend
 La trazabilidad en el cultivo de arroz es un factor clave para garantizar la calidad, seguridad y eficiencia en la producción agrícola. Sin embargo, el monitoreo manual de enfermedades, plagas, malezas y deficiencias nutricionales presenta limitaciones en precisión y tiempo de respuesta.
 
-Este proyecto propone el desarrollo de una plataforma de trazabilidad basada en inteligencia artificial, que permita a los agricultores monitorear y gestionar en tiempo real la evolución de sus cultivos, optimizando la toma de decisiones y reduciendo pérdidas.
+Este es un **Sistema Web de Trazabilidad Para el Cultivo de Arroz Mediante Inteligencia Artificial**, que permita a los agricultores monitorear y gestionar en tiempo real la evolución de sus cultivos, optimizando la toma de decisiones y reduciendo pérdidas.
 
 **Metodología**
 El desarrollo del sistema sigue la metodología ágil Scrum y los estándares de requerimientos ISO/IEC/IEEE 29148:2018. Se diseña una arquitectura basada en FastAPI y React, con pruebas bajo la normativa ISO 25010. 
@@ -57,7 +57,7 @@ Tener instalado las siguientes herramientas:
 ---
 
 ### Documentación - Postman
-![Documentación - Postman](<#>)
+![Documentación - Postman](<https://raw.githubusercontent.com/duvancardozo18/ArrozIA-backend/refs/heads/main/resources/images/Rutas.png>)
 > Docuementación completa: [Click aqui](https://www.postman.com/mission-explorer-5726823/arrozia-backend/collection/u3c2byc/arrozia-backend)
 
 ## 🚀 Credenciales
