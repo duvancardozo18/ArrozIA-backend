@@ -7,7 +7,7 @@ class UnidadInsumoSchema(BaseModel):
     nombre: str
 
     class Config:
-        from_attributes = True
+        orm_mode = True  
 
 # Esquema de TipoInsumo
 class TipoInsumoSchema(BaseModel):
@@ -15,7 +15,7 @@ class TipoInsumoSchema(BaseModel):
     nombre: str
 
     class Config:
-        from_attributes = True
+        orm_mode = True  
 
 # Esquema base de AgriculturalInput
 class AgriculturalInputBase(BaseModel):
@@ -34,7 +34,7 @@ class AgriculturalInput(AgriculturalInputBase):
     tipo_insumo: Optional[TipoInsumoSchema] = None  # Permitir que tipo_insumo sea None
 
     class Config:
-        from_attributes = True
+        orm_mode = True  
 
 class AgriculturalInputUpdate(BaseModel):
     nombre: Optional[str] = None
@@ -44,5 +44,5 @@ class AgriculturalInputUpdate(BaseModel):
     costo_unitario: Optional[float] = None
     cantidad: Optional[float] = None
 
-    class Config:
-        from_attributes = True
+class Config:
+        orm_mode = True  # Configuración para trabajar con objetos de SQLAlchemy
