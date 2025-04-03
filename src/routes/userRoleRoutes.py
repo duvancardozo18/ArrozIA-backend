@@ -19,14 +19,19 @@ def register_user_role(user_role: CreateUserRole, session: Session = Depends(get
 @USER_ROLE_ROUTES.get("/user-roles/user/{user_id}", response_model=Role)
 def get_user_role(user_id: int, db: Session = Depends(get_session)):
     user_role = db.query(UserRole).filter(UserRole.usuario_id == user_id).first()
+    
     if not user_role:
         raise HTTPException(status_code=404, detail="User role not found")
     
     role = db.query(Rol).filter(Rol.id == user_role.rol_id).first()
+
     if not role:
         raise HTTPException(status_code=404, detail="Role not found")
 
-    return role
+    # Cambia 'name' por 'nombre' (que es el campo correcto en Pydantic)
+    return Role(id=role.id, nombre=role.nombre, descripcion=role.descripcion)
+
+
 
 # Nueva ruta para verificar si el usuario es administrador
 @USER_ROLE_ROUTES.get("/users/{user_id}/is_admin")

@@ -122,7 +122,7 @@ def verify_permission(permission_name: str):
         for user_role in user_roles:
             # Obtener todos los permisos asociados al rol
             role_permissions = db.query(RolPermiso).filter(RolPermiso.rol_id == user_role.rol_id).all()
-            print(f"Permisos encontrados para el rol {user_role.rol_id}: {role_permissions}")
+            #print(f"Permisos encontrados para el rol {user_role.rol_id}: {role_permissions}")
             
             # Verificar cada permiso asociado con el rol
             for role_permission in role_permissions:
