@@ -64,7 +64,7 @@ Tener instalado las siguientes herramientas:
 
 ### Documentación - Postman
 ![Documentación - Postman](<https://raw.githubusercontent.com/duvancardozo18/ArrozIA-backend/refs/heads/main/resources/images/Rutas.png>)
-> Docuementación completa: [Click aqui](https://www.postman.com/mission-explorer-5726823/arrozia-backend/collection/u3c2byc/arrozia-backend)
+> Docuementación completa: [Click aqui](https://www.postman.com/satellite-engineer-98254428/arrozia-backend/overview)
 
 ## 🚀 Credenciales
  
