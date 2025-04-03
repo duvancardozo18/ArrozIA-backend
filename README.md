@@ -13,11 +13,11 @@ El sistema está compuesto por un backend y un frontend independientes, lo que p
 - Desarrollado con FastAPI, garantizando un rendimiento rápido y eficiente.
 - Implementación de modelos de inteligencia artificial para la detección de enfermedades y plagas en los cultivos.
 - Base de datos en PostgreSQL, optimizada para el almacenamiento de registros agrícolas.
-**NOTA:** modulo de de Diagnositco de Enfermedades (IA) Desactivado. 
-> Descargar modelo: [Click aqui](https://www.mediafire.com/file/rv8jwfyf4di239j/swin_transformer_v2.pth/file)
-Instalacion del modelo de inteligencia artificial:
+> **NOTA:** modulo de de Diagnositco de Enfermedades (IA) Deshabilitado. 
+> Descargar modelo: [Click aqui](https://www.mediafire.com/file/rv8jwfyf4di239j/swin_transformer_v2.pth/file).
+- Instalacion del modelo de inteligencia artificial:
 1. Descargar el modelo
-2. Copiarlo en la ruta del proyecto src/model
+2. Copiarlo en la ruta del proyecto src/models/
 3. Descomentar lo respectivo de los archivos predictionRoutes,main y CropModel
 
 📌 Frontend – ArrozIA-frontend
