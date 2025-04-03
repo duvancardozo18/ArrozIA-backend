@@ -1,3 +1,4 @@
+'''
 from fastapi import APIRouter, File, Form, UploadFile, Depends
 
 from sqlalchemy.orm import Session
@@ -30,3 +31,4 @@ def read_diagnostics_history(cultivo_id: int, start_date: date = None, end_date:
 @PREDICTION_ROUTES.get("/diagnostics/detail/{id}", response_model=DiagnosticoFitosanitarioOut)
 def read_diagnostic_detail(id: int, db: Session = Depends(get_db)):
     return get_diagnostic_detail(db, id)
+'''

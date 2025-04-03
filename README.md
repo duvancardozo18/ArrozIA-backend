@@ -9,10 +9,16 @@ El desarrollo del sistema sigue la metodología ágil Scrum y los estándares de
 **Tecnologías Utilizadas**
 El sistema está compuesto por un backend y un frontend independientes, lo que permite una arquitectura escalable y eficiente.
 
-🖥️ Backend – ArrozIA-backend
+🖥️ Backend – ArrozIA-backend 
 - Desarrollado con FastAPI, garantizando un rendimiento rápido y eficiente.
 - Implementación de modelos de inteligencia artificial para la detección de enfermedades y plagas en los cultivos.
 - Base de datos en PostgreSQL, optimizada para el almacenamiento de registros agrícolas.
+**NOTA:** modulo de de Diagnositco de Enfermedades (IA) Desactivado. 
+> Descargar modelo: [Click aqui](https://www.mediafire.com/file/rv8jwfyf4di239j/swin_transformer_v2.pth/file)
+Instalacion del modelo de inteligencia artificial:
+1. Descargar el modelo
+2. Copiarlo en la ruta del proyecto src/model
+3. Descomentar lo respectivo de los archivos predictionRoutes,main y CropModel
 
 📌 Frontend – ArrozIA-frontend
 - Desarrollado con React, proporcionando una interfaz intuitiva y dinámica.

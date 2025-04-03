@@ -23,7 +23,7 @@ class Crop(Base):
     lotes = relationship("Land", back_populates="crops")
     tasks = relationship("Task", back_populates="cultivo")  # Nueva relación
     monitorings = relationship("Monitoring", back_populates="crop")  # Relación hacia monitoreos
-    diagnosticos = relationship("DiagnosticoFitosanitario", back_populates="cultivo") # Relación inversa con DiagnosticoFitosanitario
+    #diagnosticos = relationship("DiagnosticoFitosanitario", back_populates="cultivo") # Relación inversa con DiagnosticoFitosanitario
     agricultural_inputs = relationship("AgriculturalInput", back_populates="cultivo")  # Relación inversa
     harvests = relationship("Harvest", back_populates="crop")  # Relación inversa con Cosecha
     gastos = relationship("Costs", back_populates="cultivo")
