@@ -19,5 +19,5 @@ class LaborCulturalResponse(LaborCulturalBase):
     precio_hora_real: Optional[float] = None  # Incluir precio_hora_real en la respuesta
 
     class Config:
-        from_attributes = True
+            orm_mode = True
 
