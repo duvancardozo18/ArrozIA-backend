@@ -10,7 +10,7 @@ class Role(RoleBase):
     descripcion: Optional[str] = None
 
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 class RoleCreate(RoleBase):
     permisos: List[int]  # Lista de IDs de permisos para asociar al rol
