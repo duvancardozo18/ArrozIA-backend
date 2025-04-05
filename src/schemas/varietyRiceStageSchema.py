@@ -27,4 +27,4 @@ class VarietyRiceStageResponse(VarietyRiceStageBase):
     phenological_stage: Optional[PhenologicalStageResponse] = None
 
     class Config:
-        from_attributes = True  # Configuración para trabajar con objetos de SQLAlchemy
+            orm_mode = True

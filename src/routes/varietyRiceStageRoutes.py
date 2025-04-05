@@ -15,7 +15,8 @@ def create_stage_route(stage: VarietyRiceStageCreate, db: Session = Depends(get_
 
 @VARIETY_RICE_STAGE_ROUTES.get("/variety-rice-stages", response_model=list[VarietyRiceStageResponse])
 def get_stages_route(db: Session = Depends(get_session)):
-    return get_variety_rice_stages(db)
+    stages = get_variety_rice_stages(db)
+    return stages
 
 @VARIETY_RICE_STAGE_ROUTES.get("/variety-rice-stages/{stage_id}", response_model=VarietyRiceStageResponse)
 def get_stage_by_id_route(stage_id: int, db: Session = Depends(get_session)):
