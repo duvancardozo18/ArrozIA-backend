@@ -4,8 +4,24 @@ from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
 from src.models.farmModel import Farm
+from src.models.cropModel import Crop
+from src.models.soilAnalysisModel import SoilAnalysisModel
+from src.models.weatherRecordModel import WeatherRecord
+from src.models.varietyArrozModel import VarietyArrozModel
+from src.models.varietyRiceStageModel import VarietyRiceStageModel
+from src.models.taskModel import Task
+from src.models.monitoringModel import Monitoring
+from src.models.agriculturalInputModel import AgriculturalInput
+from src.models.harvestModel import Harvest
+from src.models.costsModel import Costs
+from src.models.phenologicalStageModel import PhenologicalStage
+from src.models.laborCulturalModel import LaborCultural
+from src.models.userModel import User
+from src.models.machineryModel import Machinery
+from src.models.estadoModel import Estado
+from src.models.opMechModel import OpMech
 from src.schemas.farmSchema import UpdateFarmSchema
-from src.controllers.farmController import updateFarm
+from src.controller.farmCrontroller import updateFarm
 
 @pytest.fixture
 def mock_session():
@@ -16,7 +32,27 @@ def mock_session():
     return session
 
 @pytest.fixture
-def sample_farm():
+def sample_farm(mock_session):
+    MagicMock(spec=Crop)
+    MagicMock(spec=SoilAnalysisModel)
+    MagicMock(spec=WeatherRecord)
+    MagicMock(spec=VarietyArrozModel)
+    MagicMock(spec=VarietyRiceStageModel)
+    MagicMock(spec=Task)
+    MagicMock(spec=Monitoring)
+    MagicMock(spec=AgriculturalInput)
+    MagicMock(spec=Harvest)
+    MagicMock(spec=Costs)
+    MagicMock(spec=PhenologicalStage)
+    MagicMock(spec=LaborCultural)
+    MagicMock(spec=User)
+    MagicMock(spec=Machinery)
+    MagicMock(spec=Estado)
+    MagicMock(spec=OpMech)
+
+    mock_session.add.return_value = None
+    mock_session.commit.return_value = None
+
     """Crea una finca de ejemplo para pruebas"""
     return Farm(
         id=1,

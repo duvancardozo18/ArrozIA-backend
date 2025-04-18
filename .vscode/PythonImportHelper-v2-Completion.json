@@ -1265,6 +1265,22 @@
         "documentation": {}
     },
     {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "HTTPException",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -1282,6 +1298,142 @@
     },
     {
         "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -2233,6 +2385,126 @@
         "documentation": {}
     },
     {
+        "label": "joinedload",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
         "label": "get_session",
         "importPath": "src.database.database",
         "description": "src.database.database",
@@ -2977,6 +3249,102 @@
         "documentation": {}
     },
     {
+        "label": "AgriculturalInput",
+        "importPath": "src.models.agriculturalInputModel",
+        "description": "src.models.agriculturalInputModel",
+        "isExtraImport": true,
+        "detail": "src.models.agriculturalInputModel",
+        "documentation": {}
+    },
+    {
+        "label": "AgriculturalInput",
+        "importPath": "src.models.agriculturalInputModel",
+        "description": "src.models.agriculturalInputModel",
+        "isExtraImport": true,
+        "detail": "src.models.agriculturalInputModel",
+        "documentation": {}
+    },
+    {
+        "label": "AgriculturalInput",
+        "importPath": "src.models.agriculturalInputModel",
+        "description": "src.models.agriculturalInputModel",
+        "isExtraImport": true,
+        "detail": "src.models.agriculturalInputModel",
+        "documentation": {}
+    },
+    {
+        "label": "AgriculturalInput",
+        "importPath": "src.models.agriculturalInputModel",
+        "description": "src.models.agriculturalInputModel",
+        "isExtraImport": true,
+        "detail": "src.models.agriculturalInputModel",
+        "documentation": {}
+    },
+    {
+        "label": "AgriculturalInput",
+        "importPath": "src.models.agriculturalInputModel",
+        "description": "src.models.agriculturalInputModel",
+        "isExtraImport": true,
+        "detail": "src.models.agriculturalInputModel",
+        "documentation": {}
+    },
+    {
+        "label": "AgriculturalInput",
+        "importPath": "src.models.agriculturalInputModel",
+        "description": "src.models.agriculturalInputModel",
+        "isExtraImport": true,
+        "detail": "src.models.agriculturalInputModel",
+        "documentation": {}
+    },
+    {
+        "label": "AgriculturalInput",
+        "importPath": "src.models.agriculturalInputModel",
+        "description": "src.models.agriculturalInputModel",
+        "isExtraImport": true,
+        "detail": "src.models.agriculturalInputModel",
+        "documentation": {}
+    },
+    {
+        "label": "AgriculturalInput",
+        "importPath": "src.models.agriculturalInputModel",
+        "description": "src.models.agriculturalInputModel",
+        "isExtraImport": true,
+        "detail": "src.models.agriculturalInputModel",
+        "documentation": {}
+    },
+    {
+        "label": "AgriculturalInput",
+        "importPath": "src.models.agriculturalInputModel",
+        "description": "src.models.agriculturalInputModel",
+        "isExtraImport": true,
+        "detail": "src.models.agriculturalInputModel",
+        "documentation": {}
+    },
+    {
+        "label": "AgriculturalInput",
+        "importPath": "src.models.agriculturalInputModel",
+        "description": "src.models.agriculturalInputModel",
+        "isExtraImport": true,
+        "detail": "src.models.agriculturalInputModel",
+        "documentation": {}
+    },
+    {
+        "label": "AgriculturalInput",
+        "importPath": "src.models.agriculturalInputModel",
+        "description": "src.models.agriculturalInputModel",
+        "isExtraImport": true,
+        "detail": "src.models.agriculturalInputModel",
+        "documentation": {}
+    },
+    {
+        "label": "AgriculturalInput",
+        "importPath": "src.models.agriculturalInputModel",
+        "description": "src.models.agriculturalInputModel",
+        "isExtraImport": true,
+        "detail": "src.models.agriculturalInputModel",
+        "documentation": {}
+    },
+    {
         "label": "AgriculturalInputCreate",
         "importPath": "src.schemas.agriculturalInputSchema",
         "description": "src.schemas.agriculturalInputSchema",
@@ -3073,6 +3441,22 @@
         "documentation": {}
     },
     {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "TokenTable",
+        "importPath": "src.models.authModel",
+        "description": "src.models.authModel",
+        "isExtraImport": true,
+        "detail": "src.models.authModel",
+        "documentation": {}
+    },
+    {
         "label": "TokenTable",
         "importPath": "src.models.authModel",
         "description": "src.models.authModel",
@@ -3154,6 +3538,102 @@
         "documentation": {}
     },
     {
+        "label": "User",
+        "importPath": "src.models.userModel",
+        "description": "src.models.userModel",
+        "isExtraImport": true,
+        "detail": "src.models.userModel",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "src.models.userModel",
+        "description": "src.models.userModel",
+        "isExtraImport": true,
+        "detail": "src.models.userModel",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "src.models.userModel",
+        "description": "src.models.userModel",
+        "isExtraImport": true,
+        "detail": "src.models.userModel",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "src.models.userModel",
+        "description": "src.models.userModel",
+        "isExtraImport": true,
+        "detail": "src.models.userModel",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "src.models.userModel",
+        "description": "src.models.userModel",
+        "isExtraImport": true,
+        "detail": "src.models.userModel",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "src.models.userModel",
+        "description": "src.models.userModel",
+        "isExtraImport": true,
+        "detail": "src.models.userModel",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "src.models.userModel",
+        "description": "src.models.userModel",
+        "isExtraImport": true,
+        "detail": "src.models.userModel",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "src.models.userModel",
+        "description": "src.models.userModel",
+        "isExtraImport": true,
+        "detail": "src.models.userModel",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "src.models.userModel",
+        "description": "src.models.userModel",
+        "isExtraImport": true,
+        "detail": "src.models.userModel",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "src.models.userModel",
+        "description": "src.models.userModel",
+        "isExtraImport": true,
+        "detail": "src.models.userModel",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "src.models.userModel",
+        "description": "src.models.userModel",
+        "isExtraImport": true,
+        "detail": "src.models.userModel",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "src.models.userModel",
+        "description": "src.models.userModel",
+        "isExtraImport": true,
+        "detail": "src.models.userModel",
+        "documentation": {}
+    },
+    {
         "label": "LoginRequest",
         "importPath": "src.schemas.authShema",
         "description": "src.schemas.authShema",
@@ -3171,6 +3651,14 @@
     },
     {
         "label": "TokenSchema",
+        "importPath": "src.schemas.authShema",
+        "description": "src.schemas.authShema",
+        "isExtraImport": true,
+        "detail": "src.schemas.authShema",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequest",
         "importPath": "src.schemas.authShema",
         "description": "src.schemas.authShema",
         "isExtraImport": true,
@@ -3365,6 +3853,102 @@
         "documentation": {}
     },
     {
+        "label": "Costs",
+        "importPath": "src.models.costsModel",
+        "description": "src.models.costsModel",
+        "isExtraImport": true,
+        "detail": "src.models.costsModel",
+        "documentation": {}
+    },
+    {
+        "label": "Costs",
+        "importPath": "src.models.costsModel",
+        "description": "src.models.costsModel",
+        "isExtraImport": true,
+        "detail": "src.models.costsModel",
+        "documentation": {}
+    },
+    {
+        "label": "Costs",
+        "importPath": "src.models.costsModel",
+        "description": "src.models.costsModel",
+        "isExtraImport": true,
+        "detail": "src.models.costsModel",
+        "documentation": {}
+    },
+    {
+        "label": "Costs",
+        "importPath": "src.models.costsModel",
+        "description": "src.models.costsModel",
+        "isExtraImport": true,
+        "detail": "src.models.costsModel",
+        "documentation": {}
+    },
+    {
+        "label": "Costs",
+        "importPath": "src.models.costsModel",
+        "description": "src.models.costsModel",
+        "isExtraImport": true,
+        "detail": "src.models.costsModel",
+        "documentation": {}
+    },
+    {
+        "label": "Costs",
+        "importPath": "src.models.costsModel",
+        "description": "src.models.costsModel",
+        "isExtraImport": true,
+        "detail": "src.models.costsModel",
+        "documentation": {}
+    },
+    {
+        "label": "Costs",
+        "importPath": "src.models.costsModel",
+        "description": "src.models.costsModel",
+        "isExtraImport": true,
+        "detail": "src.models.costsModel",
+        "documentation": {}
+    },
+    {
+        "label": "Costs",
+        "importPath": "src.models.costsModel",
+        "description": "src.models.costsModel",
+        "isExtraImport": true,
+        "detail": "src.models.costsModel",
+        "documentation": {}
+    },
+    {
+        "label": "Costs",
+        "importPath": "src.models.costsModel",
+        "description": "src.models.costsModel",
+        "isExtraImport": true,
+        "detail": "src.models.costsModel",
+        "documentation": {}
+    },
+    {
+        "label": "Costs",
+        "importPath": "src.models.costsModel",
+        "description": "src.models.costsModel",
+        "isExtraImport": true,
+        "detail": "src.models.costsModel",
+        "documentation": {}
+    },
+    {
+        "label": "Costs",
+        "importPath": "src.models.costsModel",
+        "description": "src.models.costsModel",
+        "isExtraImport": true,
+        "detail": "src.models.costsModel",
+        "documentation": {}
+    },
+    {
+        "label": "Costs",
+        "importPath": "src.models.costsModel",
+        "description": "src.models.costsModel",
+        "isExtraImport": true,
+        "detail": "src.models.costsModel",
+        "documentation": {}
+    },
+    {
         "label": "CostsCreate",
         "importPath": "src.schemas.costsSchema",
         "description": "src.schemas.costsSchema",
@@ -3470,6 +4054,198 @@
         "documentation": {}
     },
     {
+        "label": "Farm",
+        "importPath": "src.models.farmModel",
+        "description": "src.models.farmModel",
+        "isExtraImport": true,
+        "detail": "src.models.farmModel",
+        "documentation": {}
+    },
+    {
+        "label": "Farm",
+        "importPath": "src.models.farmModel",
+        "description": "src.models.farmModel",
+        "isExtraImport": true,
+        "detail": "src.models.farmModel",
+        "documentation": {}
+    },
+    {
+        "label": "Farm",
+        "importPath": "src.models.farmModel",
+        "description": "src.models.farmModel",
+        "isExtraImport": true,
+        "detail": "src.models.farmModel",
+        "documentation": {}
+    },
+    {
+        "label": "Farm",
+        "importPath": "src.models.farmModel",
+        "description": "src.models.farmModel",
+        "isExtraImport": true,
+        "detail": "src.models.farmModel",
+        "documentation": {}
+    },
+    {
+        "label": "Farm",
+        "importPath": "src.models.farmModel",
+        "description": "src.models.farmModel",
+        "isExtraImport": true,
+        "detail": "src.models.farmModel",
+        "documentation": {}
+    },
+    {
+        "label": "Farm",
+        "importPath": "src.models.farmModel",
+        "description": "src.models.farmModel",
+        "isExtraImport": true,
+        "detail": "src.models.farmModel",
+        "documentation": {}
+    },
+    {
+        "label": "Farm",
+        "importPath": "src.models.farmModel",
+        "description": "src.models.farmModel",
+        "isExtraImport": true,
+        "detail": "src.models.farmModel",
+        "documentation": {}
+    },
+    {
+        "label": "Farm",
+        "importPath": "src.models.farmModel",
+        "description": "src.models.farmModel",
+        "isExtraImport": true,
+        "detail": "src.models.farmModel",
+        "documentation": {}
+    },
+    {
+        "label": "Farm",
+        "importPath": "src.models.farmModel",
+        "description": "src.models.farmModel",
+        "isExtraImport": true,
+        "detail": "src.models.farmModel",
+        "documentation": {}
+    },
+    {
+        "label": "Farm",
+        "importPath": "src.models.farmModel",
+        "description": "src.models.farmModel",
+        "isExtraImport": true,
+        "detail": "src.models.farmModel",
+        "documentation": {}
+    },
+    {
+        "label": "Farm",
+        "importPath": "src.models.farmModel",
+        "description": "src.models.farmModel",
+        "isExtraImport": true,
+        "detail": "src.models.farmModel",
+        "documentation": {}
+    },
+    {
+        "label": "Farm",
+        "importPath": "src.models.farmModel",
+        "description": "src.models.farmModel",
+        "isExtraImport": true,
+        "detail": "src.models.farmModel",
+        "documentation": {}
+    },
+    {
+        "label": "Crop",
+        "importPath": "src.models.cropModel",
+        "description": "src.models.cropModel",
+        "isExtraImport": true,
+        "detail": "src.models.cropModel",
+        "documentation": {}
+    },
+    {
+        "label": "Crop",
+        "importPath": "src.models.cropModel",
+        "description": "src.models.cropModel",
+        "isExtraImport": true,
+        "detail": "src.models.cropModel",
+        "documentation": {}
+    },
+    {
+        "label": "Crop",
+        "importPath": "src.models.cropModel",
+        "description": "src.models.cropModel",
+        "isExtraImport": true,
+        "detail": "src.models.cropModel",
+        "documentation": {}
+    },
+    {
+        "label": "Crop",
+        "importPath": "src.models.cropModel",
+        "description": "src.models.cropModel",
+        "isExtraImport": true,
+        "detail": "src.models.cropModel",
+        "documentation": {}
+    },
+    {
+        "label": "Crop",
+        "importPath": "src.models.cropModel",
+        "description": "src.models.cropModel",
+        "isExtraImport": true,
+        "detail": "src.models.cropModel",
+        "documentation": {}
+    },
+    {
+        "label": "Crop",
+        "importPath": "src.models.cropModel",
+        "description": "src.models.cropModel",
+        "isExtraImport": true,
+        "detail": "src.models.cropModel",
+        "documentation": {}
+    },
+    {
+        "label": "Crop",
+        "importPath": "src.models.cropModel",
+        "description": "src.models.cropModel",
+        "isExtraImport": true,
+        "detail": "src.models.cropModel",
+        "documentation": {}
+    },
+    {
+        "label": "Crop",
+        "importPath": "src.models.cropModel",
+        "description": "src.models.cropModel",
+        "isExtraImport": true,
+        "detail": "src.models.cropModel",
+        "documentation": {}
+    },
+    {
+        "label": "Crop",
+        "importPath": "src.models.cropModel",
+        "description": "src.models.cropModel",
+        "isExtraImport": true,
+        "detail": "src.models.cropModel",
+        "documentation": {}
+    },
+    {
+        "label": "Crop",
+        "importPath": "src.models.cropModel",
+        "description": "src.models.cropModel",
+        "isExtraImport": true,
+        "detail": "src.models.cropModel",
+        "documentation": {}
+    },
+    {
+        "label": "Crop",
+        "importPath": "src.models.cropModel",
+        "description": "src.models.cropModel",
+        "isExtraImport": true,
+        "detail": "src.models.cropModel",
+        "documentation": {}
+    },
+    {
+        "label": "Crop",
+        "importPath": "src.models.cropModel",
+        "description": "src.models.cropModel",
+        "isExtraImport": true,
+        "detail": "src.models.cropModel",
+        "documentation": {}
+    },
+    {
         "label": "Crop",
         "importPath": "src.models.cropModel",
         "description": "src.models.cropModel",
@@ -3606,6 +4382,102 @@
         "documentation": {}
     },
     {
+        "label": "CropCreate",
+        "importPath": "src.schemas.cropSchema",
+        "description": "src.schemas.cropSchema",
+        "isExtraImport": true,
+        "detail": "src.schemas.cropSchema",
+        "documentation": {}
+    },
+    {
+        "label": "CropCreate",
+        "importPath": "src.schemas.cropSchema",
+        "description": "src.schemas.cropSchema",
+        "isExtraImport": true,
+        "detail": "src.schemas.cropSchema",
+        "documentation": {}
+    },
+    {
+        "label": "CropCreate",
+        "importPath": "src.schemas.cropSchema",
+        "description": "src.schemas.cropSchema",
+        "isExtraImport": true,
+        "detail": "src.schemas.cropSchema",
+        "documentation": {}
+    },
+    {
+        "label": "CropUpdate",
+        "importPath": "src.schemas.cropSchema",
+        "description": "src.schemas.cropSchema",
+        "isExtraImport": true,
+        "detail": "src.schemas.cropSchema",
+        "documentation": {}
+    },
+    {
+        "label": "CropCreate",
+        "importPath": "src.schemas.cropSchema",
+        "description": "src.schemas.cropSchema",
+        "isExtraImport": true,
+        "detail": "src.schemas.cropSchema",
+        "documentation": {}
+    },
+    {
+        "label": "Land",
+        "importPath": "src.models.landModel",
+        "description": "src.models.landModel",
+        "isExtraImport": true,
+        "detail": "src.models.landModel",
+        "documentation": {}
+    },
+    {
+        "label": "Land",
+        "importPath": "src.models.landModel",
+        "description": "src.models.landModel",
+        "isExtraImport": true,
+        "detail": "src.models.landModel",
+        "documentation": {}
+    },
+    {
+        "label": "Land",
+        "importPath": "src.models.landModel",
+        "description": "src.models.landModel",
+        "isExtraImport": true,
+        "detail": "src.models.landModel",
+        "documentation": {}
+    },
+    {
+        "label": "Land",
+        "importPath": "src.models.landModel",
+        "description": "src.models.landModel",
+        "isExtraImport": true,
+        "detail": "src.models.landModel",
+        "documentation": {}
+    },
+    {
+        "label": "Land",
+        "importPath": "src.models.landModel",
+        "description": "src.models.landModel",
+        "isExtraImport": true,
+        "detail": "src.models.landModel",
+        "documentation": {}
+    },
+    {
+        "label": "Land",
+        "importPath": "src.models.landModel",
+        "description": "src.models.landModel",
+        "isExtraImport": true,
+        "detail": "src.models.landModel",
+        "documentation": {}
+    },
+    {
+        "label": "Land",
+        "importPath": "src.models.landModel",
+        "description": "src.models.landModel",
+        "isExtraImport": true,
+        "detail": "src.models.landModel",
+        "documentation": {}
+    },
+    {
         "label": "Land",
         "importPath": "src.models.landModel",
         "description": "src.models.landModel",
@@ -3675,6 +4547,78 @@
         "description": "src.models.landModel",
         "isExtraImport": true,
         "detail": "src.models.landModel",
+        "documentation": {}
+    },
+    {
+        "label": "Land",
+        "importPath": "src.models.landModel",
+        "description": "src.models.landModel",
+        "isExtraImport": true,
+        "detail": "src.models.landModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyArrozModel",
+        "importPath": "src.models.varietyArrozModel",
+        "description": "src.models.varietyArrozModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyArrozModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyArrozModel",
+        "importPath": "src.models.varietyArrozModel",
+        "description": "src.models.varietyArrozModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyArrozModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyArrozModel",
+        "importPath": "src.models.varietyArrozModel",
+        "description": "src.models.varietyArrozModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyArrozModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyArrozModel",
+        "importPath": "src.models.varietyArrozModel",
+        "description": "src.models.varietyArrozModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyArrozModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyArrozModel",
+        "importPath": "src.models.varietyArrozModel",
+        "description": "src.models.varietyArrozModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyArrozModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyArrozModel",
+        "importPath": "src.models.varietyArrozModel",
+        "description": "src.models.varietyArrozModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyArrozModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyArrozModel",
+        "importPath": "src.models.varietyArrozModel",
+        "description": "src.models.varietyArrozModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyArrozModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyArrozModel",
+        "importPath": "src.models.varietyArrozModel",
+        "description": "src.models.varietyArrozModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyArrozModel",
         "documentation": {}
     },
     {
@@ -3944,6 +4888,22 @@
     },
     {
         "label": "time",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -5415,6 +6375,102 @@
         "documentation": {}
     },
     {
+        "label": "Task",
+        "importPath": "src.models.taskModel",
+        "description": "src.models.taskModel",
+        "isExtraImport": true,
+        "detail": "src.models.taskModel",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "src.models.taskModel",
+        "description": "src.models.taskModel",
+        "isExtraImport": true,
+        "detail": "src.models.taskModel",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "src.models.taskModel",
+        "description": "src.models.taskModel",
+        "isExtraImport": true,
+        "detail": "src.models.taskModel",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "src.models.taskModel",
+        "description": "src.models.taskModel",
+        "isExtraImport": true,
+        "detail": "src.models.taskModel",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "src.models.taskModel",
+        "description": "src.models.taskModel",
+        "isExtraImport": true,
+        "detail": "src.models.taskModel",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "src.models.taskModel",
+        "description": "src.models.taskModel",
+        "isExtraImport": true,
+        "detail": "src.models.taskModel",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "src.models.taskModel",
+        "description": "src.models.taskModel",
+        "isExtraImport": true,
+        "detail": "src.models.taskModel",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "src.models.taskModel",
+        "description": "src.models.taskModel",
+        "isExtraImport": true,
+        "detail": "src.models.taskModel",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "src.models.taskModel",
+        "description": "src.models.taskModel",
+        "isExtraImport": true,
+        "detail": "src.models.taskModel",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "src.models.taskModel",
+        "description": "src.models.taskModel",
+        "isExtraImport": true,
+        "detail": "src.models.taskModel",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "src.models.taskModel",
+        "description": "src.models.taskModel",
+        "isExtraImport": true,
+        "detail": "src.models.taskModel",
+        "documentation": {}
+    },
+    {
+        "label": "Task",
+        "importPath": "src.models.taskModel",
+        "description": "src.models.taskModel",
+        "isExtraImport": true,
+        "detail": "src.models.taskModel",
+        "documentation": {}
+    },
+    {
         "label": "Diagnostic",
         "importPath": "src.models.diagnosticModel",
         "description": "src.models.diagnosticModel",
@@ -5559,6 +6615,134 @@
         "documentation": {}
     },
     {
+        "label": "LaborCultural",
+        "importPath": "src.models.laborCulturalModel",
+        "description": "src.models.laborCulturalModel",
+        "isExtraImport": true,
+        "detail": "src.models.laborCulturalModel",
+        "documentation": {}
+    },
+    {
+        "label": "LaborCultural",
+        "importPath": "src.models.laborCulturalModel",
+        "description": "src.models.laborCulturalModel",
+        "isExtraImport": true,
+        "detail": "src.models.laborCulturalModel",
+        "documentation": {}
+    },
+    {
+        "label": "LaborCultural",
+        "importPath": "src.models.laborCulturalModel",
+        "description": "src.models.laborCulturalModel",
+        "isExtraImport": true,
+        "detail": "src.models.laborCulturalModel",
+        "documentation": {}
+    },
+    {
+        "label": "LaborCultural",
+        "importPath": "src.models.laborCulturalModel",
+        "description": "src.models.laborCulturalModel",
+        "isExtraImport": true,
+        "detail": "src.models.laborCulturalModel",
+        "documentation": {}
+    },
+    {
+        "label": "LaborCultural",
+        "importPath": "src.models.laborCulturalModel",
+        "description": "src.models.laborCulturalModel",
+        "isExtraImport": true,
+        "detail": "src.models.laborCulturalModel",
+        "documentation": {}
+    },
+    {
+        "label": "LaborCultural",
+        "importPath": "src.models.laborCulturalModel",
+        "description": "src.models.laborCulturalModel",
+        "isExtraImport": true,
+        "detail": "src.models.laborCulturalModel",
+        "documentation": {}
+    },
+    {
+        "label": "LaborCultural",
+        "importPath": "src.models.laborCulturalModel",
+        "description": "src.models.laborCulturalModel",
+        "isExtraImport": true,
+        "detail": "src.models.laborCulturalModel",
+        "documentation": {}
+    },
+    {
+        "label": "LaborCultural",
+        "importPath": "src.models.laborCulturalModel",
+        "description": "src.models.laborCulturalModel",
+        "isExtraImport": true,
+        "detail": "src.models.laborCulturalModel",
+        "documentation": {}
+    },
+    {
+        "label": "LaborCultural",
+        "importPath": "src.models.laborCulturalModel",
+        "description": "src.models.laborCulturalModel",
+        "isExtraImport": true,
+        "detail": "src.models.laborCulturalModel",
+        "documentation": {}
+    },
+    {
+        "label": "LaborCultural",
+        "importPath": "src.models.laborCulturalModel",
+        "description": "src.models.laborCulturalModel",
+        "isExtraImport": true,
+        "detail": "src.models.laborCulturalModel",
+        "documentation": {}
+    },
+    {
+        "label": "LaborCultural",
+        "importPath": "src.models.laborCulturalModel",
+        "description": "src.models.laborCulturalModel",
+        "isExtraImport": true,
+        "detail": "src.models.laborCulturalModel",
+        "documentation": {}
+    },
+    {
+        "label": "LaborCultural",
+        "importPath": "src.models.laborCulturalModel",
+        "description": "src.models.laborCulturalModel",
+        "isExtraImport": true,
+        "detail": "src.models.laborCulturalModel",
+        "documentation": {}
+    },
+    {
+        "label": "Machinery",
+        "importPath": "src.models.machineryModel",
+        "description": "src.models.machineryModel",
+        "isExtraImport": true,
+        "detail": "src.models.machineryModel",
+        "documentation": {}
+    },
+    {
+        "label": "Machinery",
+        "importPath": "src.models.machineryModel",
+        "description": "src.models.machineryModel",
+        "isExtraImport": true,
+        "detail": "src.models.machineryModel",
+        "documentation": {}
+    },
+    {
+        "label": "Machinery",
+        "importPath": "src.models.machineryModel",
+        "description": "src.models.machineryModel",
+        "isExtraImport": true,
+        "detail": "src.models.machineryModel",
+        "documentation": {}
+    },
+    {
+        "label": "Machinery",
+        "importPath": "src.models.machineryModel",
+        "description": "src.models.machineryModel",
+        "isExtraImport": true,
+        "detail": "src.models.machineryModel",
+        "documentation": {}
+    },
+    {
         "label": "Machinery",
         "importPath": "src.models.machineryModel",
         "description": "src.models.machineryModel",
@@ -5604,6 +6788,166 @@
         "description": "src.models.machineryModel",
         "isExtraImport": true,
         "detail": "src.models.machineryModel",
+        "documentation": {}
+    },
+    {
+        "label": "Machinery",
+        "importPath": "src.models.machineryModel",
+        "description": "src.models.machineryModel",
+        "isExtraImport": true,
+        "detail": "src.models.machineryModel",
+        "documentation": {}
+    },
+    {
+        "label": "Machinery",
+        "importPath": "src.models.machineryModel",
+        "description": "src.models.machineryModel",
+        "isExtraImport": true,
+        "detail": "src.models.machineryModel",
+        "documentation": {}
+    },
+    {
+        "label": "Machinery",
+        "importPath": "src.models.machineryModel",
+        "description": "src.models.machineryModel",
+        "isExtraImport": true,
+        "detail": "src.models.machineryModel",
+        "documentation": {}
+    },
+    {
+        "label": "Machinery",
+        "importPath": "src.models.machineryModel",
+        "description": "src.models.machineryModel",
+        "isExtraImport": true,
+        "detail": "src.models.machineryModel",
+        "documentation": {}
+    },
+    {
+        "label": "Machinery",
+        "importPath": "src.models.machineryModel",
+        "description": "src.models.machineryModel",
+        "isExtraImport": true,
+        "detail": "src.models.machineryModel",
+        "documentation": {}
+    },
+    {
+        "label": "Machinery",
+        "importPath": "src.models.machineryModel",
+        "description": "src.models.machineryModel",
+        "isExtraImport": true,
+        "detail": "src.models.machineryModel",
+        "documentation": {}
+    },
+    {
+        "label": "Machinery",
+        "importPath": "src.models.machineryModel",
+        "description": "src.models.machineryModel",
+        "isExtraImport": true,
+        "detail": "src.models.machineryModel",
+        "documentation": {}
+    },
+    {
+        "label": "Machinery",
+        "importPath": "src.models.machineryModel",
+        "description": "src.models.machineryModel",
+        "isExtraImport": true,
+        "detail": "src.models.machineryModel",
+        "documentation": {}
+    },
+    {
+        "label": "Harvest",
+        "importPath": "src.models.harvestModel",
+        "description": "src.models.harvestModel",
+        "isExtraImport": true,
+        "detail": "src.models.harvestModel",
+        "documentation": {}
+    },
+    {
+        "label": "Harvest",
+        "importPath": "src.models.harvestModel",
+        "description": "src.models.harvestModel",
+        "isExtraImport": true,
+        "detail": "src.models.harvestModel",
+        "documentation": {}
+    },
+    {
+        "label": "Harvest",
+        "importPath": "src.models.harvestModel",
+        "description": "src.models.harvestModel",
+        "isExtraImport": true,
+        "detail": "src.models.harvestModel",
+        "documentation": {}
+    },
+    {
+        "label": "Harvest",
+        "importPath": "src.models.harvestModel",
+        "description": "src.models.harvestModel",
+        "isExtraImport": true,
+        "detail": "src.models.harvestModel",
+        "documentation": {}
+    },
+    {
+        "label": "Harvest",
+        "importPath": "src.models.harvestModel",
+        "description": "src.models.harvestModel",
+        "isExtraImport": true,
+        "detail": "src.models.harvestModel",
+        "documentation": {}
+    },
+    {
+        "label": "Harvest",
+        "importPath": "src.models.harvestModel",
+        "description": "src.models.harvestModel",
+        "isExtraImport": true,
+        "detail": "src.models.harvestModel",
+        "documentation": {}
+    },
+    {
+        "label": "Harvest",
+        "importPath": "src.models.harvestModel",
+        "description": "src.models.harvestModel",
+        "isExtraImport": true,
+        "detail": "src.models.harvestModel",
+        "documentation": {}
+    },
+    {
+        "label": "Harvest",
+        "importPath": "src.models.harvestModel",
+        "description": "src.models.harvestModel",
+        "isExtraImport": true,
+        "detail": "src.models.harvestModel",
+        "documentation": {}
+    },
+    {
+        "label": "Harvest",
+        "importPath": "src.models.harvestModel",
+        "description": "src.models.harvestModel",
+        "isExtraImport": true,
+        "detail": "src.models.harvestModel",
+        "documentation": {}
+    },
+    {
+        "label": "Harvest",
+        "importPath": "src.models.harvestModel",
+        "description": "src.models.harvestModel",
+        "isExtraImport": true,
+        "detail": "src.models.harvestModel",
+        "documentation": {}
+    },
+    {
+        "label": "Harvest",
+        "importPath": "src.models.harvestModel",
+        "description": "src.models.harvestModel",
+        "isExtraImport": true,
+        "detail": "src.models.harvestModel",
+        "documentation": {}
+    },
+    {
+        "label": "Harvest",
+        "importPath": "src.models.harvestModel",
+        "description": "src.models.harvestModel",
+        "isExtraImport": true,
+        "detail": "src.models.harvestModel",
         "documentation": {}
     },
     {
@@ -5743,6 +7087,22 @@
         "documentation": {}
     },
     {
+        "label": "LandSchema",
+        "importPath": "src.schemas.landSchema",
+        "description": "src.schemas.landSchema",
+        "isExtraImport": true,
+        "detail": "src.schemas.landSchema",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateLandSchema",
+        "importPath": "src.schemas.landSchema",
+        "description": "src.schemas.landSchema",
+        "isExtraImport": true,
+        "detail": "src.schemas.landSchema",
+        "documentation": {}
+    },
+    {
         "label": "MaquinariaAgricolaCreate",
         "importPath": "src.schemas.machinerySchema",
         "description": "src.schemas.machinerySchema",
@@ -5807,6 +7167,102 @@
         "documentation": {}
     },
     {
+        "label": "Monitoring",
+        "importPath": "src.models.monitoringModel",
+        "description": "src.models.monitoringModel",
+        "isExtraImport": true,
+        "detail": "src.models.monitoringModel",
+        "documentation": {}
+    },
+    {
+        "label": "Monitoring",
+        "importPath": "src.models.monitoringModel",
+        "description": "src.models.monitoringModel",
+        "isExtraImport": true,
+        "detail": "src.models.monitoringModel",
+        "documentation": {}
+    },
+    {
+        "label": "Monitoring",
+        "importPath": "src.models.monitoringModel",
+        "description": "src.models.monitoringModel",
+        "isExtraImport": true,
+        "detail": "src.models.monitoringModel",
+        "documentation": {}
+    },
+    {
+        "label": "Monitoring",
+        "importPath": "src.models.monitoringModel",
+        "description": "src.models.monitoringModel",
+        "isExtraImport": true,
+        "detail": "src.models.monitoringModel",
+        "documentation": {}
+    },
+    {
+        "label": "Monitoring",
+        "importPath": "src.models.monitoringModel",
+        "description": "src.models.monitoringModel",
+        "isExtraImport": true,
+        "detail": "src.models.monitoringModel",
+        "documentation": {}
+    },
+    {
+        "label": "Monitoring",
+        "importPath": "src.models.monitoringModel",
+        "description": "src.models.monitoringModel",
+        "isExtraImport": true,
+        "detail": "src.models.monitoringModel",
+        "documentation": {}
+    },
+    {
+        "label": "Monitoring",
+        "importPath": "src.models.monitoringModel",
+        "description": "src.models.monitoringModel",
+        "isExtraImport": true,
+        "detail": "src.models.monitoringModel",
+        "documentation": {}
+    },
+    {
+        "label": "Monitoring",
+        "importPath": "src.models.monitoringModel",
+        "description": "src.models.monitoringModel",
+        "isExtraImport": true,
+        "detail": "src.models.monitoringModel",
+        "documentation": {}
+    },
+    {
+        "label": "Monitoring",
+        "importPath": "src.models.monitoringModel",
+        "description": "src.models.monitoringModel",
+        "isExtraImport": true,
+        "detail": "src.models.monitoringModel",
+        "documentation": {}
+    },
+    {
+        "label": "Monitoring",
+        "importPath": "src.models.monitoringModel",
+        "description": "src.models.monitoringModel",
+        "isExtraImport": true,
+        "detail": "src.models.monitoringModel",
+        "documentation": {}
+    },
+    {
+        "label": "Monitoring",
+        "importPath": "src.models.monitoringModel",
+        "description": "src.models.monitoringModel",
+        "isExtraImport": true,
+        "detail": "src.models.monitoringModel",
+        "documentation": {}
+    },
+    {
+        "label": "Monitoring",
+        "importPath": "src.models.monitoringModel",
+        "description": "src.models.monitoringModel",
+        "isExtraImport": true,
+        "detail": "src.models.monitoringModel",
+        "documentation": {}
+    },
+    {
         "label": "MonitoringCreate",
         "importPath": "src.schemas.monitoringSchema",
         "description": "src.schemas.monitoringSchema",
@@ -5887,6 +7343,126 @@
         "documentation": {}
     },
     {
+        "label": "VarietyRiceStageModel",
+        "importPath": "src.models.varietyRiceStageModel",
+        "description": "src.models.varietyRiceStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyRiceStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyRiceStageModel",
+        "importPath": "src.models.varietyRiceStageModel",
+        "description": "src.models.varietyRiceStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyRiceStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyRiceStageModel",
+        "importPath": "src.models.varietyRiceStageModel",
+        "description": "src.models.varietyRiceStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyRiceStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyRiceStageModel",
+        "importPath": "src.models.varietyRiceStageModel",
+        "description": "src.models.varietyRiceStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyRiceStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyRiceStageModel",
+        "importPath": "src.models.varietyRiceStageModel",
+        "description": "src.models.varietyRiceStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyRiceStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyRiceStageModel",
+        "importPath": "src.models.varietyRiceStageModel",
+        "description": "src.models.varietyRiceStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyRiceStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyRiceStageModel",
+        "importPath": "src.models.varietyRiceStageModel",
+        "description": "src.models.varietyRiceStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyRiceStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyRiceStageModel",
+        "importPath": "src.models.varietyRiceStageModel",
+        "description": "src.models.varietyRiceStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyRiceStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyRiceStageModel",
+        "importPath": "src.models.varietyRiceStageModel",
+        "description": "src.models.varietyRiceStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyRiceStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyRiceStageModel",
+        "importPath": "src.models.varietyRiceStageModel",
+        "description": "src.models.varietyRiceStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyRiceStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyRiceStageModel",
+        "importPath": "src.models.varietyRiceStageModel",
+        "description": "src.models.varietyRiceStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyRiceStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "VarietyRiceStageModel",
+        "importPath": "src.models.varietyRiceStageModel",
+        "description": "src.models.varietyRiceStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.varietyRiceStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "PhenologicalStage",
+        "importPath": "src.models.phenologicalStageModel",
+        "description": "src.models.phenologicalStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.phenologicalStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "PhenologicalStage",
+        "importPath": "src.models.phenologicalStageModel",
+        "description": "src.models.phenologicalStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.phenologicalStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "PhenologicalStage",
+        "importPath": "src.models.phenologicalStageModel",
+        "description": "src.models.phenologicalStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.phenologicalStageModel",
+        "documentation": {}
+    },
+    {
         "label": "PhenologicalStage",
         "importPath": "src.models.phenologicalStageModel",
         "description": "src.models.phenologicalStageModel",
@@ -5924,6 +7500,134 @@
         "description": "src.models.phenologicalStageModel",
         "isExtraImport": true,
         "detail": "src.models.phenologicalStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "PhenologicalStage",
+        "importPath": "src.models.phenologicalStageModel",
+        "description": "src.models.phenologicalStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.phenologicalStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "PhenologicalStage",
+        "importPath": "src.models.phenologicalStageModel",
+        "description": "src.models.phenologicalStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.phenologicalStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "PhenologicalStage",
+        "importPath": "src.models.phenologicalStageModel",
+        "description": "src.models.phenologicalStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.phenologicalStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "PhenologicalStage",
+        "importPath": "src.models.phenologicalStageModel",
+        "description": "src.models.phenologicalStageModel",
+        "isExtraImport": true,
+        "detail": "src.models.phenologicalStageModel",
+        "documentation": {}
+    },
+    {
+        "label": "OpMech",
+        "importPath": "src.models.opMechModel",
+        "description": "src.models.opMechModel",
+        "isExtraImport": true,
+        "detail": "src.models.opMechModel",
+        "documentation": {}
+    },
+    {
+        "label": "OpMech",
+        "importPath": "src.models.opMechModel",
+        "description": "src.models.opMechModel",
+        "isExtraImport": true,
+        "detail": "src.models.opMechModel",
+        "documentation": {}
+    },
+    {
+        "label": "OpMech",
+        "importPath": "src.models.opMechModel",
+        "description": "src.models.opMechModel",
+        "isExtraImport": true,
+        "detail": "src.models.opMechModel",
+        "documentation": {}
+    },
+    {
+        "label": "OpMech",
+        "importPath": "src.models.opMechModel",
+        "description": "src.models.opMechModel",
+        "isExtraImport": true,
+        "detail": "src.models.opMechModel",
+        "documentation": {}
+    },
+    {
+        "label": "OpMech",
+        "importPath": "src.models.opMechModel",
+        "description": "src.models.opMechModel",
+        "isExtraImport": true,
+        "detail": "src.models.opMechModel",
+        "documentation": {}
+    },
+    {
+        "label": "OpMech",
+        "importPath": "src.models.opMechModel",
+        "description": "src.models.opMechModel",
+        "isExtraImport": true,
+        "detail": "src.models.opMechModel",
+        "documentation": {}
+    },
+    {
+        "label": "OpMech",
+        "importPath": "src.models.opMechModel",
+        "description": "src.models.opMechModel",
+        "isExtraImport": true,
+        "detail": "src.models.opMechModel",
+        "documentation": {}
+    },
+    {
+        "label": "OpMech",
+        "importPath": "src.models.opMechModel",
+        "description": "src.models.opMechModel",
+        "isExtraImport": true,
+        "detail": "src.models.opMechModel",
+        "documentation": {}
+    },
+    {
+        "label": "OpMech",
+        "importPath": "src.models.opMechModel",
+        "description": "src.models.opMechModel",
+        "isExtraImport": true,
+        "detail": "src.models.opMechModel",
+        "documentation": {}
+    },
+    {
+        "label": "OpMech",
+        "importPath": "src.models.opMechModel",
+        "description": "src.models.opMechModel",
+        "isExtraImport": true,
+        "detail": "src.models.opMechModel",
+        "documentation": {}
+    },
+    {
+        "label": "OpMech",
+        "importPath": "src.models.opMechModel",
+        "description": "src.models.opMechModel",
+        "isExtraImport": true,
+        "detail": "src.models.opMechModel",
+        "documentation": {}
+    },
+    {
+        "label": "OpMech",
+        "importPath": "src.models.opMechModel",
+        "description": "src.models.opMechModel",
+        "isExtraImport": true,
+        "detail": "src.models.opMechModel",
         "documentation": {}
     },
     {
@@ -6930,6 +8634,110 @@
         "documentation": {}
     },
     {
+        "label": "SoilAnalysisModel",
+        "importPath": "src.models.soilAnalysisModel",
+        "description": "src.models.soilAnalysisModel",
+        "isExtraImport": true,
+        "detail": "src.models.soilAnalysisModel",
+        "documentation": {}
+    },
+    {
+        "label": "SoilAnalysisModel",
+        "importPath": "src.models.soilAnalysisModel",
+        "description": "src.models.soilAnalysisModel",
+        "isExtraImport": true,
+        "detail": "src.models.soilAnalysisModel",
+        "documentation": {}
+    },
+    {
+        "label": "SoilAnalysisModel",
+        "importPath": "src.models.soilAnalysisModel",
+        "description": "src.models.soilAnalysisModel",
+        "isExtraImport": true,
+        "detail": "src.models.soilAnalysisModel",
+        "documentation": {}
+    },
+    {
+        "label": "SoilAnalysisModel",
+        "importPath": "src.models.soilAnalysisModel",
+        "description": "src.models.soilAnalysisModel",
+        "isExtraImport": true,
+        "detail": "src.models.soilAnalysisModel",
+        "documentation": {}
+    },
+    {
+        "label": "SoilAnalysisModel",
+        "importPath": "src.models.soilAnalysisModel",
+        "description": "src.models.soilAnalysisModel",
+        "isExtraImport": true,
+        "detail": "src.models.soilAnalysisModel",
+        "documentation": {}
+    },
+    {
+        "label": "SoilAnalysisModel",
+        "importPath": "src.models.soilAnalysisModel",
+        "description": "src.models.soilAnalysisModel",
+        "isExtraImport": true,
+        "detail": "src.models.soilAnalysisModel",
+        "documentation": {}
+    },
+    {
+        "label": "SoilAnalysisModel",
+        "importPath": "src.models.soilAnalysisModel",
+        "description": "src.models.soilAnalysisModel",
+        "isExtraImport": true,
+        "detail": "src.models.soilAnalysisModel",
+        "documentation": {}
+    },
+    {
+        "label": "SoilAnalysisModel",
+        "importPath": "src.models.soilAnalysisModel",
+        "description": "src.models.soilAnalysisModel",
+        "isExtraImport": true,
+        "detail": "src.models.soilAnalysisModel",
+        "documentation": {}
+    },
+    {
+        "label": "SoilAnalysisModel",
+        "importPath": "src.models.soilAnalysisModel",
+        "description": "src.models.soilAnalysisModel",
+        "isExtraImport": true,
+        "detail": "src.models.soilAnalysisModel",
+        "documentation": {}
+    },
+    {
+        "label": "SoilAnalysisModel",
+        "importPath": "src.models.soilAnalysisModel",
+        "description": "src.models.soilAnalysisModel",
+        "isExtraImport": true,
+        "detail": "src.models.soilAnalysisModel",
+        "documentation": {}
+    },
+    {
+        "label": "SoilAnalysisModel",
+        "importPath": "src.models.soilAnalysisModel",
+        "description": "src.models.soilAnalysisModel",
+        "isExtraImport": true,
+        "detail": "src.models.soilAnalysisModel",
+        "documentation": {}
+    },
+    {
+        "label": "SoilAnalysisModel",
+        "importPath": "src.models.soilAnalysisModel",
+        "description": "src.models.soilAnalysisModel",
+        "isExtraImport": true,
+        "detail": "src.models.soilAnalysisModel",
+        "documentation": {}
+    },
+    {
+        "label": "SoilAnalysisModel",
+        "importPath": "src.models.soilAnalysisModel",
+        "description": "src.models.soilAnalysisModel",
+        "isExtraImport": true,
+        "detail": "src.models.soilAnalysisModel",
+        "documentation": {}
+    },
+    {
         "label": "SoilAnalysisCreate",
         "importPath": "src.schemas.soilAnalysisSchema",
         "description": "src.schemas.soilAnalysisSchema",
@@ -7071,6 +8879,22 @@
         "description": "src.schemas.taskSchema",
         "isExtraImport": true,
         "detail": "src.schemas.taskSchema",
+        "documentation": {}
+    },
+    {
+        "label": "CrearUsuario",
+        "importPath": "src.schemas.userShema",
+        "description": "src.schemas.userShema",
+        "isExtraImport": true,
+        "detail": "src.schemas.userShema",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateUser",
+        "importPath": "src.schemas.userShema",
+        "description": "src.schemas.userShema",
+        "isExtraImport": true,
+        "detail": "src.schemas.userShema",
         "documentation": {}
     },
     {
@@ -7327,6 +9151,110 @@
         "description": "src.schemas.varietyRiceStageSchema",
         "isExtraImport": true,
         "detail": "src.schemas.varietyRiceStageSchema",
+        "documentation": {}
+    },
+    {
+        "label": "WeatherRecord",
+        "importPath": "src.models.weatherRecordModel",
+        "description": "src.models.weatherRecordModel",
+        "isExtraImport": true,
+        "detail": "src.models.weatherRecordModel",
+        "documentation": {}
+    },
+    {
+        "label": "WeatherRecord",
+        "importPath": "src.models.weatherRecordModel",
+        "description": "src.models.weatherRecordModel",
+        "isExtraImport": true,
+        "detail": "src.models.weatherRecordModel",
+        "documentation": {}
+    },
+    {
+        "label": "WeatherRecord",
+        "importPath": "src.models.weatherRecordModel",
+        "description": "src.models.weatherRecordModel",
+        "isExtraImport": true,
+        "detail": "src.models.weatherRecordModel",
+        "documentation": {}
+    },
+    {
+        "label": "WeatherRecord",
+        "importPath": "src.models.weatherRecordModel",
+        "description": "src.models.weatherRecordModel",
+        "isExtraImport": true,
+        "detail": "src.models.weatherRecordModel",
+        "documentation": {}
+    },
+    {
+        "label": "WeatherRecord",
+        "importPath": "src.models.weatherRecordModel",
+        "description": "src.models.weatherRecordModel",
+        "isExtraImport": true,
+        "detail": "src.models.weatherRecordModel",
+        "documentation": {}
+    },
+    {
+        "label": "WeatherRecord",
+        "importPath": "src.models.weatherRecordModel",
+        "description": "src.models.weatherRecordModel",
+        "isExtraImport": true,
+        "detail": "src.models.weatherRecordModel",
+        "documentation": {}
+    },
+    {
+        "label": "WeatherRecord",
+        "importPath": "src.models.weatherRecordModel",
+        "description": "src.models.weatherRecordModel",
+        "isExtraImport": true,
+        "detail": "src.models.weatherRecordModel",
+        "documentation": {}
+    },
+    {
+        "label": "WeatherRecord",
+        "importPath": "src.models.weatherRecordModel",
+        "description": "src.models.weatherRecordModel",
+        "isExtraImport": true,
+        "detail": "src.models.weatherRecordModel",
+        "documentation": {}
+    },
+    {
+        "label": "WeatherRecord",
+        "importPath": "src.models.weatherRecordModel",
+        "description": "src.models.weatherRecordModel",
+        "isExtraImport": true,
+        "detail": "src.models.weatherRecordModel",
+        "documentation": {}
+    },
+    {
+        "label": "WeatherRecord",
+        "importPath": "src.models.weatherRecordModel",
+        "description": "src.models.weatherRecordModel",
+        "isExtraImport": true,
+        "detail": "src.models.weatherRecordModel",
+        "documentation": {}
+    },
+    {
+        "label": "WeatherRecord",
+        "importPath": "src.models.weatherRecordModel",
+        "description": "src.models.weatherRecordModel",
+        "isExtraImport": true,
+        "detail": "src.models.weatherRecordModel",
+        "documentation": {}
+    },
+    {
+        "label": "WeatherRecord",
+        "importPath": "src.models.weatherRecordModel",
+        "description": "src.models.weatherRecordModel",
+        "isExtraImport": true,
+        "detail": "src.models.weatherRecordModel",
+        "documentation": {}
+    },
+    {
+        "label": "WeatherRecord",
+        "importPath": "src.models.weatherRecordModel",
+        "description": "src.models.weatherRecordModel",
+        "isExtraImport": true,
+        "detail": "src.models.weatherRecordModel",
         "documentation": {}
     },
     {
@@ -7718,6 +9646,22 @@
         "documentation": {}
     },
     {
+        "label": "login",
+        "importPath": "src.controller.authController",
+        "description": "src.controller.authController",
+        "isExtraImport": true,
+        "detail": "src.controller.authController",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "importPath": "src.controller.authController",
+        "description": "src.controller.authController",
+        "isExtraImport": true,
+        "detail": "src.controller.authController",
+        "documentation": {}
+    },
+    {
         "label": "filter_departments",
         "importPath": "src.controller.cities_Controller",
         "description": "src.controller.cities_Controller",
@@ -7847,6 +9791,86 @@
     },
     {
         "label": "getCropsByLand  # Importar la nueva función",
+        "importPath": "src.controller.cropController",
+        "description": "src.controller.cropController",
+        "isExtraImport": true,
+        "detail": "src.controller.cropController",
+        "documentation": {}
+    },
+    {
+        "label": "createCrop",
+        "importPath": "src.controller.cropController",
+        "description": "src.controller.cropController",
+        "isExtraImport": true,
+        "detail": "src.controller.cropController",
+        "documentation": {}
+    },
+    {
+        "label": "createCrop",
+        "importPath": "src.controller.cropController",
+        "description": "src.controller.cropController",
+        "isExtraImport": true,
+        "detail": "src.controller.cropController",
+        "documentation": {}
+    },
+    {
+        "label": "deleteCrop",
+        "importPath": "src.controller.cropController",
+        "description": "src.controller.cropController",
+        "isExtraImport": true,
+        "detail": "src.controller.cropController",
+        "documentation": {}
+    },
+    {
+        "label": "createCrop",
+        "importPath": "src.controller.cropController",
+        "description": "src.controller.cropController",
+        "isExtraImport": true,
+        "detail": "src.controller.cropController",
+        "documentation": {}
+    },
+    {
+        "label": "getCrop",
+        "importPath": "src.controller.cropController",
+        "description": "src.controller.cropController",
+        "isExtraImport": true,
+        "detail": "src.controller.cropController",
+        "documentation": {}
+    },
+    {
+        "label": "getAllCrops",
+        "importPath": "src.controller.cropController",
+        "description": "src.controller.cropController",
+        "isExtraImport": true,
+        "detail": "src.controller.cropController",
+        "documentation": {}
+    },
+    {
+        "label": "getCropsByLand",
+        "importPath": "src.controller.cropController",
+        "description": "src.controller.cropController",
+        "isExtraImport": true,
+        "detail": "src.controller.cropController",
+        "documentation": {}
+    },
+    {
+        "label": "getCropInfo",
+        "importPath": "src.controller.cropController",
+        "description": "src.controller.cropController",
+        "isExtraImport": true,
+        "detail": "src.controller.cropController",
+        "documentation": {}
+    },
+    {
+        "label": "createCrop",
+        "importPath": "src.controller.cropController",
+        "description": "src.controller.cropController",
+        "isExtraImport": true,
+        "detail": "src.controller.cropController",
+        "documentation": {}
+    },
+    {
+        "label": "updateCrop",
         "importPath": "src.controller.cropController",
         "description": "src.controller.cropController",
         "isExtraImport": true,
@@ -8014,6 +10038,14 @@
         "documentation": {}
     },
     {
+        "label": "deleteFarm",
+        "importPath": "src.controller.farmCrontroller",
+        "description": "src.controller.farmCrontroller",
+        "isExtraImport": true,
+        "detail": "src.controller.farmCrontroller",
+        "documentation": {}
+    },
+    {
         "label": "getAllFarms",
         "importPath": "src.controller.farmCrontroller",
         "description": "src.controller.farmCrontroller",
@@ -8023,6 +10055,14 @@
     },
     {
         "label": "getFarmById",
+        "importPath": "src.controller.farmCrontroller",
+        "description": "src.controller.farmCrontroller",
+        "isExtraImport": true,
+        "detail": "src.controller.farmCrontroller",
+        "documentation": {}
+    },
+    {
+        "label": "updateFarm",
         "importPath": "src.controller.farmCrontroller",
         "description": "src.controller.farmCrontroller",
         "isExtraImport": true,
@@ -8319,6 +10359,46 @@
     },
     {
         "label": "calculate_agricultural_input_costs",
+        "importPath": "src.controller.landController",
+        "description": "src.controller.landController",
+        "isExtraImport": true,
+        "detail": "src.controller.landController",
+        "documentation": {}
+    },
+    {
+        "label": "createLand",
+        "importPath": "src.controller.landController",
+        "description": "src.controller.landController",
+        "isExtraImport": true,
+        "detail": "src.controller.landController",
+        "documentation": {}
+    },
+    {
+        "label": "deleteLand",
+        "importPath": "src.controller.landController",
+        "description": "src.controller.landController",
+        "isExtraImport": true,
+        "detail": "src.controller.landController",
+        "documentation": {}
+    },
+    {
+        "label": "getLandById",
+        "importPath": "src.controller.landController",
+        "description": "src.controller.landController",
+        "isExtraImport": true,
+        "detail": "src.controller.landController",
+        "documentation": {}
+    },
+    {
+        "label": "getAllLands",
+        "importPath": "src.controller.landController",
+        "description": "src.controller.landController",
+        "isExtraImport": true,
+        "detail": "src.controller.landController",
+        "documentation": {}
+    },
+    {
+        "label": "updateLand",
         "importPath": "src.controller.landController",
         "description": "src.controller.landController",
         "isExtraImport": true,
@@ -8974,6 +11054,46 @@
         "documentation": {}
     },
     {
+        "label": "registerUser",
+        "importPath": "src.controller.userController",
+        "description": "src.controller.userController",
+        "isExtraImport": true,
+        "detail": "src.controller.userController",
+        "documentation": {}
+    },
+    {
+        "label": "deleteUser",
+        "importPath": "src.controller.userController",
+        "description": "src.controller.userController",
+        "isExtraImport": true,
+        "detail": "src.controller.userController",
+        "documentation": {}
+    },
+    {
+        "label": "getUsers",
+        "importPath": "src.controller.userController",
+        "description": "src.controller.userController",
+        "isExtraImport": true,
+        "detail": "src.controller.userController",
+        "documentation": {}
+    },
+    {
+        "label": "getUser",
+        "importPath": "src.controller.userController",
+        "description": "src.controller.userController",
+        "isExtraImport": true,
+        "detail": "src.controller.userController",
+        "documentation": {}
+    },
+    {
+        "label": "updateUser",
+        "importPath": "src.controller.userController",
+        "description": "src.controller.userController",
+        "isExtraImport": true,
+        "detail": "src.controller.userController",
+        "documentation": {}
+    },
+    {
         "label": "create_variable_cost",
         "importPath": "src.controller.variableCostController",
         "description": "src.controller.variableCostController",
@@ -9479,6 +11599,14 @@
         "documentation": {}
     },
     {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
         "label": "MagicMock",
         "importPath": "unittest.mock",
         "description": "unittest.mock",
@@ -9488,6 +11616,142 @@
     },
     {
         "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
         "importPath": "unittest.mock",
         "description": "unittest.mock",
         "isExtraImport": true,
@@ -9527,11 +11791,99 @@
         "documentation": {}
     },
     {
-        "label": "updateFarm",
-        "importPath": "src.controllers.farmController",
-        "description": "src.controllers.farmController",
+        "label": "Estado",
+        "importPath": "src.models.estadoModel",
+        "description": "src.models.estadoModel",
         "isExtraImport": true,
-        "detail": "src.controllers.farmController",
+        "detail": "src.models.estadoModel",
+        "documentation": {}
+    },
+    {
+        "label": "Estado",
+        "importPath": "src.models.estadoModel",
+        "description": "src.models.estadoModel",
+        "isExtraImport": true,
+        "detail": "src.models.estadoModel",
+        "documentation": {}
+    },
+    {
+        "label": "Estado",
+        "importPath": "src.models.estadoModel",
+        "description": "src.models.estadoModel",
+        "isExtraImport": true,
+        "detail": "src.models.estadoModel",
+        "documentation": {}
+    },
+    {
+        "label": "Estado",
+        "importPath": "src.models.estadoModel",
+        "description": "src.models.estadoModel",
+        "isExtraImport": true,
+        "detail": "src.models.estadoModel",
+        "documentation": {}
+    },
+    {
+        "label": "Estado",
+        "importPath": "src.models.estadoModel",
+        "description": "src.models.estadoModel",
+        "isExtraImport": true,
+        "detail": "src.models.estadoModel",
+        "documentation": {}
+    },
+    {
+        "label": "Estado",
+        "importPath": "src.models.estadoModel",
+        "description": "src.models.estadoModel",
+        "isExtraImport": true,
+        "detail": "src.models.estadoModel",
+        "documentation": {}
+    },
+    {
+        "label": "Estado",
+        "importPath": "src.models.estadoModel",
+        "description": "src.models.estadoModel",
+        "isExtraImport": true,
+        "detail": "src.models.estadoModel",
+        "documentation": {}
+    },
+    {
+        "label": "Estado",
+        "importPath": "src.models.estadoModel",
+        "description": "src.models.estadoModel",
+        "isExtraImport": true,
+        "detail": "src.models.estadoModel",
+        "documentation": {}
+    },
+    {
+        "label": "Estado",
+        "importPath": "src.models.estadoModel",
+        "description": "src.models.estadoModel",
+        "isExtraImport": true,
+        "detail": "src.models.estadoModel",
+        "documentation": {}
+    },
+    {
+        "label": "Estado",
+        "importPath": "src.models.estadoModel",
+        "description": "src.models.estadoModel",
+        "isExtraImport": true,
+        "detail": "src.models.estadoModel",
+        "documentation": {}
+    },
+    {
+        "label": "Estado",
+        "importPath": "src.models.estadoModel",
+        "description": "src.models.estadoModel",
+        "isExtraImport": true,
+        "detail": "src.models.estadoModel",
+        "documentation": {}
+    },
+    {
+        "label": "Estado",
+        "importPath": "src.models.estadoModel",
+        "description": "src.models.estadoModel",
+        "isExtraImport": true,
+        "detail": "src.models.estadoModel",
         "documentation": {}
     },
     {
@@ -15161,6 +17513,438 @@
     {
         "label": "mock_session",
         "kind": 2,
+        "importPath": "tests.auth.test_login",
+        "description": "tests.auth.test_login",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.commit = MagicMock()\n    session.refresh = MagicMock()\n    return session\n@pytest.fixture\ndef mock_user():\n    MagicMock(spec=Task)\n    MagicMock(spec=Crop)",
+        "detail": "tests.auth.test_login",
+        "documentation": {}
+    },
+    {
+        "label": "mock_user",
+        "kind": 2,
+        "importPath": "tests.auth.test_login",
+        "description": "tests.auth.test_login",
+        "peekOfCode": "def mock_user():\n    MagicMock(spec=Task)\n    MagicMock(spec=Crop)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=LaborCultural)\n    MagicMock(spec=Machinery)\n    MagicMock(spec=Estado)\n    MagicMock(spec=Farm)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=WeatherRecord)",
+        "detail": "tests.auth.test_login",
+        "documentation": {}
+    },
+    {
+        "label": "valid_login_request",
+        "kind": 2,
+        "importPath": "tests.auth.test_login",
+        "description": "tests.auth.test_login",
+        "peekOfCode": "def valid_login_request():\n    \"\"\"Crea una solicitud de inicio de sesión válida\"\"\"\n    return LoginRequest(\n        email=\"juanperez@example.com\",\n        password=\"Password123\"\n    )\n@patch('src.controller.authController.verify_password')\n@patch('src.controller.authController.create_access_token')\n@patch('src.controller.authController.create_refresh_token')\ndef test_login_success(mock_create_refresh_token, mock_create_access_token, ",
+        "detail": "tests.auth.test_login",
+        "documentation": {}
+    },
+    {
+        "label": "test_login_success",
+        "kind": 2,
+        "importPath": "tests.auth.test_login",
+        "description": "tests.auth.test_login",
+        "peekOfCode": "def test_login_success(mock_create_refresh_token, mock_create_access_token, \n                      mock_verify_password, mock_session, mock_user, valid_login_request):\n    \"\"\"Prueba un inicio de sesión exitoso\"\"\"\n    # Configurar mocks\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_user\n    mock_verify_password.return_value = True\n    mock_create_access_token.return_value = \"test_access_token\"\n    mock_create_refresh_token.return_value = \"test_refresh_token\"\n    # Ejecutar la función\n    result = login(valid_login_request, mock_session)",
+        "detail": "tests.auth.test_login",
+        "documentation": {}
+    },
+    {
+        "label": "test_login_first_time",
+        "kind": 2,
+        "importPath": "tests.auth.test_login",
+        "description": "tests.auth.test_login",
+        "peekOfCode": "def test_login_first_time(mock_create_refresh_token, mock_create_access_token, \n                         mock_verify_password, mock_session, mock_user, valid_login_request):\n    \"\"\"Prueba un primer inicio de sesión (necesita cambio de contraseña)\"\"\"\n    # Configurar mocks\n    mock_user.primer_login = True\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_user\n    mock_verify_password.return_value = True\n    mock_create_access_token.return_value = \"test_access_token\"\n    mock_create_refresh_token.return_value = \"test_refresh_token\"\n    # Ejecutar la función",
+        "detail": "tests.auth.test_login",
+        "documentation": {}
+    },
+    {
+        "label": "test_login_user_not_found",
+        "kind": 2,
+        "importPath": "tests.auth.test_login",
+        "description": "tests.auth.test_login",
+        "peekOfCode": "def test_login_user_not_found(mock_session, valid_login_request):\n    \"\"\"Prueba el caso en que no se encuentra el usuario por email\"\"\"\n    # Configurar el mock de la sesión para devolver None cuando se filtra por email\n    mock_session.query.return_value.filter.return_value.first.return_value = None\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        login(valid_login_request, mock_session)\n    assert excinfo.value.status_code == 400\n    assert \"Incorrect email\" in excinfo.value.detail\n@patch('src.controller.authController.verify_password')",
+        "detail": "tests.auth.test_login",
+        "documentation": {}
+    },
+    {
+        "label": "test_login_incorrect_password",
+        "kind": 2,
+        "importPath": "tests.auth.test_login",
+        "description": "tests.auth.test_login",
+        "peekOfCode": "def test_login_incorrect_password(mock_verify_password, mock_session, mock_user, valid_login_request):\n    \"\"\"Prueba el caso de contraseña incorrecta\"\"\"\n    # Configurar mocks\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_user\n    mock_verify_password.return_value = False  # Contraseña incorrecta\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        login(valid_login_request, mock_session)\n    assert excinfo.value.status_code == 400\n    assert \"Incorrect password\" in excinfo.value.detail",
+        "detail": "tests.auth.test_login",
+        "documentation": {}
+    },
+    {
+        "label": "test_login_invalid_email_format",
+        "kind": 2,
+        "importPath": "tests.auth.test_login",
+        "description": "tests.auth.test_login",
+        "peekOfCode": "def test_login_invalid_email_format(mock_session):\n    \"\"\"Prueba validación de formato de email\"\"\"\n    # Email sin @\n    invalid_login = LoginRequest(\n        email=\"juanperezexample.com\",\n        password=\"Password123\"\n    )\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        login(invalid_login, mock_session)",
+        "detail": "tests.auth.test_login",
+        "documentation": {}
+    },
+    {
+        "label": "test_login_invalid_password_format",
+        "kind": 2,
+        "importPath": "tests.auth.test_login",
+        "description": "tests.auth.test_login",
+        "peekOfCode": "def test_login_invalid_password_format(mock_session):\n    \"\"\"Prueba validación de formato de contraseña\"\"\"\n    # Contraseña simple\n    weak_login = LoginRequest(\n        email=\"juanperez@example.com\",\n        password=\"simple\"\n    )\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        login(weak_login, mock_session)",
+        "detail": "tests.auth.test_login",
+        "documentation": {}
+    },
+    {
+        "label": "test_logout_success",
+        "kind": 2,
+        "importPath": "tests.auth.test_login",
+        "description": "tests.auth.test_login",
+        "peekOfCode": "def test_logout_success(mock_session):\n    \"\"\"Prueba un cierre de sesión exitoso\"\"\"\n    # Crear un token mock\n    token = MagicMock(spec=TokenTable)\n    token.status = True\n    # Configurar el mock de la sesión para devolver el token\n    mock_session.query.return_value.filter.return_value.first.return_value = token\n    # Ejecutar la función\n    result = logout(1, mock_session)\n    # Verificaciones",
+        "detail": "tests.auth.test_login",
+        "documentation": {}
+    },
+    {
+        "label": "test_logout_not_found",
+        "kind": 2,
+        "importPath": "tests.auth.test_login",
+        "description": "tests.auth.test_login",
+        "peekOfCode": "def test_logout_not_found(mock_session):\n    \"\"\"Prueba el caso en que no se encuentra un token activo para cerrar sesión\"\"\"\n    # Configurar el mock de la sesión para devolver None\n    mock_session.query",
+        "detail": "tests.auth.test_login",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
+        "importPath": "tests.crop.test_create_crop",
+        "description": "tests.crop.test_create_crop",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.add = MagicMock()\n    session.commit = MagicMock()\n    session.refresh = MagicMock()\n    return session\n@pytest.fixture\ndef valid_crop_data():\n    MagicMock(spec=Land)",
+        "detail": "tests.crop.test_create_crop",
+        "documentation": {}
+    },
+    {
+        "label": "valid_crop_data",
+        "kind": 2,
+        "importPath": "tests.crop.test_create_crop",
+        "description": "tests.crop.test_create_crop",
+        "peekOfCode": "def valid_crop_data():\n    MagicMock(spec=Land)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=VarietyRiceStageModel)\n    MagicMock(spec=Monitoring)\n    MagicMock(spec=Task)\n    MagicMock(spec=WeatherRecord)\n    MagicMock(spec=VarietyArrozModel)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=Harvest)",
+        "detail": "tests.crop.test_create_crop",
+        "documentation": {}
+    },
+    {
+        "label": "mock_variety",
+        "kind": 2,
+        "importPath": "tests.crop.test_create_crop",
+        "description": "tests.crop.test_create_crop",
+        "peekOfCode": "def mock_variety():\n    \"\"\"Crea un mock para la variedad de arroz\"\"\"\n    variety = MagicMock(spec=VarietyArrozModel)\n    variety.id = 1\n    variety.nombre = \"Variedad Premium\"\n    return variety\n@pytest.fixture\ndef mock_land():\n    \"\"\"Crea un mock para el lote\"\"\"\n    land = MagicMock(spec=Land)",
+        "detail": "tests.crop.test_create_crop",
+        "documentation": {}
+    },
+    {
+        "label": "mock_land",
+        "kind": 2,
+        "importPath": "tests.crop.test_create_crop",
+        "description": "tests.crop.test_create_crop",
+        "peekOfCode": "def mock_land():\n    \"\"\"Crea un mock para el lote\"\"\"\n    land = MagicMock(spec=Land)\n    land.id = 1\n    land.nombre = \"Lote Norte\"\n    land.finca_id = 1\n    land.slug = \"lote-norte\"\n    return land\n@pytest.fixture\ndef mock_farm():",
+        "detail": "tests.crop.test_create_crop",
+        "documentation": {}
+    },
+    {
+        "label": "mock_farm",
+        "kind": 2,
+        "importPath": "tests.crop.test_create_crop",
+        "description": "tests.crop.test_create_crop",
+        "peekOfCode": "def mock_farm():\n    \"\"\"Crea un mock para la finca\"\"\"\n    farm = MagicMock(spec=Farm)\n    farm.id = 1\n    farm.nombre = \"Finca Las Palmas\"\n    farm.slug = \"finca-las-palmas\"\n    return farm\ndef test_create_crop_success(mock_session, valid_crop_data, mock_variety, mock_land, mock_farm):\n    \"\"\"Prueba la creación exitosa de un cultivo\"\"\"\n    # Configuración del mock para simular la asignación de ID después de refresh",
+        "detail": "tests.crop.test_create_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_crop_success",
+        "kind": 2,
+        "importPath": "tests.crop.test_create_crop",
+        "description": "tests.crop.test_create_crop",
+        "peekOfCode": "def test_create_crop_success(mock_session, valid_crop_data, mock_variety, mock_land, mock_farm):\n    \"\"\"Prueba la creación exitosa de un cultivo\"\"\"\n    # Configuración del mock para simular la asignación de ID después de refresh\n    def set_id_and_slug(crop):\n        crop.id = 1\n        crop.slug = \"arroz-premium\"\n    mock_session.refresh.side_effect = set_id_and_slug\n    # Configurar las consultas para los objetos relacionados\n    def mock_query_side_effect(model):\n        if model == VarietyArrozModel:",
+        "detail": "tests.crop.test_create_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_crop_variety_not_found",
+        "kind": 2,
+        "importPath": "tests.crop.test_create_crop",
+        "description": "tests.crop.test_create_crop",
+        "peekOfCode": "def test_create_crop_variety_not_found(mock_session, valid_crop_data, mock_land, mock_farm):\n    \"\"\"Prueba la creación de un cultivo cuando no se encuentra la variedad\"\"\"\n    # Configurar la asignación de ID después de refresh\n    def set_id_and_slug(crop):\n        crop.id = 1\n        crop.slug = \"arroz-premium\"\n    mock_session.refresh.side_effect = set_id_and_slug\n    # Configurar las consultas para los objetos relacionados\n    def mock_query_side_effect(model):\n        if model == VarietyArrozModel:",
+        "detail": "tests.crop.test_create_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_crop_land_not_found",
+        "kind": 2,
+        "importPath": "tests.crop.test_create_crop",
+        "description": "tests.crop.test_create_crop",
+        "peekOfCode": "def test_create_crop_land_not_found(mock_session, valid_crop_data, mock_variety, mock_farm):\n    \"\"\"Prueba la creación de un cultivo cuando no se encuentra el lote\"\"\"\n    # Configurar la asignación de ID después de refresh\n    def set_id_and_slug(crop):\n        crop.id = 1\n        crop.slug = \"arroz-premium\"\n    mock_session.refresh.side_effect = set_id_and_slug\n    # Configurar las consultas para los objetos relacionados\n    def mock_query_side_effect(model):\n        if model == VarietyArrozModel:",
+        "detail": "tests.crop.test_create_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_crop_farm_not_found",
+        "kind": 2,
+        "importPath": "tests.crop.test_create_crop",
+        "description": "tests.crop.test_create_crop",
+        "peekOfCode": "def test_create_crop_farm_not_found(mock_session, valid_crop_data, mock_variety, mock_land):\n    \"\"\"Prueba la creación de un cultivo cuando no se encuentra la finca\"\"\"\n    # Configurar la asignación de ID después de refresh\n    def set_id_and_slug(crop):\n        crop.id = 1\n        crop.slug = \"arroz-premium\"\n    mock_session.refresh.side_effect = set_id_and_slug\n    # Configurar las consultas para los objetos relacionados\n    def mock_query_side_effect(model):\n        if model == VarietyArrozModel:",
+        "detail": "tests.crop.test_create_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_crop_database_error",
+        "kind": 2,
+        "importPath": "tests.crop.test_create_crop",
+        "description": "tests.crop.test_create_crop",
+        "peekOfCode": "def test_create_crop_database_error(mock_session, valid_crop_data):\n    \"\"\"Prueba el manejo de errores de base de datos durante la creación\"\"\"\n    # Configurar el mock de la sesión para lanzar una excepción al llamar a commit\n    mock_session.commit.side_effect = Exception(\"Database error\")\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        createCrop(valid_crop_data, mock_session)\n    assert excinfo.value.status_code == 500\n    assert \"Error inesperado al crear el cultivo\" in excinfo.value.detail\nif __name__ == \"__main__\":",
+        "detail": "tests.crop.test_create_crop",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
+        "importPath": "tests.crop.test_delete_crop",
+        "description": "tests.crop.test_delete_crop",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.commit = MagicMock()\n    return session\n@pytest.fixture\ndef mock_crop():\n    MagicMock(spec=Land)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=VarietyRiceStageModel)",
+        "detail": "tests.crop.test_delete_crop",
+        "documentation": {}
+    },
+    {
+        "label": "mock_crop",
+        "kind": 2,
+        "importPath": "tests.crop.test_delete_crop",
+        "description": "tests.crop.test_delete_crop",
+        "peekOfCode": "def mock_crop():\n    MagicMock(spec=Land)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=VarietyRiceStageModel)\n    MagicMock(spec=Monitoring)\n    MagicMock(spec=Task)\n    MagicMock(spec=WeatherRecord)\n    MagicMock(spec=VarietyArrozModel)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=Harvest)",
+        "detail": "tests.crop.test_delete_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_crop_success",
+        "kind": 2,
+        "importPath": "tests.crop.test_delete_crop",
+        "description": "tests.crop.test_delete_crop",
+        "peekOfCode": "def test_delete_crop_success(mock_session, mock_crop):\n    \"\"\"Prueba la eliminación exitosa de un cultivo\"\"\"\n    # Configurar el mock de la sesión para devolver el cultivo cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_crop\n    # Ejecutar la función\n    result = deleteCrop(1, mock_session)\n    # Verificaciones\n    mock_session.delete.assert_called_once_with(mock_crop)\n    assert mock_session.commit.called\n    assert result[\"message\"] == \"Crop deleted successfully\"",
+        "detail": "tests.crop.test_delete_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_crop_not_found",
+        "kind": 2,
+        "importPath": "tests.crop.test_delete_crop",
+        "description": "tests.crop.test_delete_crop",
+        "peekOfCode": "def test_delete_crop_not_found(mock_session):\n    \"\"\"Prueba el caso en que no se encuentra el cultivo para eliminar\"\"\"\n    # Configurar el mock de la sesión para devolver None cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = None\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        deleteCrop(999, mock_session)\n    assert excinfo.value.status_code == 404\n    assert \"Crop not found\" in excinfo.value.detail\n    # Verificar que no se llamó a delete ni commit",
+        "detail": "tests.crop.test_delete_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_crop_database_error",
+        "kind": 2,
+        "importPath": "tests.crop.test_delete_crop",
+        "description": "tests.crop.test_delete_crop",
+        "peekOfCode": "def test_delete_crop_database_error(mock_session, mock_crop):\n    \"\"\"Prueba el manejo de errores de base de datos durante la eliminación\"\"\"\n    # Configurar el mock de la sesión para devolver el cultivo pero lanzar una excepción al eliminar\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_crop\n    mock_session.commit.side_effect = Exception(\"Database error\")\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        deleteCrop(1, mock_session)\n    assert excinfo.value.status_code == 500\n    assert \"Error al eliminar el cultivo\" in excinfo.value.detail",
+        "detail": "tests.crop.test_delete_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_crop_with_invalid_id",
+        "kind": 2,
+        "importPath": "tests.crop.test_delete_crop",
+        "description": "tests.crop.test_delete_crop",
+        "peekOfCode": "def test_delete_crop_with_invalid_id(mock_session):\n    \"\"\"Prueba la eliminación con un ID inválido (por ejemplo, None o no numérico)\"\"\"\n    # Configuramos el mock para que lance una excepción si se intenta filtrar con un ID inválido\n    mock_session.query.return_value.filter.side_effect = Exception(\"Invalid ID type\")\n    # Verificar que se maneja correctamente la excepción\n    with pytest.raises(HTTPException) as excinfo:\n        deleteCrop(None, mock_session)\n    assert excinfo.value.status_code == 500\n    assert \"Error al eliminar el cultivo\" in excinfo.value.detail\nif __name__ == \"__main__\":",
+        "detail": "tests.crop.test_delete_crop",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
+        "importPath": "tests.crop.test_get_crop",
+        "description": "tests.crop.test_get_crop",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    return session\n@pytest.fixture\ndef mock_crop():\n    MagicMock(spec=Land)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=VarietyRiceStageModel)\n    MagicMock(spec=Monitoring)",
+        "detail": "tests.crop.test_get_crop",
+        "documentation": {}
+    },
+    {
+        "label": "mock_crop",
+        "kind": 2,
+        "importPath": "tests.crop.test_get_crop",
+        "description": "tests.crop.test_get_crop",
+        "peekOfCode": "def mock_crop():\n    MagicMock(spec=Land)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=VarietyRiceStageModel)\n    MagicMock(spec=Monitoring)\n    MagicMock(spec=Task)\n    MagicMock(spec=WeatherRecord)\n    MagicMock(spec=VarietyArrozModel)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=Harvest)",
+        "detail": "tests.crop.test_get_crop",
+        "documentation": {}
+    },
+    {
+        "label": "mock_crops",
+        "kind": 2,
+        "importPath": "tests.crop.test_get_crop",
+        "description": "tests.crop.test_get_crop",
+        "peekOfCode": "def mock_crops():\n    MagicMock(spec=Land)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=VarietyRiceStageModel)\n    MagicMock(spec=Monitoring)\n    MagicMock(spec=Task)\n    MagicMock(spec=WeatherRecord)\n    MagicMock(spec=VarietyArrozModel)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=Harvest)",
+        "detail": "tests.crop.test_get_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_crop_success",
+        "kind": 2,
+        "importPath": "tests.crop.test_get_crop",
+        "description": "tests.crop.test_get_crop",
+        "peekOfCode": "def test_get_crop_success(mock_session, mock_crop):\n    \"\"\"Prueba obtener un cultivo por ID exitosamente\"\"\"\n    # Configurar el mock de la sesión\n    mock_query = MagicMock()\n    mock_options = MagicMock()\n    mock_filter = MagicMock()\n    mock_first = MagicMock(return_value=mock_crop)\n    mock_session.query.return_value = mock_query\n    mock_query.options.return_value = mock_options\n    mock_options.filter.return_value = mock_filter",
+        "detail": "tests.crop.test_get_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_crop_not_found",
+        "kind": 2,
+        "importPath": "tests.crop.test_get_crop",
+        "description": "tests.crop.test_get_crop",
+        "peekOfCode": "def test_get_crop_not_found(mock_session):\n    \"\"\"Prueba el caso en que no se encuentra el cultivo\"\"\"\n    # Configurar el mock de la sesión para devolver None\n    mock_query = MagicMock()\n    mock_options = MagicMock()\n    mock_filter = MagicMock()\n    mock_first = MagicMock(return_value=None)\n    mock_session.query.return_value = mock_query\n    mock_query.options.return_value = mock_options\n    mock_options.filter.return_value = mock_filter",
+        "detail": "tests.crop.test_get_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_crop_variety_not_found",
+        "kind": 2,
+        "importPath": "tests.crop.test_get_crop",
+        "description": "tests.crop.test_get_crop",
+        "peekOfCode": "def test_get_crop_variety_not_found(mock_session):\n    \"\"\"Prueba el caso en que el cultivo no tiene variedad asociada\"\"\"\n    # Crear un crop sin variedad\n    crop_no_variety = MagicMock(spec=Crop)\n    crop_no_variety.id = 1\n    crop_no_variety.cropName = \"Arroz Sin Variedad\"\n    crop_no_variety.varietyId = None\n    crop_no_variety.plotId = 1\n    crop_no_variety.variety = None  # Sin variedad\n    # Configurar el mock de la sesión",
+        "detail": "tests.crop.test_get_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_all_crops_success",
+        "kind": 2,
+        "importPath": "tests.crop.test_get_crop",
+        "description": "tests.crop.test_get_crop",
+        "peekOfCode": "def test_get_all_crops_success(mock_session, mock_crops):\n    \"\"\"Prueba obtener todos los cultivos exitosamente\"\"\"\n    # Configurar el mock de la sesión\n    mock_query = MagicMock()\n    mock_options = MagicMock()\n    mock_all = MagicMock(return_value=mock_crops)\n    mock_session.query.return_value = mock_query\n    mock_query.options.return_value = mock_options\n    mock_options.all.return_value = mock_crops\n    # Ejecutar la función",
+        "detail": "tests.crop.test_get_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_all_crops_empty",
+        "kind": 2,
+        "importPath": "tests.crop.test_get_crop",
+        "description": "tests.crop.test_get_crop",
+        "peekOfCode": "def test_get_all_crops_empty(mock_session):\n    \"\"\"Prueba obtener todos los cultivos cuando no hay ninguno\"\"\"\n    # Configurar el mock de la sesión para devolver lista vacía\n    mock_query = MagicMock()\n    mock_options = MagicMock()\n    mock_all = MagicMock(return_value=[])\n    mock_session.query.return_value = mock_query\n    mock_query.options.return_value = mock_options\n    mock_options.all.return_value = []\n    # Ejecutar la función",
+        "detail": "tests.crop.test_get_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_crops_by_land_success",
+        "kind": 2,
+        "importPath": "tests.crop.test_get_crop",
+        "description": "tests.crop.test_get_crop",
+        "peekOfCode": "def test_get_crops_by_land_success(mock_session, mock_crops):\n    \"\"\"Prueba obtener cultivos por lote exitosamente\"\"\"\n    # Asumir que ambos cultivos pertenecen al mismo lote\n    for crop in mock_crops:\n        crop.plotId = 1\n    # Configurar el mock de la sesión\n    mock_query = MagicMock()\n    mock_options = MagicMock()\n    mock_filter = MagicMock()\n    mock_all = MagicMock(return_value=mock_crops)",
+        "detail": "tests.crop.test_get_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_crops_by_land_empty",
+        "kind": 2,
+        "importPath": "tests.crop.test_get_crop",
+        "description": "tests.crop.test_get_crop",
+        "peekOfCode": "def test_get_crops_by_land_empty(mock_session):\n    \"\"\"Prueba obtener cultivos por lote cuando no hay ninguno\"\"\"\n    # Configurar el mock de la sesión para devolver lista vacía\n    mock_query = MagicMock()\n    mock_options = MagicMock()\n    mock_filter = MagicMock()\n    mock_all = MagicMock(return_value=[])\n    mock_session.query.return_value = mock_query\n    mock_query.options.return_value = mock_options\n    mock_options.filter.return_value = mock_filter",
+        "detail": "tests.crop.test_get_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_crop_info_success",
+        "kind": 2,
+        "importPath": "tests.crop.test_get_crop",
+        "description": "tests.crop.test_get_crop",
+        "peekOfCode": "def test_get_crop_info_success(mock_session):\n    \"\"\"Prueba obtener información del cultivo por slugs exitosamente\"\"\"\n    # Mocks para finca, lote, cultivo y variedad\n    mock_farm = MagicMock(spec=Farm)\n    mock_farm.id = 1\n    mock_farm.nombre = \"Finca Las Palmas\"\n    mock_farm.slug = \"finca-las-palmas\"\n    mock_land = MagicMock(spec=Land)\n    mock_land.id = 1\n    mock_land.nombre = \"Lote Norte\"",
+        "detail": "tests.crop.test_get_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_crop_info_finca_not_found",
+        "kind": 2,
+        "importPath": "tests.crop.test_get_crop",
+        "description": "tests.crop.test_get_crop",
+        "peekOfCode": "def test_get_crop_info_finca_not_found(mock_session):\n    \"\"\"Prueba obtener información cuando no se encuentra la finca\"\"\"\n    # Configurar la consulta para devolver None para la finca\n    def mock_query_side_effect(model):\n        mock_filter = MagicMock()\n        if model == Farm:\n            mock_filter.filter.return_value.first.return_value = None\n        return mock_filter\n    mock_session.query.side_effect = mock_query_side_effect\n    # Verificar que se lanza la excepción correcta",
+        "detail": "tests.crop.test_get_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_crop_info_lote_not_found",
+        "kind": 2,
+        "importPath": "tests.crop.test_get_crop",
+        "description": "tests.crop.test_get_crop",
+        "peekOfCode": "def test_get_crop_info_lote_not_found(mock_session):\n    \"\"\"Prueba obtener información cuando no se encuentra el lote\"\"\"\n    # Mocks para finca\n    mock_farm = MagicMock(spec=Farm)\n    mock_farm.id = 1\n    mock_farm.slug = \"finca-las-palmas\"\n    # Configurar las consultas\n    def mock_query_side_effect(model):\n        mock_filter = MagicMock()\n        if model == Farm:",
+        "detail": "tests.crop.test_get_crop",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
+        "importPath": "tests.crop.test_update_crop",
+        "description": "tests.crop.test_update_crop",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.commit = MagicMock()\n    session.refresh = MagicMock()\n    return session\n@pytest.fixture\ndef mock_crop():\n    MagicMock(spec=Land)\n    MagicMock(spec=SoilAnalysisModel)",
+        "detail": "tests.crop.test_update_crop",
+        "documentation": {}
+    },
+    {
+        "label": "mock_crop",
+        "kind": 2,
+        "importPath": "tests.crop.test_update_crop",
+        "description": "tests.crop.test_update_crop",
+        "peekOfCode": "def mock_crop():\n    MagicMock(spec=Land)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=VarietyRiceStageModel)\n    MagicMock(spec=Monitoring)\n    MagicMock(spec=Task)\n    MagicMock(spec=WeatherRecord)\n    MagicMock(spec=VarietyArrozModel)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=Harvest)",
+        "detail": "tests.crop.test_update_crop",
+        "documentation": {}
+    },
+    {
+        "label": "valid_update_data",
+        "kind": 2,
+        "importPath": "tests.crop.test_update_crop",
+        "description": "tests.crop.test_update_crop",
+        "peekOfCode": "def valid_update_data():\n    \"\"\"Crea datos válidos para actualizar un cultivo\"\"\"\n    return CropUpdate(\n        cropName=\"Arroz Premium Actualizado\",\n        varietyId=2,\n        plotId=1,\n        slug=\"nuevo-slug\",\n        estimatedHarvestDate=datetime.date.today() + datetime.timedelta(days=90)\n    )\ndef test_update_crop_success(mock_session, mock_crop, valid_update_data):",
+        "detail": "tests.crop.test_update_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_crop_success",
+        "kind": 2,
+        "importPath": "tests.crop.test_update_crop",
+        "description": "tests.crop.test_update_crop",
+        "peekOfCode": "def test_update_crop_success(mock_session, mock_crop, valid_update_data):\n    \"\"\"Prueba la actualización exitosa de un cultivo\"\"\"\n    # Configurar el mock de la sesión para devolver el cultivo cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_crop\n    # Ejecutar la función\n    result = updateCrop(1, valid_update_data, mock_session)\n    # Verificaciones\n    assert mock_session.commit.called\n    assert mock_session.refresh.called\n    # Verificar que los atributos se hayan actualizado correctamente",
+        "detail": "tests.crop.test_update_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_crop_partial",
+        "kind": 2,
+        "importPath": "tests.crop.test_update_crop",
+        "description": "tests.crop.test_update_crop",
+        "peekOfCode": "def test_update_crop_partial(mock_session, mock_crop):\n    partial_update = CropUpdate(cropName=\"Parcial\")\n    # Mockear el comportamiento\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_crop\n    result = updateCrop(1, partial_update, mock_session)\n    assert mock_crop.cropName == \"Parcial\"\n    assert mock_crop.varietyId == 1  # No cambia\n    assert mock_session.commit.called\ndef test_update_crop_not_found(mock_session, valid_update_data):\n    \"\"\"Prueba el caso en que no se encuentra el cultivo para actualizar\"\"\"",
+        "detail": "tests.crop.test_update_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_crop_not_found",
+        "kind": 2,
+        "importPath": "tests.crop.test_update_crop",
+        "description": "tests.crop.test_update_crop",
+        "peekOfCode": "def test_update_crop_not_found(mock_session, valid_update_data):\n    \"\"\"Prueba el caso en que no se encuentra el cultivo para actualizar\"\"\"\n    # Configurar el mock de la sesión para devolver None cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = None\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        updateCrop(999, valid_update_data, mock_session)\n    assert excinfo.value.status_code == 404\n    assert \"Crop not found\" in excinfo.value.detail\n    # Verificar que no se llamó a commit ni refresh",
+        "detail": "tests.crop.test_update_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_crop_database_error",
+        "kind": 2,
+        "importPath": "tests.crop.test_update_crop",
+        "description": "tests.crop.test_update_crop",
+        "peekOfCode": "def test_update_crop_database_error(mock_session, mock_crop, valid_update_data):\n    \"\"\"Prueba el manejo de errores de base de datos durante la actualización\"\"\"\n    # Configurar el mock de la sesión para lanzar una excepción al llamar a commit\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_crop\n    mock_session.commit.side_effect = Exception(\"Database error\")\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        updateCrop(1, valid_update_data, mock_session)\n    assert excinfo.value.status_code == 500\n    assert \"Error al actualizar el cultivo\" in excinfo.value.detail",
+        "detail": "tests.crop.test_update_crop",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_crop_empty_values",
+        "kind": 2,
+        "importPath": "tests.crop.test_update_crop",
+        "description": "tests.crop.test_update_crop",
+        "peekOfCode": "def test_update_crop_empty_values(mock_session, mock_crop):\n    \"\"\"Prueba la actualización con valores vacíos o None\"\"\"\n    # Crear datos de actualización con algunos valores vacíos\n    empty_update = CropUpdate(cropName=\"\", varietyId=None)\n    # Configurar el mock de la sesión\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_crop\n    # Ejecutar la función\n    result = updateCrop(1, empty_update, mock_session)\n    # Verificaciones\n    assert mock_session.commit.called",
+        "detail": "tests.crop.test_update_crop",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
         "importPath": "tests.farm.test_create_farm",
         "description": "tests.farm.test_create_farm",
         "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.add = MagicMock()\n    session.commit = MagicMock()\n    session.refresh = MagicMock()\n    return session\n@pytest.fixture\ndef valid_farm_data():\n    \"\"\"Crea datos válidos para una finca\"\"\"",
@@ -15219,6 +18003,42 @@
         "description": "tests.farm.test_create_farm",
         "peekOfCode": "def test_create_farm_location_too_long(mock_session, valid_farm_data):\n    \"\"\"Prueba la validación de longitud de la ubicación\"\"\"\n    # Crear ubicación muy larga (más de 100 caracteres)\n    valid_farm_data.ubicacion = \"A\" * 101\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        createFarm(valid_farm_data, mock_session)\n    assert excinfo.value.status_code == 400\n    assert \"Location must be at most 100 characters\" in excinfo.value.detail\nif __name__ == \"__main__\":",
         "detail": "tests.farm.test_create_farm",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
+        "importPath": "tests.farm.test_delete_farm",
+        "description": "tests.farm.test_delete_farm",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.delete = MagicMock()\n    session.commit = MagicMock()\n    return session\n@pytest.fixture\ndef sample_farm(mock_session):\n    MagicMock(spec=Crop)\n    MagicMock(spec=SoilAnalysisModel)",
+        "detail": "tests.farm.test_delete_farm",
+        "documentation": {}
+    },
+    {
+        "label": "sample_farm",
+        "kind": 2,
+        "importPath": "tests.farm.test_delete_farm",
+        "description": "tests.farm.test_delete_farm",
+        "peekOfCode": "def sample_farm(mock_session):\n    MagicMock(spec=Crop)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=WeatherRecord)\n    MagicMock(spec=VarietyArrozModel)\n    MagicMock(spec=VarietyRiceStageModel)\n    MagicMock(spec=Task)\n    MagicMock(spec=Monitoring)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=Harvest)",
+        "detail": "tests.farm.test_delete_farm",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_farm_success",
+        "kind": 2,
+        "importPath": "tests.farm.test_delete_farm",
+        "description": "tests.farm.test_delete_farm",
+        "peekOfCode": "def test_delete_farm_success(mock_session, sample_farm):\n    \"\"\"Prueba la eliminación exitosa de una finca\"\"\"\n    # Configurar el comportamiento del mock\n    mock_session.query.return_value.filter.return_value.first.return_value = sample_farm\n    # Ejecutar la función\n    result = deleteFarm(1, mock_session)\n    # Verificaciones\n    mock_session.delete.assert_called_once_with(sample_farm)  # Sin usar assert\n    mock_session.commit.assert_called_once()\n    assert mock_session.commit.called",
+        "detail": "tests.farm.test_delete_farm",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_farm_not_found",
+        "kind": 2,
+        "importPath": "tests.farm.test_delete_farm",
+        "description": "tests.farm.test_delete_farm",
+        "peekOfCode": "def test_delete_farm_not_found(mock_session):\n    \"\"\"Prueba la eliminación de una finca cuando el ID no existe\"\"\"\n    # Configurar el comportamiento del mock para devolver None\n    mock_session.query.return_value.filter.return_value.first.return_value = None\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        deleteFarm(999, mock_session)\n    # Verificaciones\n    assert excinfo.value.status_code == 404\n    assert \"Finca con id 999 no encontrada\" in excinfo.value.detail",
+        "detail": "tests.farm.test_delete_farm",
         "documentation": {}
     },
     {
@@ -15289,7 +18109,7 @@
         "kind": 2,
         "importPath": "tests.farm.test_update_farm",
         "description": "tests.farm.test_update_farm",
-        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.commit = MagicMock()\n    session.refresh = MagicMock()\n    return session\n@pytest.fixture\ndef sample_farm():\n    \"\"\"Crea una finca de ejemplo para pruebas\"\"\"\n    return Farm(",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.commit = MagicMock()\n    session.refresh = MagicMock()\n    return session\n@pytest.fixture\ndef sample_farm(mock_session):\n    MagicMock(spec=Crop)\n    MagicMock(spec=SoilAnalysisModel)",
         "detail": "tests.farm.test_update_farm",
         "documentation": {}
     },
@@ -15298,7 +18118,7 @@
         "kind": 2,
         "importPath": "tests.farm.test_update_farm",
         "description": "tests.farm.test_update_farm",
-        "peekOfCode": "def sample_farm():\n    \"\"\"Crea una finca de ejemplo para pruebas\"\"\"\n    return Farm(\n        id=1,\n        nombre=\"Finca Las Palmas\",\n        ubicacion=\"Valle Central\",\n        area_total=120.5,\n        latitud=4.5709,\n        longitud=-74.2973,\n        slug=\"finca-las-palmas\",",
+        "peekOfCode": "def sample_farm(mock_session):\n    MagicMock(spec=Crop)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=WeatherRecord)\n    MagicMock(spec=VarietyArrozModel)\n    MagicMock(spec=VarietyRiceStageModel)\n    MagicMock(spec=Task)\n    MagicMock(spec=Monitoring)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=Harvest)",
         "detail": "tests.farm.test_update_farm",
         "documentation": {}
     },
@@ -15354,6 +18174,231 @@
         "description": "tests.farm.test_update_farm",
         "peekOfCode": "def test_update_farm_name_too_long(mock_session, sample_farm):\n    \"\"\"Prueba la validación de longitud del nombre\"\"\"\n    # Crear datos de actualización con nombre muy largo\n    invalid_update = UpdateFarmSchema(\n        nombre=\"A\" * 51,  # Nombre con más de 50 caracteres\n        ubicacion=None,\n        area_total=None,\n        latitud=None,\n        longitud=None,\n        ciudad=None,",
         "detail": "tests.farm.test_update_farm",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
+        "importPath": "tests.land.test_create_land",
+        "description": "tests.land.test_create_land",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.add = MagicMock()\n    session.commit = MagicMock()\n    session.refresh = MagicMock()\n    return session\n@pytest.fixture\ndef valid_land_data(mock_session):\n    MagicMock(spec=Crop)",
+        "detail": "tests.land.test_create_land",
+        "documentation": {}
+    },
+    {
+        "label": "valid_land_data",
+        "kind": 2,
+        "importPath": "tests.land.test_create_land",
+        "description": "tests.land.test_create_land",
+        "peekOfCode": "def valid_land_data(mock_session):\n    MagicMock(spec=Crop)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=WeatherRecord)\n    MagicMock(spec=VarietyArrozModel)\n    MagicMock(spec=VarietyRiceStageModel)\n    MagicMock(spec=Task)\n    MagicMock(spec=Monitoring)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=Harvest)",
+        "detail": "tests.land.test_create_land",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_land_success",
+        "kind": 2,
+        "importPath": "tests.land.test_create_land",
+        "description": "tests.land.test_create_land",
+        "peekOfCode": "def test_create_land_success(mock_session, valid_land_data):\n    \"\"\"Prueba la creación exitosa de un lote\"\"\"\n    # Configuración del mock para simular la asignación de ID después de refresh\n    def set_id_and_slug(land):\n        land.id = 1\n        land.slug = \"lote-norte\"\n    mock_session.refresh.side_effect = set_id_and_slug\n    # Ejecutar la función\n    result = createLand(valid_land_data, mock_session)\n    # Verificaciones",
+        "detail": "tests.land.test_create_land",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_land_empty_name",
+        "kind": 2,
+        "importPath": "tests.land.test_create_land",
+        "description": "tests.land.test_create_land",
+        "peekOfCode": "def test_create_land_empty_name(mock_session):\n    \"\"\"Prueba la validación de nombre vacío\"\"\"\n    # Crear datos con nombre vacío\n    land_data = LandSchema(\n        nombre=\"  \".strip(),  # Nombre con espacios en blanco\n        finca_id=1,\n        area=50.5,\n        latitud=4.5709,\n        longitud=-74.2973\n    )",
+        "detail": "tests.land.test_create_land",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_land_invalid_area",
+        "kind": 2,
+        "importPath": "tests.land.test_create_land",
+        "description": "tests.land.test_create_land",
+        "peekOfCode": "def test_create_land_invalid_area(mock_session, valid_land_data):\n    \"\"\"Prueba la validación de área negativa\"\"\"\n    # Modificar área para que sea negativa\n    valid_land_data.area = -10\n    # Ejecutar la función\n    result = createLand(valid_land_data, mock_session)\n    # Verificar que se crea correctamente (el controlador actual no valida área negativa)\n    assert mock_session.add.called\n    assert \"msg\" in result\n    assert result[\"msg\"] == \"Lote creado satisfactoriamente\"",
+        "detail": "tests.land.test_create_land",
+        "documentation": {}
+    },
+    {
+        "label": "test_create_land_generate_slug",
+        "kind": 2,
+        "importPath": "tests.land.test_create_land",
+        "description": "tests.land.test_create_land",
+        "peekOfCode": "def test_create_land_generate_slug(mock_session):\n    \"\"\"Prueba la generación de slug con caracteres especiales\"\"\"\n    # Crear datos con nombre que contenga caracteres especiales\n    land_data = LandSchema(\n        nombre=\"Lote #1 (Norte)\",\n        finca_id=1,\n        area=50.5,\n        latitud=4.5709,\n        longitud=-74.2973\n    )",
+        "detail": "tests.land.test_create_land",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
+        "importPath": "tests.land.test_delete_land",
+        "description": "tests.land.test_delete_land",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.delete = MagicMock()\n    session.commit = MagicMock()\n    return session\n@pytest.fixture\ndef mock_land():\n    \"\"\"Crea un mock de un objeto Land existente\"\"\"\n    land = MagicMock(spec=Land)",
+        "detail": "tests.land.test_delete_land",
+        "documentation": {}
+    },
+    {
+        "label": "mock_land",
+        "kind": 2,
+        "importPath": "tests.land.test_delete_land",
+        "description": "tests.land.test_delete_land",
+        "peekOfCode": "def mock_land():\n    \"\"\"Crea un mock de un objeto Land existente\"\"\"\n    land = MagicMock(spec=Land)\n    land.id = 1\n    land.nombre = \"Lote Norte\"\n    land.finca_id = 1\n    land.area = 50.5\n    land.latitud = 4.5709\n    land.longitud = -74.2973\n    land.slug = \"lote-norte\"",
+        "detail": "tests.land.test_delete_land",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_land_success",
+        "kind": 2,
+        "importPath": "tests.land.test_delete_land",
+        "description": "tests.land.test_delete_land",
+        "peekOfCode": "def test_delete_land_success(mock_session, mock_land):\n    \"\"\"Prueba la eliminación exitosa de un lote\"\"\"\n    # Configurar el mock de la sesión para devolver el lote cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_land\n    # Ejecutar la función\n    result = deleteLand(1, mock_session)\n    # Verificaciones\n    assert mock_session.delete.called\n    assert mock_session.commit.called\n    assert \"msg\" in result",
+        "detail": "tests.land.test_delete_land",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_land_not_found",
+        "kind": 2,
+        "importPath": "tests.land.test_delete_land",
+        "description": "tests.land.test_delete_land",
+        "peekOfCode": "def test_delete_land_not_found(mock_session):\n    \"\"\"Prueba el caso en que no se encuentra el lote para eliminar\"\"\"\n    # Configurar el mock de la sesión para devolver None cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = None\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        deleteLand(999, mock_session)\n    assert excinfo.value.status_code == 404\n    assert \"Lote con id 999 no encontrado\" in excinfo.value.detail\n    # Verificar que no se llamó a delete ni commit",
+        "detail": "tests.land.test_delete_land",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_land_database_error",
+        "kind": 2,
+        "importPath": "tests.land.test_delete_land",
+        "description": "tests.land.test_delete_land",
+        "peekOfCode": "def test_delete_land_database_error(mock_session, mock_land):\n    \"\"\"Prueba el manejo de errores de base de datos durante la eliminación\"\"\"\n    # Configurar el mock de la sesión para lanzar una excepción al llamar a commit\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_land\n    mock_session.commit.side_effect = Exception(\"Database error\")\n    # Verificar que se propaga la excepción\n    with pytest.raises(Exception) as excinfo:\n        deleteLand(1, mock_session)\n    assert str(excinfo.value) == \"Database error\"\n    # Verificar que se llamó a delete pero no se completó el commit",
+        "detail": "tests.land.test_delete_land",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
+        "importPath": "tests.land.test_get_lands",
+        "description": "tests.land.test_get_lands",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    return session\n@pytest.fixture\ndef mock_land():\n    \"\"\"Crea un mock de un objeto Land\"\"\"\n    land = MagicMock(spec=Land)\n    land.id = 1\n    land.nombre = \"Lote Norte\"",
+        "detail": "tests.land.test_get_lands",
+        "documentation": {}
+    },
+    {
+        "label": "mock_land",
+        "kind": 2,
+        "importPath": "tests.land.test_get_lands",
+        "description": "tests.land.test_get_lands",
+        "peekOfCode": "def mock_land():\n    \"\"\"Crea un mock de un objeto Land\"\"\"\n    land = MagicMock(spec=Land)\n    land.id = 1\n    land.nombre = \"Lote Norte\"\n    land.finca_id = 1\n    land.area = 50.5\n    land.latitud = 4.5709\n    land.longitud = -74.2973\n    land.slug = \"lote-norte\"",
+        "detail": "tests.land.test_get_lands",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_all_lands_success",
+        "kind": 2,
+        "importPath": "tests.land.test_get_lands",
+        "description": "tests.land.test_get_lands",
+        "peekOfCode": "def test_get_all_lands_success(mock_session):\n    \"\"\"Prueba obtener todos los lotes exitosamente\"\"\"\n    # Crear una lista de lotes mock\n    mock_land1 = MagicMock(spec=Land)\n    mock_land1.id = 1\n    mock_land1.nombre = \"Lote Norte\"\n    mock_land2 = MagicMock(spec=Land)\n    mock_land2.id = 2\n    mock_land2.nombre = \"Lote Sur\"\n    mock_lands = [mock_land1, mock_land2]",
+        "detail": "tests.land.test_get_lands",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_all_lands_empty",
+        "kind": 2,
+        "importPath": "tests.land.test_get_lands",
+        "description": "tests.land.test_get_lands",
+        "peekOfCode": "def test_get_all_lands_empty(mock_session):\n    \"\"\"Prueba el caso en que no hay lotes\"\"\"\n    # Configurar el mock de la sesión para devolver una lista vacía\n    mock_session.query.return_value.all.return_value = []\n    # Ejecutar la función\n    result = getAllLands(mock_session)\n    # Verificaciones\n    assert len(result) == 0\n    assert result == []\ndef test_get_land_by_id_success(mock_session, mock_land):",
+        "detail": "tests.land.test_get_lands",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_land_by_id_success",
+        "kind": 2,
+        "importPath": "tests.land.test_get_lands",
+        "description": "tests.land.test_get_lands",
+        "peekOfCode": "def test_get_land_by_id_success(mock_session, mock_land):\n    \"\"\"Prueba obtener un lote por ID exitosamente\"\"\"\n    # Configurar el mock de la sesión para devolver el lote cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_land\n    # Ejecutar la función\n    result = getLandById(1, mock_session)\n    # Verificaciones\n    assert result[\"id\"] == 1\n    assert result[\"nombre\"] == \"Lote Norte\"\n    assert result[\"finca_id\"] == 1",
+        "detail": "tests.land.test_get_lands",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_land_by_id_not_found",
+        "kind": 2,
+        "importPath": "tests.land.test_get_lands",
+        "description": "tests.land.test_get_lands",
+        "peekOfCode": "def test_get_land_by_id_not_found(mock_session):\n    \"\"\"Prueba el caso en que no se encuentra el lote por ID\"\"\"\n    # Configurar el mock de la sesión para devolver None cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = None\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        getLandById(999, mock_session)\n    assert excinfo.value.status_code == 404\n    assert \"Lote con id 999 no encontrado\" in excinfo.value.detail\ndef test_get_land_by_id_no_farm(mock_session):",
+        "detail": "tests.land.test_get_lands",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_land_by_id_no_farm",
+        "kind": 2,
+        "importPath": "tests.land.test_get_lands",
+        "description": "tests.land.test_get_lands",
+        "peekOfCode": "def test_get_land_by_id_no_farm(mock_session):\n    \"\"\"Prueba el caso en que el lote no tiene finca asociada\"\"\"\n    # Crear un lote sin finca asociada\n    land_no_farm = MagicMock(spec=Land)\n    land_no_farm.id = 1\n    land_no_farm.nombre = \"Lote Sin Finca\"\n    land_no_farm.finca_id = None\n    land_no_farm.area = 50.5\n    land_no_farm.latitud = 4.5709\n    land_no_farm.longitud = -74.2973",
+        "detail": "tests.land.test_get_lands",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
+        "importPath": "tests.land.test_update_land",
+        "description": "tests.land.test_update_land",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.commit = MagicMock()\n    session.refresh = MagicMock()\n    return session\n@pytest.fixture\ndef mock_land():\n    \"\"\"Crea un mock de un objeto Land existente\"\"\"\n    land = MagicMock(spec=Land)",
+        "detail": "tests.land.test_update_land",
+        "documentation": {}
+    },
+    {
+        "label": "mock_land",
+        "kind": 2,
+        "importPath": "tests.land.test_update_land",
+        "description": "tests.land.test_update_land",
+        "peekOfCode": "def mock_land():\n    \"\"\"Crea un mock de un objeto Land existente\"\"\"\n    land = MagicMock(spec=Land)\n    land.id = 1\n    land.nombre = \"Lote Norte\"\n    land.finca_id = 1\n    land.area = 50.5\n    land.latitud = 4.5709\n    land.longitud = -74.2973\n    land.slug = \"lote-norte\"",
+        "detail": "tests.land.test_update_land",
+        "documentation": {}
+    },
+    {
+        "label": "valid_update_data",
+        "kind": 2,
+        "importPath": "tests.land.test_update_land",
+        "description": "tests.land.test_update_land",
+        "peekOfCode": "def valid_update_data():\n    \"\"\"Crea datos válidos para actualizar un lote\"\"\"\n    return UpdateLandSchema(\n        nombre=\"Lote Norte Actualizado\",\n        area=60.5,\n        latitud=4.5710,\n        longitud=-74.2974\n    )\ndef test_update_land_success(mock_session, mock_land, valid_update_data):\n    \"\"\"Prueba la actualización exitosa de un lote\"\"\"",
+        "detail": "tests.land.test_update_land",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_land_success",
+        "kind": 2,
+        "importPath": "tests.land.test_update_land",
+        "description": "tests.land.test_update_land",
+        "peekOfCode": "def test_update_land_success(mock_session, mock_land, valid_update_data):\n    \"\"\"Prueba la actualización exitosa de un lote\"\"\"\n    # Configurar el mock de la sesión para devolver el lote cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_land\n    # Ejecutar la función\n    result = updateLand(1, valid_update_data, mock_session)\n    # Verificaciones\n    assert mock_session.commit.called\n    assert mock_session.refresh.called\n    assert \"msg\" in result",
+        "detail": "tests.land.test_update_land",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_land_partial",
+        "kind": 2,
+        "importPath": "tests.land.test_update_land",
+        "description": "tests.land.test_update_land",
+        "peekOfCode": "def test_update_land_partial(mock_session, mock_land):\n    \"\"\"Prueba la actualización parcial de un lote (solo algunos campos)\"\"\"\n    # Crear datos de actualización parcial (solo nombre)\n    partial_update = UpdateLandSchema(nombre=\"Lote Norte Parcial\")\n    # Configurar el mock de la sesión\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_land\n    # Ejecutar la función\n    result = updateLand(1, partial_update, mock_session)\n    # Verificaciones\n    assert mock_session.commit.called",
+        "detail": "tests.land.test_update_land",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_land_not_found",
+        "kind": 2,
+        "importPath": "tests.land.test_update_land",
+        "description": "tests.land.test_update_land",
+        "peekOfCode": "def test_update_land_not_found(mock_session, valid_update_data):\n    \"\"\"Prueba el caso en que no se encuentra el lote para actualizar\"\"\"\n    # Configurar el mock de la sesión para devolver None cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = None\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        updateLand(999, valid_update_data, mock_session)\n    assert excinfo.value.status_code == 404\n    assert \"Lote con id 999 no encontrado\" in excinfo.value.detail\n    # Verificar que no se llamó a commit ni refresh",
+        "detail": "tests.land.test_update_land",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_land_empty_values",
+        "kind": 2,
+        "importPath": "tests.land.test_update_land",
+        "description": "tests.land.test_update_land",
+        "peekOfCode": "def test_update_land_empty_values(mock_session, mock_land):\n    \"\"\"Prueba la actualización con valores vacíos o None\"\"\"\n    # Crear datos de actualización con algunos valores vacíos\n    empty_update = UpdateLandSchema(nombre=\"\", area=None)\n    # Configurar el mock de la sesión\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_land\n    # Ejecutar la función\n    result = updateLand(1, empty_update, mock_session)\n    # Verificaciones\n    assert mock_session.commit.called",
+        "detail": "tests.land.test_update_land",
         "documentation": {}
     },
     {
@@ -15489,6 +18534,285 @@
         "description": "tests.role.test_role",
         "peekOfCode": "def test_delete_role_not_found(mock_db):\n    # Configurar el comportamiento del mock para simular que no se encuentra el rol\n    mock_db.query.return_value.filter.return_value.first.return_value = None\n    # Ejecutar la función y verificar que lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        delete_role(999, mock_db)\n    # Verificar el código de estado y el detalle de la excepción\n    assert excinfo.value.status_code == 404\n    assert excinfo.value.detail == \"Role not found\"",
         "detail": "tests.role.test_role",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
+        "importPath": "tests.users.test_create_user",
+        "description": "tests.users.test_create_user",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.commit = MagicMock()\n    session.refresh = MagicMock()\n    return session\n@pytest.fixture\ndef valid_user_data():\n    MagicMock(spec=Task)\n    MagicMock(spec=Crop)",
+        "detail": "tests.users.test_create_user",
+        "documentation": {}
+    },
+    {
+        "label": "valid_user_data",
+        "kind": 2,
+        "importPath": "tests.users.test_create_user",
+        "description": "tests.users.test_create_user",
+        "peekOfCode": "def valid_user_data():\n    MagicMock(spec=Task)\n    MagicMock(spec=Crop)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=LaborCultural)\n    MagicMock(spec=Machinery)\n    MagicMock(spec=Estado)\n    MagicMock(spec=Farm)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=WeatherRecord)",
+        "detail": "tests.users.test_create_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_register_user_success",
+        "kind": 2,
+        "importPath": "tests.users.test_create_user",
+        "description": "tests.users.test_create_user",
+        "peekOfCode": "def test_register_user_success(mock_session, valid_user_data):\n    \"\"\"Prueba el registro exitoso de un nuevo usuario\"\"\"\n    # Configuramos el mock para que no encuentre usuarios existentes con el correo\n    mock_session.query.return_value.filter_by.return_value.first.return_value = None\n    # Crear un mock para el nuevo usuario\n    new_user = MagicMock(spec=User)\n    new_user.id = 1\n    mock_session.refresh.side_effect = lambda x: setattr(x, 'id', 1) if isinstance(x, User) else None\n    # Parcheamos la función add para capturar el usuario creado\n    def mock_add(user):",
+        "detail": "tests.users.test_create_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_register_user_email_exists",
+        "kind": 2,
+        "importPath": "tests.users.test_create_user",
+        "description": "tests.users.test_create_user",
+        "peekOfCode": "def test_register_user_email_exists(mock_session, valid_user_data):\n    \"\"\"Prueba que no se pueda registrar un usuario con un correo ya existente\"\"\"\n    # Configuramos el mock para que encuentre un usuario existente con el correo\n    existing_user = MagicMock(spec=User)\n    mock_session.query.return_value.filter_by.return_value.first.return_value = existing_user\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        registerUser(valid_user_data, mock_session)\n    assert excinfo.value.status_code == 400\n    assert \"Email already registered\" in excinfo.value.detail",
+        "detail": "tests.users.test_create_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_register_user_empty_fields",
+        "kind": 2,
+        "importPath": "tests.users.test_create_user",
+        "description": "tests.users.test_create_user",
+        "peekOfCode": "def test_register_user_empty_fields(mock_session):\n    \"\"\"Prueba validaciones de campos vacíos\"\"\"\n    # Casos de prueba con campos vacíos\n    cases = [\n        (CrearUsuario(nombre=\"\", apellido=\"Perez\", email=\"jp@example.com\", password=\"Password123\"), \"Name cannot be empty\"),\n        (CrearUsuario(nombre=\"Juan\", apellido=\"\", email=\"jp@example.com\", password=\"Password123\"), \"Last name cannot be empty\"),\n        (CrearUsuario(nombre=\"Juan\", apellido=\"Perez\", email=\"\", password=\"Password123\"), \"Email cannot be empty\"),\n        (CrearUsuario(nombre=\"Juan\", apellido=\"Perez\", email=\"jp@example.com\", password=\"\"), \"Password cannot be empty\")\n    ]\n    for user_data, expected_error in cases:",
+        "detail": "tests.users.test_create_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_register_user_length_validations",
+        "kind": 2,
+        "importPath": "tests.users.test_create_user",
+        "description": "tests.users.test_create_user",
+        "peekOfCode": "def test_register_user_length_validations(mock_session):\n    \"\"\"Prueba validación de longitud de campos\"\"\"\n    # Nombre muy largo\n    long_name_user = CrearUsuario(\n        nombre=\"A\" * 51,  # 51 caracteres\n        apellido=\"Perez\",\n        email=\"jp@example.com\",\n        password=\"Password123\"\n    )\n    with pytest.raises(HTTPException) as excinfo:",
+        "detail": "tests.users.test_create_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_register_user_email_format",
+        "kind": 2,
+        "importPath": "tests.users.test_create_user",
+        "description": "tests.users.test_create_user",
+        "peekOfCode": "def test_register_user_email_format(mock_session):\n    \"\"\"Prueba validación de formato de email\"\"\"\n    invalid_email_user = CrearUsuario(\n        nombre=\"Juan\",\n        apellido=\"Perez\",\n        email=\"juanperezexample.com\",  # Sin @\n        password=\"Password123\"\n    )\n    with pytest.raises(HTTPException) as excinfo:\n        registerUser(invalid_email_user, mock_session)",
+        "detail": "tests.users.test_create_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_register_user_password_complexity",
+        "kind": 2,
+        "importPath": "tests.users.test_create_user",
+        "description": "tests.users.test_create_user",
+        "peekOfCode": "def test_register_user_password_complexity(mock_session):\n    \"\"\"Prueba validación de complejidad de contraseña\"\"\"\n    # Contraseña sin mayúsculas\n    weak_password1 = CrearUsuario(\n        nombre=\"Juan\",\n        apellido=\"Perez\",\n        email=\"jp@example.com\",\n        password=\"password123\"\n    )\n    with pytest.raises(HTTPException) as excinfo:",
+        "detail": "tests.users.test_create_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_register_user_name_with_special_chars",
+        "kind": 2,
+        "importPath": "tests.users.test_create_user",
+        "description": "tests.users.test_create_user",
+        "peekOfCode": "def test_register_user_name_with_special_chars(mock_session):\n    \"\"\"Prueba validación de nombres y apellidos sin caracteres especiales\"\"\"\n    user_with_special_chars = CrearUsuario(\n        nombre=\"Juan123\",\n        apellido=\"Perez\",\n        email=\"jp@example.com\",\n        password=\"Password123\"\n    )\n    with pytest.raises(HTTPException) as excinfo:\n        registerUser(user_with_special_chars, mock_session)",
+        "detail": "tests.users.test_create_user",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
+        "importPath": "tests.users.test_delete_user",
+        "description": "tests.users.test_delete_user",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.commit = MagicMock()\n    return session\n@pytest.fixture\ndef mock_user():\n    MagicMock(spec=Task)\n    MagicMock(spec=Crop)\n    MagicMock(spec=AgriculturalInput)",
+        "detail": "tests.users.test_delete_user",
+        "documentation": {}
+    },
+    {
+        "label": "mock_user",
+        "kind": 2,
+        "importPath": "tests.users.test_delete_user",
+        "description": "tests.users.test_delete_user",
+        "peekOfCode": "def mock_user():\n    MagicMock(spec=Task)\n    MagicMock(spec=Crop)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=LaborCultural)\n    MagicMock(spec=Machinery)\n    MagicMock(spec=Estado)\n    MagicMock(spec=Farm)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=WeatherRecord)",
+        "detail": "tests.users.test_delete_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_user_success",
+        "kind": 2,
+        "importPath": "tests.users.test_delete_user",
+        "description": "tests.users.test_delete_user",
+        "peekOfCode": "def test_delete_user_success(mock_session, mock_user):\n    \"\"\"Prueba la eliminación exitosa de un usuario\"\"\"\n    # Configurar el mock de la sesión para devolver el usuario cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_user\n    # Ejecutar la función\n    result = deleteUser(1, mock_session)\n    # Verificaciones\n    mock_session.delete.assert_called_once_with(mock_user)\n    assert mock_session.commit.called\n    # Verificar la respuesta",
+        "detail": "tests.users.test_delete_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_user_not_found",
+        "kind": 2,
+        "importPath": "tests.users.test_delete_user",
+        "description": "tests.users.test_delete_user",
+        "peekOfCode": "def test_delete_user_not_found(mock_session):\n    \"\"\"Prueba el caso en que no se encuentra el usuario para eliminar\"\"\"\n    # Configurar el mock de la sesión para devolver None cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = None\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        deleteUser(999, mock_session)\n    assert excinfo.value.status_code == 404\n    assert \"User not found\" in excinfo.value.detail\n    # Verificar que no se llamó a delete ni commit",
+        "detail": "tests.users.test_delete_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_delete_user_database_error",
+        "kind": 2,
+        "importPath": "tests.users.test_delete_user",
+        "description": "tests.users.test_delete_user",
+        "peekOfCode": "def test_delete_user_database_error(mock_session, mock_user):\n    \"\"\"Prueba el manejo de errores de base de datos durante la eliminación\"\"\"\n    # Configurar el mock de la sesión para devolver el usuario pero lanzar una excepción al eliminar\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_user\n    mock_session.commit.side_effect = Exception(\"Database error\")\n    # Verificar que se maneja correctamente la excepción\n    with pytest.raises(Exception) as excinfo:\n        deleteUser(1, mock_session)\n    assert str(excinfo.value) == \"Database error\"\n    # Verificar que se llamó a delete pero la excepción ocurrió en commit",
+        "detail": "tests.users.test_delete_user",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
+        "importPath": "tests.users.test_get_user_info",
+        "description": "tests.users.test_get_user_info",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    return session\n@pytest.fixture\ndef mock_users():\n    MagicMock(spec=Task)\n    MagicMock(spec=Crop)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=LaborCultural)",
+        "detail": "tests.users.test_get_user_info",
+        "documentation": {}
+    },
+    {
+        "label": "mock_users",
+        "kind": 2,
+        "importPath": "tests.users.test_get_user_info",
+        "description": "tests.users.test_get_user_info",
+        "peekOfCode": "def mock_users():\n    MagicMock(spec=Task)\n    MagicMock(spec=Crop)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=LaborCultural)\n    MagicMock(spec=Machinery)\n    MagicMock(spec=Estado)\n    MagicMock(spec=Farm)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=WeatherRecord)",
+        "detail": "tests.users.test_get_user_info",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_users_success",
+        "kind": 2,
+        "importPath": "tests.users.test_get_user_info",
+        "description": "tests.users.test_get_user_info",
+        "peekOfCode": "def test_get_users_success(mock_get_current_user, mock_session, mock_users):\n    \"\"\"Prueba la obtención exitosa de todos los usuarios\"\"\"\n    # Configurar el mock de la sesión para devolver la lista de usuarios\n    mock_session.query.return_value.all.return_value = mock_users\n    # Configurar el mock para el usuario actual\n    current_user = MagicMock(spec=User)\n    current_user.id = 1\n    mock_get_current_user.return_value = current_user\n    # Ejecutar la función\n    result = getUsers(mock_session, current_user)",
+        "detail": "tests.users.test_get_user_info",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_user_by_id_success",
+        "kind": 2,
+        "importPath": "tests.users.test_get_user_info",
+        "description": "tests.users.test_get_user_info",
+        "peekOfCode": "def test_get_user_by_id_success(mock_session, mock_users):\n    \"\"\"Prueba la obtención exitosa de un usuario por ID\"\"\"\n    # Configurar el mock de la sesión para devolver el usuario cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_users[0]\n    # Ejecutar la función\n    result = getUser(1, mock_session)\n    # Verificaciones\n    assert result == mock_users[0]\n    assert result.id == 1\n    assert result.nombre == \"Juan\"",
+        "detail": "tests.users.test_get_user_info",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_user_by_id_not_found",
+        "kind": 2,
+        "importPath": "tests.users.test_get_user_info",
+        "description": "tests.users.test_get_user_info",
+        "peekOfCode": "def test_get_user_by_id_not_found(mock_session):\n    \"\"\"Prueba el caso en que no se encuentra un usuario por ID\"\"\"\n    # Configurar el mock de la sesión para devolver None cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = None\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        getUser(999, mock_session)\n    assert excinfo.value.status_code == 404\n    assert \"User not found\" in excinfo.value.detail\n@patch('src.controller.userController.get_current_user')",
+        "detail": "tests.users.test_get_user_info",
+        "documentation": {}
+    },
+    {
+        "label": "test_get_users_empty_list",
+        "kind": 2,
+        "importPath": "tests.users.test_get_user_info",
+        "description": "tests.users.test_get_user_info",
+        "peekOfCode": "def test_get_users_empty_list(mock_get_current_user, mock_session):\n    \"\"\"Prueba el caso en que no hay usuarios en la base de datos\"\"\"\n    # Configurar el mock de la sesión para devolver una lista vacía\n    mock_session.query.return_value.all.return_value = []\n    # Configurar el mock para el usuario actual\n    current_user = MagicMock(spec=User)\n    current_user.id = 1\n    mock_get_current_user.return_value = current_user\n    # Ejecutar la función\n    result = getUsers(mock_session, current_user)",
+        "detail": "tests.users.test_get_user_info",
+        "documentation": {}
+    },
+    {
+        "label": "mock_session",
+        "kind": 2,
+        "importPath": "tests.users.test_update_user",
+        "description": "tests.users.test_update_user",
+        "peekOfCode": "def mock_session():\n    \"\"\"Crea un mock para la sesión de base de datos\"\"\"\n    session = MagicMock(spec=Session)\n    session.commit = MagicMock()\n    session.refresh = MagicMock()\n    return session\n@pytest.fixture\ndef mock_user():\n    MagicMock(spec=Task)\n    MagicMock(spec=Crop)",
+        "detail": "tests.users.test_update_user",
+        "documentation": {}
+    },
+    {
+        "label": "mock_user",
+        "kind": 2,
+        "importPath": "tests.users.test_update_user",
+        "description": "tests.users.test_update_user",
+        "peekOfCode": "def mock_user():\n    MagicMock(spec=Task)\n    MagicMock(spec=Crop)\n    MagicMock(spec=AgriculturalInput)\n    MagicMock(spec=LaborCultural)\n    MagicMock(spec=Machinery)\n    MagicMock(spec=Estado)\n    MagicMock(spec=Farm)\n    MagicMock(spec=SoilAnalysisModel)\n    MagicMock(spec=WeatherRecord)",
+        "detail": "tests.users.test_update_user",
+        "documentation": {}
+    },
+    {
+        "label": "valid_update_data",
+        "kind": 2,
+        "importPath": "tests.users.test_update_user",
+        "description": "tests.users.test_update_user",
+        "peekOfCode": "def valid_update_data():\n    \"\"\"Crea datos válidos para actualizar un usuario\"\"\"\n    return UpdateUser(\n        nombre=\"Juan Carlos\",\n        apellido=\"Perez Gomez\",\n        email=\"jcperez@example.com\",\n        password=\"NewPassword123\",\n        primer_login=False\n    )\ndef test_update_user_success(mock_session, mock_user, valid_update_data):",
+        "detail": "tests.users.test_update_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_user_success",
+        "kind": 2,
+        "importPath": "tests.users.test_update_user",
+        "description": "tests.users.test_update_user",
+        "peekOfCode": "def test_update_user_success(mock_session, mock_user, valid_update_data):\n    \"\"\"Prueba la actualización exitosa de un usuario\"\"\"\n    # Configurar el mock de la sesión para devolver el usuario cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_user\n    # Ejecutar la función\n    result = updateUser(1, valid_update_data, mock_session)\n    # Verificaciones\n    assert mock_session.commit.called\n    assert mock_session.refresh.called\n    # Verificar que los atributos se hayan actualizado correctamente",
+        "detail": "tests.users.test_update_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_user_partial",
+        "kind": 2,
+        "importPath": "tests.users.test_update_user",
+        "description": "tests.users.test_update_user",
+        "peekOfCode": "def test_update_user_partial(mock_session, mock_user):\n    \"\"\"Prueba la actualización parcial de un usuario\"\"\"\n    # Crear datos de actualización parcial\n    partial_update = UpdateUser(nombre=\"Juan Carlos\")\n    # Configurar el mock de la sesión\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_user\n    # Ejecutar la función\n    result = updateUser(1, partial_update, mock_session)\n    # Verificaciones\n    assert mock_session.commit.called",
+        "detail": "tests.users.test_update_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_user_not_found",
+        "kind": 2,
+        "importPath": "tests.users.test_update_user",
+        "description": "tests.users.test_update_user",
+        "peekOfCode": "def test_update_user_not_found(mock_session, valid_update_data):\n    \"\"\"Prueba el caso en que no se encuentra el usuario para actualizar\"\"\"\n    # Configurar el mock de la sesión para devolver None cuando se filtra por ID\n    mock_session.query.return_value.filter.return_value.first.return_value = None\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        updateUser(999, valid_update_data, mock_session)\n    assert excinfo.value.status_code == 404\n    assert \"User not found\" in excinfo.value.detail\n    # Verificar que no se llamó a commit ni refresh",
+        "detail": "tests.users.test_update_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_user_invalid_name",
+        "kind": 2,
+        "importPath": "tests.users.test_update_user",
+        "description": "tests.users.test_update_user",
+        "peekOfCode": "def test_update_user_invalid_name(mock_session, mock_user):\n    \"\"\"Prueba validación de formato de nombre\"\"\"\n    # Nombre con números\n    invalid_name = UpdateUser(nombre=\"Juan123\")\n    # Configurar el mock de la sesión\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_user\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        updateUser(1, invalid_name, mock_session)\n    assert excinfo.value.status_code == 400",
+        "detail": "tests.users.test_update_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_user_invalid_lastname",
+        "kind": 2,
+        "importPath": "tests.users.test_update_user",
+        "description": "tests.users.test_update_user",
+        "peekOfCode": "def test_update_user_invalid_lastname(mock_session, mock_user):\n    \"\"\"Prueba validación de formato de apellido\"\"\"\n    # Apellido con caracteres especiales\n    invalid_lastname = UpdateUser(apellido=\"Perez@123\")\n    # Configurar el mock de la sesión\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_user\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        updateUser(1, invalid_lastname, mock_session)\n    assert excinfo.value.status_code == 400",
+        "detail": "tests.users.test_update_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_user_invalid_email_format",
+        "kind": 2,
+        "importPath": "tests.users.test_update_user",
+        "description": "tests.users.test_update_user",
+        "peekOfCode": "def test_update_user_invalid_email_format(mock_session, mock_user):\n    \"\"\"Prueba validación de formato de email\"\"\"\n    # Email sin @\n    invalid_email = UpdateUser(email=\"juanperezexample.com\")\n    # Configurar el mock de la sesión\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_user\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        updateUser(1, invalid_email, mock_session)\n    assert excinfo.value.status_code == 400",
+        "detail": "tests.users.test_update_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_user_password_complexity",
+        "kind": 2,
+        "importPath": "tests.users.test_update_user",
+        "description": "tests.users.test_update_user",
+        "peekOfCode": "def test_update_user_password_complexity(mock_session, mock_user):\n    \"\"\"Prueba validación de complejidad de contraseña\"\"\"\n    # Contraseña simple\n    weak_password = UpdateUser(password=\"simple\")\n    # Configurar el mock de la sesión\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_user\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        updateUser(1, weak_password, mock_session)\n    assert excinfo.value.status_code == 400",
+        "detail": "tests.users.test_update_user",
+        "documentation": {}
+    },
+    {
+        "label": "test_update_user_with_long_fields",
+        "kind": 2,
+        "importPath": "tests.users.test_update_user",
+        "description": "tests.users.test_update_user",
+        "peekOfCode": "def test_update_user_with_long_fields(mock_session, mock_user):\n    \"\"\"Prueba validación de longitud de campos\"\"\"\n    # Nombre muy largo\n    long_name = UpdateUser(nombre=\"A\" * 51)  # 51 caracteres\n    # Configurar el mock de la sesión\n    mock_session.query.return_value.filter.return_value.first.return_value = mock_user\n    # Verificar que se lanza la excepción correcta\n    with pytest.raises(HTTPException) as excinfo:\n        updateUser(1, long_name, mock_session)\n    assert excinfo.value.status_code == 400",
+        "detail": "tests.users.test_update_user",
         "documentation": {}
     },
     {
