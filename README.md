@@ -34,6 +34,7 @@ Tener instalado las siguientes herramientas:
 - **Python 3.11**
 - **PostgreSQL 16.6**
 - **Rustup.rs**  (Después de instalar el software, se procede a instalar las librerías de Cargo y Rustc utilizando la Opción 1)
+- **Docker** (opcional, para despliegue en contenedores)
 ---
 
 ### Instrucciones  
