@@ -30,7 +30,7 @@ RUN rustup default stable
 WORKDIR /app
 
 # copiar archivos necesarios para construir dependencias
-COPY pyproject.toml poetry.lock* requirements.txt* /app/
+COPY requirements.txt /app/
 
 # crear wheelhouse: compilar todas las dependencias en ruedas
 # si usas requirements.txt:
